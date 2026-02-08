@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicSysMultipleMapper">
+    <!-- 定义 TbBasicSysUser 的结果映射 -->
+    <resultMap id="TbBasicSysUserResultMap" type="com.api.basic.data.entity.TbBasicSysUser" autoMapping="true">
+        <id property="id" column="id"/>
+    </resultMap>
+
+    <!-- 定义 TbBasicSysUserRoleRelation 的结果映射 -->
+    <resultMap id="TbBasicSysUserRoleRelationResultMap" type="com.api.basic.data.entity.TbBasicSysUserRoleRelation" autoMapping="true">
+        <id property="id" column="userRoleRelationId"/>
+    </resultMap>
+
+    <!-- 定义 TbBasicSys 的结果映射 -->
+    <resultMap id="TbBasicSysResultMap" type="com.api.basic.data.entity.TbBasicSysMultiple">
+        <association property="tbBasicSysUser" resultMap="TbBasicSysUserResultMap"/>
+        <association property="tbBasicSysUserRoleRelation" resultMap="TbBasicSysUserRoleRelationResultMap"/>
+    </resultMap>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicSysMultiplePo"
+            resultMap="TbBasicSysResultMap">
+        SELECT tbsu.*
+        FROM tb_basic_sys_user as tbsu
+        left join tb_basic_sys_user_role_relation as tbsurr on tbsurr.userId = tbsu.id
+        <where>
+            <include refid="com.api.basic.mapper.TbBasicSysUserMapper.whereClause"/>
+            <include refid="com.api.basic.mapper.TbBasicSysUserRoleRelationMapper.whereClause"/>
+        </where>
+        group by tbsu.`id`
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicSysMultiplePo"
+            resultType="int">
+        SELECT COUNT(DISTINCT tbsu.`id`) as cnt
+        FROM tb_basic_sys_user as tbsu
+        left join tb_basic_sys_user_role_relation as tbsurr on tbsurr.userId = tbsu.id
+        <where>
+            <include refid="com.api.basic.mapper.TbBasicSysUserMapper.whereClause"/>
+            <include refid="com.api.basic.mapper.TbBasicSysUserRoleRelationMapper.whereClause"/>
+        </where>
+    </select>
+</mapper>

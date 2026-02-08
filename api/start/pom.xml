@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.api</groupId>
+        <artifactId>api</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <artifactId>start</artifactId>
+    <version>${revision}</version>
+    <name>start</name>
+    <description>start（负责启动项目，管理项目依赖）</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>21</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.api</groupId>
+            <artifactId>basic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.api</groupId>
+            <artifactId>apps</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.parent.name}</finalName>
+        <plugins>
+            <!-- 使用maven-jar-plugin打包，只包含本模块和内部模块 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.api.start.StartApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <!-- 使用maven-dependency-plugin解压内部模块到target/classes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <!-- 解压所有com.api模块到当前module的classes目录 -->
+                    <execution>
+                        <id>unpack-modules</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeGroupIds>com.api</includeGroupIds>
+                            <excludeArtifactIds>start</excludeArtifactIds>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                    <!-- 将第三方依赖复制到lib目录 -->
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <excludeGroupIds>com.api</excludeGroupIds>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!-- 使用antrun插件在install阶段执行清理 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>clean-after-package</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <!-- 清理start/target目录，只保留最终的jar包和lib目录 -->
+                                <delete dir="${project.build.directory}/classes" failonerror="false"/>
+                                <delete dir="${project.build.directory}/generated-sources" failonerror="false"/>
+                                <delete dir="${project.build.directory}/generated-test-sources" failonerror="false"/>
+                                <delete dir="${project.build.directory}/maven-archiver" failonerror="false"/>
+                                <delete dir="${project.build.directory}/maven-status" failonerror="false"/>
+                                <delete dir="${project.build.directory}/dependency-maven-plugin-markers" failonerror="false"/>
+                                <delete dir="${project.build.directory}/surefire-reports" failonerror="false"/>
+                                <delete dir="${project.build.directory}/test-classes" failonerror="false"/>
+                                <delete dir="${project.build.directory}/antrun" failonerror="false"/>
+                                <delete file="${project.build.directory}/${project.parent.name}.jar.original" failonerror="false"/>
+                                
+                                <!-- 清理所有兄弟模块的target目录 -->
+                                <delete includeemptydirs="true" failonerror="false">
+                                    <fileset dir="${project.basedir}/.." includes="*/target/**" excludes="start/target/**"/>
+                                </delete>
+                                
+                                <echo message="已清理 start/target 目录，保留 ${project.parent.name}.jar 和 lib 目录"/>
+                                <echo message="已清理所有其他模块的 target 目录"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.ColumnMapper">
+    <sql id="whereClause">
+        <if test="whereTableSchema != null and whereTableSchema != ''">
+            AND table_schema = #{whereTableSchema}
+        </if>
+        <if test="whereTableName != null and whereTableName != ''">
+            AND `table_name` = #{whereTableName}
+        </if>
+        <if test="whereInTableNames != null and whereInTableNames.size() > 0">
+            AND `table_name` IN
+            <foreach item="item" index="index" collection="whereInTableNames"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="whereTableComment != null and whereTableComment != ''">
+            AND `table_comment` = #{whereTableComment}
+        </if>
+        <if test="whereLikeColumnName != null and whereLikeColumnName != ''">
+            AND `column_name` LIKE CONCAT('%', #{whereLikeColumnName}, '%')
+        </if>
+        <if test="whereLikeColumnComment != null and whereLikeColumnComment != ''">
+            AND `column_comment` LIKE CONCAT('%', #{whereLikeColumnComment}, '%')
+        </if>
+        <if test="whereDataType != null and whereDataType != ''">
+            AND `data_type` = #{whereDataType}
+        </if>
+        <if test="whereColumnType != null and whereColumnType != ''">
+            AND `column_type` = #{whereColumnType}
+        </if>
+        <if test="whereIsNullable != null and whereIsNullable != ''">
+            AND `is_nullable` = #{whereIsNullable}
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.ColumnPo"
+            resultType="com.api.basic.data.entity.Column">
+        SELECT * FROM INFORMATION_SCHEMA.columns
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.ColumnPo"
+            resultType="int">
+        SELECT COUNT(id) as cnt
+        FROM INFORMATION_SCHEMA.columns
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

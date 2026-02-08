@@ -1,0 +1,3340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicSysRegionMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicSysRegion"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_sys_region (
+        <trim suffixOverrides=",">
+                            <if test="parentCode != null">
+                                `parentCode`,
+                            </if>
+                        <if test="code != null">
+                            `code`,
+                        </if>
+                        <if test="name != null">
+                            `name`,
+                        </if>
+                            <if test="sort != null">
+                                `sort`,
+                            </if>
+                            <if test="isDelete != null">
+                                `isDelete`,
+                            </if>
+                            <if test="level != null">
+                                `level`,
+                            </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                            <if test="updatedUserId != null">
+                                `updatedUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                            <if test="parentCode != null">
+                                #{parentCode},
+                            </if>
+                        <if test="code != null">
+                            #{code},
+                        </if>
+                        <if test="name != null">
+                            #{name},
+                        </if>
+                            <if test="sort != null">
+                                #{sort},
+                            </if>
+                            <if test="isDelete != null">
+                                #{isDelete},
+                            </if>
+                            <if test="level != null">
+                                #{level},
+                            </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                            <if test="updatedUserId != null">
+                                #{updatedUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicSysRegionPo">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        DELETE `tbsr` FROM tb_basic_sys_region as `tbsr`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        UPDATE tb_basic_sys_region as `tbsr`
+        <set>
+                <if test="tbBasicSysRegionPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`id` = #{tbBasicSysRegionPo.id},
+                </if>
+                <if test="tbBasicSysRegionPo.parentCode != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`parentCode` = #{tbBasicSysRegionPo.parentCode},
+                </if>
+                <if test="tbBasicSysRegionPo.code != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`code` = #{tbBasicSysRegionPo.code},
+                </if>
+                <if test="tbBasicSysRegionPo.name != null">
+                        <if test="tbBasicSysRegionPo.name == ''">
+                    `tbsr`.`name` = NULL,
+                        </if>
+                        <if test="tbBasicSysRegionPo.name != ''">
+                    `tbsr`.`name` = #{tbBasicSysRegionPo.name},
+                        </if>
+                </if>
+                <if test="tbBasicSysRegionPo.sort != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`sort` = #{tbBasicSysRegionPo.sort},
+                </if>
+                <if test="tbBasicSysRegionPo.isDelete != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`isDelete` = #{tbBasicSysRegionPo.isDelete},
+                </if>
+                <if test="tbBasicSysRegionPo.level != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`level` = #{tbBasicSysRegionPo.level},
+                </if>
+                <if test="tbBasicSysRegionPo.createdAt != null">
+                        <if test="tbBasicSysRegionPo.createdAt == ''">
+                    `tbsr`.`createdAt` = '',
+                        </if>
+                        <if test="tbBasicSysRegionPo.createdAt != ''">
+                    `tbsr`.`createdAt` = #{tbBasicSysRegionPo.createdAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysRegionPo.createdUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`createdUserId` = #{tbBasicSysRegionPo.createdUserId},
+                </if>
+                <if test="tbBasicSysRegionPo.updatedAt != null">
+                        <if test="tbBasicSysRegionPo.updatedAt == ''">
+                    `tbsr`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicSysRegionPo.updatedAt != ''">
+                    `tbsr`.`updatedAt` = #{tbBasicSysRegionPo.updatedAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysRegionPo.updatedUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`updatedUserId` = #{tbBasicSysRegionPo.updatedUserId},
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicSysRegionPo != null">
+                            <if test="tbBasicSysRegionPo.whereId != null">
+                                AND `tbsr`.`id` = #{tbBasicSysRegionPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInIds != null and tbBasicSysRegionPo.whereInIds.size() > 0">
+                            AND `tbsr`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrIds != null and tbBasicSysRegionPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotId != null">
+                                AND `tbsr`.`id` != #{tbBasicSysRegionPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInIds != null and tbBasicSysRegionPo.whereNotInIds.size() > 0">
+                            AND `tbsr`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullId != null and tbBasicSysRegionPo.whereIsNullId == true">
+                            AND `tbsr`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullId != null and tbBasicSysRegionPo.whereIsNotNullId == true">
+                            AND `tbsr`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyId != null and tbBasicSysRegionPo.whereIsEmptyId == true">
+                            AND (`tbsr`.`id` IS NULL OR `tbsr`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyId != null and tbBasicSysRegionPo.whereIsNotEmptyId == true">
+                            AND `tbsr`.`id` IS NOT NULL AND `tbsr`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtId != null">
+                                AND `tbsr`.`id` &gt; #{tbBasicSysRegionPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteId != null">
+                                AND `tbsr`.`id` &gt;= #{tbBasicSysRegionPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtId != null">
+                                AND `tbsr`.`id` &lt; #{tbBasicSysRegionPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteId != null">
+                                AND `tbsr`.`id` &lt;= #{tbBasicSysRegionPo.whereLteId}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartId != null">
+                                AND `tbsr`.`id` &gt;= #{tbBasicSysRegionPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndId != null">
+                                AND `tbsr`.`id` &lt;= #{tbBasicSysRegionPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereParentCode != null">
+                                AND `tbsr`.`parentCode` = #{tbBasicSysRegionPo.whereParentCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInParentCodes != null and tbBasicSysRegionPo.whereInParentCodes.size() > 0">
+                            AND `tbsr`.`parentCode` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInParentCodes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrParentCodes != null and tbBasicSysRegionPo.whereInOrParentCodes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrParentCodes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`parentCode` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`parentCode` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotParentCode != null">
+                                AND `tbsr`.`parentCode` != #{tbBasicSysRegionPo.whereNotParentCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInParentCodes != null and tbBasicSysRegionPo.whereNotInParentCodes.size() > 0">
+                            AND `tbsr`.`parentCode` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInParentCodes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullParentCode != null and tbBasicSysRegionPo.whereIsNullParentCode == true">
+                            AND `tbsr`.`parentCode` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullParentCode != null and tbBasicSysRegionPo.whereIsNotNullParentCode == true">
+                            AND `tbsr`.`parentCode` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyParentCode != null and tbBasicSysRegionPo.whereIsEmptyParentCode == true">
+                            AND (`tbsr`.`parentCode` IS NULL OR `tbsr`.`parentCode` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyParentCode != null and tbBasicSysRegionPo.whereIsNotEmptyParentCode == true">
+                            AND `tbsr`.`parentCode` IS NOT NULL AND `tbsr`.`parentCode` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtParentCode != null">
+                                AND `tbsr`.`parentCode` &gt; #{tbBasicSysRegionPo.whereGtParentCode}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteParentCode != null">
+                                AND `tbsr`.`parentCode` &gt;= #{tbBasicSysRegionPo.whereGteParentCode}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtParentCode != null">
+                                AND `tbsr`.`parentCode` &lt; #{tbBasicSysRegionPo.whereLtParentCode}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteParentCode != null">
+                                AND `tbsr`.`parentCode` &lt;= #{tbBasicSysRegionPo.whereLteParentCode}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartParentCode != null">
+                                AND `tbsr`.`parentCode` &gt;= #{tbBasicSysRegionPo.whereStartParentCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndParentCode != null">
+                                AND `tbsr`.`parentCode` &lt;= #{tbBasicSysRegionPo.whereEndParentCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereCode != null">
+                                AND `tbsr`.`code` = #{tbBasicSysRegionPo.whereCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInCodes != null and tbBasicSysRegionPo.whereInCodes.size() > 0">
+                            AND `tbsr`.`code` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInCodes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrCodes != null and tbBasicSysRegionPo.whereInOrCodes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrCodes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`code` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`code` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotCode != null">
+                                AND `tbsr`.`code` != #{tbBasicSysRegionPo.whereNotCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInCodes != null and tbBasicSysRegionPo.whereNotInCodes.size() > 0">
+                            AND `tbsr`.`code` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInCodes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullCode != null and tbBasicSysRegionPo.whereIsNullCode == true">
+                            AND `tbsr`.`code` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullCode != null and tbBasicSysRegionPo.whereIsNotNullCode == true">
+                            AND `tbsr`.`code` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyCode != null and tbBasicSysRegionPo.whereIsEmptyCode == true">
+                            AND (`tbsr`.`code` IS NULL OR `tbsr`.`code` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyCode != null and tbBasicSysRegionPo.whereIsNotEmptyCode == true">
+                            AND `tbsr`.`code` IS NOT NULL AND `tbsr`.`code` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtCode != null">
+                                AND `tbsr`.`code` &gt; #{tbBasicSysRegionPo.whereGtCode}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteCode != null">
+                                AND `tbsr`.`code` &gt;= #{tbBasicSysRegionPo.whereGteCode}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtCode != null">
+                                AND `tbsr`.`code` &lt; #{tbBasicSysRegionPo.whereLtCode}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteCode != null">
+                                AND `tbsr`.`code` &lt;= #{tbBasicSysRegionPo.whereLteCode}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartCode != null">
+                                AND `tbsr`.`code` &gt;= #{tbBasicSysRegionPo.whereStartCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndCode != null">
+                                AND `tbsr`.`code` &lt;= #{tbBasicSysRegionPo.whereEndCode}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereName != null and tbBasicSysRegionPo.whereName != ''">
+                                AND `tbsr`.`name` = #{tbBasicSysRegionPo.whereName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInNames != null and tbBasicSysRegionPo.whereInNames.size() > 0">
+                            AND `tbsr`.`name` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrNames != null and tbBasicSysRegionPo.whereInOrNames.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrNames"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`name` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`name` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotName != null and tbBasicSysRegionPo.whereNotName != ''">
+                                AND `tbsr`.`name` != #{tbBasicSysRegionPo.whereNotName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInNames != null and tbBasicSysRegionPo.whereNotInNames.size() > 0">
+                            AND `tbsr`.`name` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullName != null and tbBasicSysRegionPo.whereIsNullName == true">
+                            AND `tbsr`.`name` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullName != null and tbBasicSysRegionPo.whereIsNotNullName == true">
+                            AND `tbsr`.`name` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyName != null and tbBasicSysRegionPo.whereIsEmptyName == true">
+                            AND (`tbsr`.`name` IS NULL OR `tbsr`.`name` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyName != null and tbBasicSysRegionPo.whereIsNotEmptyName == true">
+                            AND `tbsr`.`name` IS NOT NULL AND `tbsr`.`name` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtName != null and tbBasicSysRegionPo.whereGtName != ''">
+                                AND `tbsr`.`name` &gt; #{tbBasicSysRegionPo.whereGtName}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteName != null and tbBasicSysRegionPo.whereGteName != ''">
+                                AND `tbsr`.`name` &gt;= #{tbBasicSysRegionPo.whereGteName}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtName != null and tbBasicSysRegionPo.whereLtName != ''">
+                                AND `tbsr`.`name` &lt; #{tbBasicSysRegionPo.whereLtName}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteName != null and tbBasicSysRegionPo.whereLteName != ''">
+                                AND `tbsr`.`name` &lt;= #{tbBasicSysRegionPo.whereLteName}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereLikeName != null and tbBasicSysRegionPo.whereLikeName != ''">
+                                AND `tbsr`.`name` LIKE CONCAT('%', #{tbBasicSysRegionPo.whereLikeName}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereStartName != null and tbBasicSysRegionPo.whereStartName != ''">
+                                AND `tbsr`.`name` &gt;= #{tbBasicSysRegionPo.whereStartName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndName != null and tbBasicSysRegionPo.whereEndName != ''">
+                                AND `tbsr`.`name` &lt;= #{tbBasicSysRegionPo.whereEndName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereSort != null">
+                                AND `tbsr`.`sort` = #{tbBasicSysRegionPo.whereSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInSorts != null and tbBasicSysRegionPo.whereInSorts.size() > 0">
+                            AND `tbsr`.`sort` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInSorts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrSorts != null and tbBasicSysRegionPo.whereInOrSorts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrSorts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`sort` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`sort` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotSort != null">
+                                AND `tbsr`.`sort` != #{tbBasicSysRegionPo.whereNotSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInSorts != null and tbBasicSysRegionPo.whereNotInSorts.size() > 0">
+                            AND `tbsr`.`sort` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInSorts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullSort != null and tbBasicSysRegionPo.whereIsNullSort == true">
+                            AND `tbsr`.`sort` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullSort != null and tbBasicSysRegionPo.whereIsNotNullSort == true">
+                            AND `tbsr`.`sort` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptySort != null and tbBasicSysRegionPo.whereIsEmptySort == true">
+                            AND (`tbsr`.`sort` IS NULL OR `tbsr`.`sort` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptySort != null and tbBasicSysRegionPo.whereIsNotEmptySort == true">
+                            AND `tbsr`.`sort` IS NOT NULL AND `tbsr`.`sort` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtSort != null">
+                                AND `tbsr`.`sort` &gt; #{tbBasicSysRegionPo.whereGtSort}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteSort != null">
+                                AND `tbsr`.`sort` &gt;= #{tbBasicSysRegionPo.whereGteSort}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtSort != null">
+                                AND `tbsr`.`sort` &lt; #{tbBasicSysRegionPo.whereLtSort}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteSort != null">
+                                AND `tbsr`.`sort` &lt;= #{tbBasicSysRegionPo.whereLteSort}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartSort != null">
+                                AND `tbsr`.`sort` &gt;= #{tbBasicSysRegionPo.whereStartSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndSort != null">
+                                AND `tbsr`.`sort` &lt;= #{tbBasicSysRegionPo.whereEndSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereIsDelete != null">
+                                AND `tbsr`.`isDelete` = #{tbBasicSysRegionPo.whereIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInIsDeletes != null and tbBasicSysRegionPo.whereInIsDeletes.size() > 0">
+                            AND `tbsr`.`isDelete` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrIsDeletes != null and tbBasicSysRegionPo.whereInOrIsDeletes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrIsDeletes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`isDelete` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`isDelete` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotIsDelete != null">
+                                AND `tbsr`.`isDelete` != #{tbBasicSysRegionPo.whereNotIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInIsDeletes != null and tbBasicSysRegionPo.whereNotInIsDeletes.size() > 0">
+                            AND `tbsr`.`isDelete` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullIsDelete != null and tbBasicSysRegionPo.whereIsNullIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullIsDelete != null and tbBasicSysRegionPo.whereIsNotNullIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyIsDelete != null and tbBasicSysRegionPo.whereIsEmptyIsDelete == true">
+                            AND (`tbsr`.`isDelete` IS NULL OR `tbsr`.`isDelete` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyIsDelete != null and tbBasicSysRegionPo.whereIsNotEmptyIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NOT NULL AND `tbsr`.`isDelete` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt; #{tbBasicSysRegionPo.whereGtIsDelete}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt;= #{tbBasicSysRegionPo.whereGteIsDelete}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt; #{tbBasicSysRegionPo.whereLtIsDelete}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt;= #{tbBasicSysRegionPo.whereLteIsDelete}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt;= #{tbBasicSysRegionPo.whereStartIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt;= #{tbBasicSysRegionPo.whereEndIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLevel != null">
+                                AND `tbsr`.`level` = #{tbBasicSysRegionPo.whereLevel}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInLevels != null and tbBasicSysRegionPo.whereInLevels.size() > 0">
+                            AND `tbsr`.`level` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInLevels"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrLevels != null and tbBasicSysRegionPo.whereInOrLevels.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrLevels"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`level` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`level` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotLevel != null">
+                                AND `tbsr`.`level` != #{tbBasicSysRegionPo.whereNotLevel}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInLevels != null and tbBasicSysRegionPo.whereNotInLevels.size() > 0">
+                            AND `tbsr`.`level` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInLevels"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullLevel != null and tbBasicSysRegionPo.whereIsNullLevel == true">
+                            AND `tbsr`.`level` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullLevel != null and tbBasicSysRegionPo.whereIsNotNullLevel == true">
+                            AND `tbsr`.`level` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyLevel != null and tbBasicSysRegionPo.whereIsEmptyLevel == true">
+                            AND (`tbsr`.`level` IS NULL OR `tbsr`.`level` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyLevel != null and tbBasicSysRegionPo.whereIsNotEmptyLevel == true">
+                            AND `tbsr`.`level` IS NOT NULL AND `tbsr`.`level` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtLevel != null">
+                                AND `tbsr`.`level` &gt; #{tbBasicSysRegionPo.whereGtLevel}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteLevel != null">
+                                AND `tbsr`.`level` &gt;= #{tbBasicSysRegionPo.whereGteLevel}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtLevel != null">
+                                AND `tbsr`.`level` &lt; #{tbBasicSysRegionPo.whereLtLevel}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteLevel != null">
+                                AND `tbsr`.`level` &lt;= #{tbBasicSysRegionPo.whereLteLevel}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartLevel != null">
+                                AND `tbsr`.`level` &gt;= #{tbBasicSysRegionPo.whereStartLevel}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndLevel != null">
+                                AND `tbsr`.`level` &lt;= #{tbBasicSysRegionPo.whereEndLevel}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereCreatedAt != null and tbBasicSysRegionPo.whereCreatedAt != ''">
+                                AND `tbsr`.`createdAt` = #{tbBasicSysRegionPo.whereCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInCreatedAts != null and tbBasicSysRegionPo.whereInCreatedAts.size() > 0">
+                            AND `tbsr`.`createdAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrCreatedAts != null and tbBasicSysRegionPo.whereInOrCreatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrCreatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`createdAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`createdAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotCreatedAt != null and tbBasicSysRegionPo.whereNotCreatedAt != ''">
+                                AND `tbsr`.`createdAt` != #{tbBasicSysRegionPo.whereNotCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInCreatedAts != null and tbBasicSysRegionPo.whereNotInCreatedAts.size() > 0">
+                            AND `tbsr`.`createdAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullCreatedAt != null and tbBasicSysRegionPo.whereIsNullCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullCreatedAt != null and tbBasicSysRegionPo.whereIsNotNullCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyCreatedAt != null and tbBasicSysRegionPo.whereIsEmptyCreatedAt == true">
+                            AND (`tbsr`.`createdAt` IS NULL OR `tbsr`.`createdAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyCreatedAt != null and tbBasicSysRegionPo.whereIsNotEmptyCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NOT NULL AND `tbsr`.`createdAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtCreatedAt != null and tbBasicSysRegionPo.whereGtCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt; #{tbBasicSysRegionPo.whereGtCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteCreatedAt != null and tbBasicSysRegionPo.whereGteCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt;= #{tbBasicSysRegionPo.whereGteCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtCreatedAt != null and tbBasicSysRegionPo.whereLtCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt; #{tbBasicSysRegionPo.whereLtCreatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteCreatedAt != null and tbBasicSysRegionPo.whereLteCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt;= #{tbBasicSysRegionPo.whereLteCreatedAt}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartCreatedAt != null and tbBasicSysRegionPo.whereStartCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt;= #{tbBasicSysRegionPo.whereStartCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndCreatedAt != null and tbBasicSysRegionPo.whereEndCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt;= #{tbBasicSysRegionPo.whereEndCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` = #{tbBasicSysRegionPo.whereCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInCreatedUserIds != null and tbBasicSysRegionPo.whereInCreatedUserIds.size() > 0">
+                            AND `tbsr`.`createdUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrCreatedUserIds != null and tbBasicSysRegionPo.whereInOrCreatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrCreatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`createdUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`createdUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` != #{tbBasicSysRegionPo.whereNotCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInCreatedUserIds != null and tbBasicSysRegionPo.whereNotInCreatedUserIds.size() > 0">
+                            AND `tbsr`.`createdUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullCreatedUserId != null and tbBasicSysRegionPo.whereIsNullCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullCreatedUserId != null and tbBasicSysRegionPo.whereIsNotNullCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyCreatedUserId != null and tbBasicSysRegionPo.whereIsEmptyCreatedUserId == true">
+                            AND (`tbsr`.`createdUserId` IS NULL OR `tbsr`.`createdUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyCreatedUserId != null and tbBasicSysRegionPo.whereIsNotEmptyCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NOT NULL AND `tbsr`.`createdUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt; #{tbBasicSysRegionPo.whereGtCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt;= #{tbBasicSysRegionPo.whereGteCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt; #{tbBasicSysRegionPo.whereLtCreatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt;= #{tbBasicSysRegionPo.whereLteCreatedUserId}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt;= #{tbBasicSysRegionPo.whereStartCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt;= #{tbBasicSysRegionPo.whereEndCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereUpdatedAt != null and tbBasicSysRegionPo.whereUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` = #{tbBasicSysRegionPo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInUpdatedAts != null and tbBasicSysRegionPo.whereInUpdatedAts.size() > 0">
+                            AND `tbsr`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrUpdatedAts != null and tbBasicSysRegionPo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotUpdatedAt != null and tbBasicSysRegionPo.whereNotUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` != #{tbBasicSysRegionPo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInUpdatedAts != null and tbBasicSysRegionPo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbsr`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullUpdatedAt != null and tbBasicSysRegionPo.whereIsNullUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullUpdatedAt != null and tbBasicSysRegionPo.whereIsNotNullUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyUpdatedAt != null and tbBasicSysRegionPo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbsr`.`updatedAt` IS NULL OR `tbsr`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyUpdatedAt != null and tbBasicSysRegionPo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NOT NULL AND `tbsr`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtUpdatedAt != null and tbBasicSysRegionPo.whereGtUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt; #{tbBasicSysRegionPo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteUpdatedAt != null and tbBasicSysRegionPo.whereGteUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt;= #{tbBasicSysRegionPo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtUpdatedAt != null and tbBasicSysRegionPo.whereLtUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt; #{tbBasicSysRegionPo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteUpdatedAt != null and tbBasicSysRegionPo.whereLteUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt;= #{tbBasicSysRegionPo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartUpdatedAt != null and tbBasicSysRegionPo.whereStartUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt;= #{tbBasicSysRegionPo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndUpdatedAt != null and tbBasicSysRegionPo.whereEndUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt;= #{tbBasicSysRegionPo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` = #{tbBasicSysRegionPo.whereUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInUpdatedUserIds != null and tbBasicSysRegionPo.whereInUpdatedUserIds.size() > 0">
+                            AND `tbsr`.`updatedUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereInOrUpdatedUserIds != null and tbBasicSysRegionPo.whereInOrUpdatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereInOrUpdatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`updatedUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`updatedUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereNotUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` != #{tbBasicSysRegionPo.whereNotUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereNotInUpdatedUserIds != null and tbBasicSysRegionPo.whereNotInUpdatedUserIds.size() > 0">
+                            AND `tbsr`.`updatedUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRegionPo.whereNotInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRegionPo.whereIsNullUpdatedUserId != null and tbBasicSysRegionPo.whereIsNullUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotNullUpdatedUserId != null and tbBasicSysRegionPo.whereIsNotNullUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsEmptyUpdatedUserId != null and tbBasicSysRegionPo.whereIsEmptyUpdatedUserId == true">
+                            AND (`tbsr`.`updatedUserId` IS NULL OR `tbsr`.`updatedUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRegionPo.whereIsNotEmptyUpdatedUserId != null and tbBasicSysRegionPo.whereIsNotEmptyUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NOT NULL AND `tbsr`.`updatedUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRegionPo.whereGtUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt; #{tbBasicSysRegionPo.whereGtUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRegionPo.whereGteUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt;= #{tbBasicSysRegionPo.whereGteUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLtUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt; #{tbBasicSysRegionPo.whereLtUpdatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereLteUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt;= #{tbBasicSysRegionPo.whereLteUpdatedUserId}
+                            </if>
+                            <if test="tbBasicSysRegionPo.whereStartUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt;= #{tbBasicSysRegionPo.whereStartUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRegionPo.whereEndUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt;= #{tbBasicSysRegionPo.whereEndUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="com.api.basic.data.entity.TbBasicSysRegion">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.*
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="int">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT `tbsr`.`id` </when>
+            <otherwise> `tbsr`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumParentCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`parentCode`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxParentCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`parentCode`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minParentCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`parentCode`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgParentCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`parentCode`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`code`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`code`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`code`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCode"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`code`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumSort"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`sort`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxSort"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`sort`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minSort"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`sort`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgSort"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`sort`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumLevel"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`level`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxLevel"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`level`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minLevel"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`level`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgLevel"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`level`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRegionPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRegionPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRegionPo.useDistinct != null and tbBasicSysRegionPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_region as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRegionPo.groupByFields != null and tbBasicSysRegionPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRegionPo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRegionPo.havingClause != null and tbBasicSysRegionPo.havingClause != ''">
+        HAVING #{tbBasicSysRegionPo.havingClause}
+        </if>
+    </select>
+</mapper>

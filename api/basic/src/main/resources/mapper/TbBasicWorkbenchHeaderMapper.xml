@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicWorkbenchHeaderMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicWorkbenchHeader"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_workbench_header (
+        <trim suffixOverrides=",">
+                        <if test="key != null">
+                            `key`,
+                        </if>
+                            <if test="title != null and title != ''">
+                                `title`,
+                            </if>
+                            <if test="description != null and description != ''">
+                                `description`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="key != null">
+                            #{key},
+                        </if>
+                            <if test="title != null and title != ''">
+                                #{title},
+                            </if>
+                            <if test="description != null and description != ''">
+                                #{description},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        DELETE `tbwh` FROM tb_basic_workbench_header as `tbwh`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        UPDATE tb_basic_workbench_header as `tbwh`
+        <set>
+                <if test="tbBasicWorkbenchHeaderPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbwh`.`id` = #{tbBasicWorkbenchHeaderPo.id},
+                </if>
+                <if test="tbBasicWorkbenchHeaderPo.key != null">
+                        <if test="tbBasicWorkbenchHeaderPo.key == ''">
+                    `tbwh`.`key` = NULL,
+                        </if>
+                        <if test="tbBasicWorkbenchHeaderPo.key != ''">
+                    `tbwh`.`key` = #{tbBasicWorkbenchHeaderPo.key},
+                        </if>
+                </if>
+                <if test="tbBasicWorkbenchHeaderPo.title != null">
+                        <if test="tbBasicWorkbenchHeaderPo.title == ''">
+                    `tbwh`.`title` = NULL,
+                        </if>
+                        <if test="tbBasicWorkbenchHeaderPo.title != ''">
+                    `tbwh`.`title` = #{tbBasicWorkbenchHeaderPo.title},
+                        </if>
+                </if>
+                <if test="tbBasicWorkbenchHeaderPo.description != null">
+                        <if test="tbBasicWorkbenchHeaderPo.description == ''">
+                    `tbwh`.`description` = NULL,
+                        </if>
+                        <if test="tbBasicWorkbenchHeaderPo.description != ''">
+                    `tbwh`.`description` = #{tbBasicWorkbenchHeaderPo.description},
+                        </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicWorkbenchHeaderPo != null">
+                            <if test="tbBasicWorkbenchHeaderPo.whereId != null">
+                                AND `tbwh`.`id` = #{tbBasicWorkbenchHeaderPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInIds != null and tbBasicWorkbenchHeaderPo.whereInIds.size() > 0">
+                            AND `tbwh`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInOrIds != null and tbBasicWorkbenchHeaderPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbwh`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbwh`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereNotId != null">
+                                AND `tbwh`.`id` != #{tbBasicWorkbenchHeaderPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereNotInIds != null and tbBasicWorkbenchHeaderPo.whereNotInIds.size() > 0">
+                            AND `tbwh`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNullId != null and tbBasicWorkbenchHeaderPo.whereIsNullId == true">
+                            AND `tbwh`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotNullId != null and tbBasicWorkbenchHeaderPo.whereIsNotNullId == true">
+                            AND `tbwh`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsEmptyId != null and tbBasicWorkbenchHeaderPo.whereIsEmptyId == true">
+                            AND (`tbwh`.`id` IS NULL OR `tbwh`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotEmptyId != null and tbBasicWorkbenchHeaderPo.whereIsNotEmptyId == true">
+                            AND `tbwh`.`id` IS NOT NULL AND `tbwh`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicWorkbenchHeaderPo.whereGtId != null">
+                                AND `tbwh`.`id` &gt; #{tbBasicWorkbenchHeaderPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereGteId != null">
+                                AND `tbwh`.`id` &gt;= #{tbBasicWorkbenchHeaderPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLtId != null">
+                                AND `tbwh`.`id` &lt; #{tbBasicWorkbenchHeaderPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLteId != null">
+                                AND `tbwh`.`id` &lt;= #{tbBasicWorkbenchHeaderPo.whereLteId}
+                            </if>
+                            <if test="tbBasicWorkbenchHeaderPo.whereStartId != null">
+                                AND `tbwh`.`id` &gt;= #{tbBasicWorkbenchHeaderPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereEndId != null">
+                                AND `tbwh`.`id` &lt;= #{tbBasicWorkbenchHeaderPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereKey != null and tbBasicWorkbenchHeaderPo.whereKey != ''">
+                                AND `tbwh`.`key` = #{tbBasicWorkbenchHeaderPo.whereKey}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInKeys != null and tbBasicWorkbenchHeaderPo.whereInKeys.size() > 0">
+                            AND `tbwh`.`key` IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInKeys"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInOrKeys != null and tbBasicWorkbenchHeaderPo.whereInOrKeys.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInOrKeys"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbwh`.`key` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbwh`.`key` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereNotKey != null and tbBasicWorkbenchHeaderPo.whereNotKey != ''">
+                                AND `tbwh`.`key` != #{tbBasicWorkbenchHeaderPo.whereNotKey}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereNotInKeys != null and tbBasicWorkbenchHeaderPo.whereNotInKeys.size() > 0">
+                            AND `tbwh`.`key` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereNotInKeys"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNullKey != null and tbBasicWorkbenchHeaderPo.whereIsNullKey == true">
+                            AND `tbwh`.`key` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotNullKey != null and tbBasicWorkbenchHeaderPo.whereIsNotNullKey == true">
+                            AND `tbwh`.`key` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsEmptyKey != null and tbBasicWorkbenchHeaderPo.whereIsEmptyKey == true">
+                            AND (`tbwh`.`key` IS NULL OR `tbwh`.`key` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotEmptyKey != null and tbBasicWorkbenchHeaderPo.whereIsNotEmptyKey == true">
+                            AND `tbwh`.`key` IS NOT NULL AND `tbwh`.`key` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicWorkbenchHeaderPo.whereGtKey != null and tbBasicWorkbenchHeaderPo.whereGtKey != ''">
+                                AND `tbwh`.`key` &gt; #{tbBasicWorkbenchHeaderPo.whereGtKey}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereGteKey != null and tbBasicWorkbenchHeaderPo.whereGteKey != ''">
+                                AND `tbwh`.`key` &gt;= #{tbBasicWorkbenchHeaderPo.whereGteKey}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLtKey != null and tbBasicWorkbenchHeaderPo.whereLtKey != ''">
+                                AND `tbwh`.`key` &lt; #{tbBasicWorkbenchHeaderPo.whereLtKey}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLteKey != null and tbBasicWorkbenchHeaderPo.whereLteKey != ''">
+                                AND `tbwh`.`key` &lt;= #{tbBasicWorkbenchHeaderPo.whereLteKey}
+                            </if>
+                            <if test="tbBasicWorkbenchHeaderPo.whereLikeKey != null and tbBasicWorkbenchHeaderPo.whereLikeKey != ''">
+                                AND `tbwh`.`key` LIKE CONCAT('%', #{tbBasicWorkbenchHeaderPo.whereLikeKey}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereStartKey != null and tbBasicWorkbenchHeaderPo.whereStartKey != ''">
+                                AND `tbwh`.`key` &gt;= #{tbBasicWorkbenchHeaderPo.whereStartKey}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereEndKey != null and tbBasicWorkbenchHeaderPo.whereEndKey != ''">
+                                AND `tbwh`.`key` &lt;= #{tbBasicWorkbenchHeaderPo.whereEndKey}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereTitle != null and tbBasicWorkbenchHeaderPo.whereTitle != ''">
+                                AND `tbwh`.`title` = #{tbBasicWorkbenchHeaderPo.whereTitle}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInTitles != null and tbBasicWorkbenchHeaderPo.whereInTitles.size() > 0">
+                            AND `tbwh`.`title` IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInTitles"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInOrTitles != null and tbBasicWorkbenchHeaderPo.whereInOrTitles.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInOrTitles"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbwh`.`title` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbwh`.`title` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereNotTitle != null and tbBasicWorkbenchHeaderPo.whereNotTitle != ''">
+                                AND `tbwh`.`title` != #{tbBasicWorkbenchHeaderPo.whereNotTitle}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereNotInTitles != null and tbBasicWorkbenchHeaderPo.whereNotInTitles.size() > 0">
+                            AND `tbwh`.`title` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereNotInTitles"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNullTitle != null and tbBasicWorkbenchHeaderPo.whereIsNullTitle == true">
+                            AND `tbwh`.`title` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotNullTitle != null and tbBasicWorkbenchHeaderPo.whereIsNotNullTitle == true">
+                            AND `tbwh`.`title` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsEmptyTitle != null and tbBasicWorkbenchHeaderPo.whereIsEmptyTitle == true">
+                            AND (`tbwh`.`title` IS NULL OR `tbwh`.`title` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotEmptyTitle != null and tbBasicWorkbenchHeaderPo.whereIsNotEmptyTitle == true">
+                            AND `tbwh`.`title` IS NOT NULL AND `tbwh`.`title` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicWorkbenchHeaderPo.whereGtTitle != null and tbBasicWorkbenchHeaderPo.whereGtTitle != ''">
+                                AND `tbwh`.`title` &gt; #{tbBasicWorkbenchHeaderPo.whereGtTitle}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereGteTitle != null and tbBasicWorkbenchHeaderPo.whereGteTitle != ''">
+                                AND `tbwh`.`title` &gt;= #{tbBasicWorkbenchHeaderPo.whereGteTitle}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLtTitle != null and tbBasicWorkbenchHeaderPo.whereLtTitle != ''">
+                                AND `tbwh`.`title` &lt; #{tbBasicWorkbenchHeaderPo.whereLtTitle}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLteTitle != null and tbBasicWorkbenchHeaderPo.whereLteTitle != ''">
+                                AND `tbwh`.`title` &lt;= #{tbBasicWorkbenchHeaderPo.whereLteTitle}
+                            </if>
+                            <if test="tbBasicWorkbenchHeaderPo.whereLikeTitle != null and tbBasicWorkbenchHeaderPo.whereLikeTitle != ''">
+                                AND `tbwh`.`title` LIKE CONCAT('%', #{tbBasicWorkbenchHeaderPo.whereLikeTitle}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereStartTitle != null and tbBasicWorkbenchHeaderPo.whereStartTitle != ''">
+                                AND `tbwh`.`title` &gt;= #{tbBasicWorkbenchHeaderPo.whereStartTitle}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereEndTitle != null and tbBasicWorkbenchHeaderPo.whereEndTitle != ''">
+                                AND `tbwh`.`title` &lt;= #{tbBasicWorkbenchHeaderPo.whereEndTitle}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereDescription != null and tbBasicWorkbenchHeaderPo.whereDescription != ''">
+                                AND `tbwh`.`description` = #{tbBasicWorkbenchHeaderPo.whereDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInDescriptions != null and tbBasicWorkbenchHeaderPo.whereInDescriptions.size() > 0">
+                            AND `tbwh`.`description` IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInDescriptions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereInOrDescriptions != null and tbBasicWorkbenchHeaderPo.whereInOrDescriptions.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereInOrDescriptions"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbwh`.`description` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbwh`.`description` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereNotDescription != null and tbBasicWorkbenchHeaderPo.whereNotDescription != ''">
+                                AND `tbwh`.`description` != #{tbBasicWorkbenchHeaderPo.whereNotDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereNotInDescriptions != null and tbBasicWorkbenchHeaderPo.whereNotInDescriptions.size() > 0">
+                            AND `tbwh`.`description` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicWorkbenchHeaderPo.whereNotInDescriptions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNullDescription != null and tbBasicWorkbenchHeaderPo.whereIsNullDescription == true">
+                            AND `tbwh`.`description` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotNullDescription != null and tbBasicWorkbenchHeaderPo.whereIsNotNullDescription == true">
+                            AND `tbwh`.`description` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsEmptyDescription != null and tbBasicWorkbenchHeaderPo.whereIsEmptyDescription == true">
+                            AND (`tbwh`.`description` IS NULL OR `tbwh`.`description` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicWorkbenchHeaderPo.whereIsNotEmptyDescription != null and tbBasicWorkbenchHeaderPo.whereIsNotEmptyDescription == true">
+                            AND `tbwh`.`description` IS NOT NULL AND `tbwh`.`description` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicWorkbenchHeaderPo.whereGtDescription != null and tbBasicWorkbenchHeaderPo.whereGtDescription != ''">
+                                AND `tbwh`.`description` &gt; #{tbBasicWorkbenchHeaderPo.whereGtDescription}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereGteDescription != null and tbBasicWorkbenchHeaderPo.whereGteDescription != ''">
+                                AND `tbwh`.`description` &gt;= #{tbBasicWorkbenchHeaderPo.whereGteDescription}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLtDescription != null and tbBasicWorkbenchHeaderPo.whereLtDescription != ''">
+                                AND `tbwh`.`description` &lt; #{tbBasicWorkbenchHeaderPo.whereLtDescription}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereLteDescription != null and tbBasicWorkbenchHeaderPo.whereLteDescription != ''">
+                                AND `tbwh`.`description` &lt;= #{tbBasicWorkbenchHeaderPo.whereLteDescription}
+                            </if>
+                            <if test="tbBasicWorkbenchHeaderPo.whereLikeDescription != null and tbBasicWorkbenchHeaderPo.whereLikeDescription != ''">
+                                AND `tbwh`.`description` LIKE CONCAT('%', #{tbBasicWorkbenchHeaderPo.whereLikeDescription}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereStartDescription != null and tbBasicWorkbenchHeaderPo.whereStartDescription != ''">
+                                AND `tbwh`.`description` &gt;= #{tbBasicWorkbenchHeaderPo.whereStartDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicWorkbenchHeaderPo.whereEndDescription != null and tbBasicWorkbenchHeaderPo.whereEndDescription != ''">
+                                AND `tbwh`.`description` &lt;= #{tbBasicWorkbenchHeaderPo.whereEndDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="com.api.basic.data.entity.TbBasicWorkbenchHeader">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbwh`.*
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="int">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT `tbwh`.`id` </when>
+            <otherwise> `tbwh`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbwh`.`id`), 0) as result
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbwh`.`id`) as result
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbwh`.`id`) as result
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicWorkbenchHeaderPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicWorkbenchHeaderPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicWorkbenchHeaderPo.useDistinct != null and tbBasicWorkbenchHeaderPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbwh`.`id`), 0) as result
+        FROM tb_basic_workbench_header as `tbwh`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicWorkbenchHeaderPo.groupByFields != null and tbBasicWorkbenchHeaderPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicWorkbenchHeaderPo.groupByFields" separator=",">
+            `tbwh`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicWorkbenchHeaderPo.havingClause != null and tbBasicWorkbenchHeaderPo.havingClause != ''">
+        HAVING #{tbBasicWorkbenchHeaderPo.havingClause}
+        </if>
+    </select>
+</mapper>

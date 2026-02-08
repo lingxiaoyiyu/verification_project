@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicTrackingPointRecordMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicTrackingPointRecord"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_tracking_point_record (
+        <trim suffixOverrides=",">
+                        `page`,
+                        `tag`,
+                        `UA`,
+                        `ip`,
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        #{page},
+                        #{tag},
+                        #{UA},
+                        #{ip},
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicTrackingPointRecordPo">
+        <bind name="tbBasicTrackingPointRecordPo" value="_parameter"/>
+        DELETE `tbtpr` FROM tb_basic_tracking_point_record as `tbtpr`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicTrackingPointRecordPo">
+        <bind name="tbBasicTrackingPointRecordPo" value="_parameter"/>
+        UPDATE tb_basic_tracking_point_record as `tbtpr`
+        <set>
+                <if test="tbBasicTrackingPointRecordPo.id != null">
+                    <if test="tbBasicTrackingPointRecordPo.id == ''">
+                    `tbtpr`.`id` = NULL,
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.id != ''">
+                    `tbtpr`.`id` = #{tbBasicTrackingPointRecordPo.id},
+                    </if>
+                </if>
+                <if test="tbBasicTrackingPointRecordPo.page != null">
+                    <if test="tbBasicTrackingPointRecordPo.page == ''">
+                    `tbtpr`.`page` = NULL,
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.page != ''">
+                    `tbtpr`.`page` = #{tbBasicTrackingPointRecordPo.page},
+                    </if>
+                </if>
+                <if test="tbBasicTrackingPointRecordPo.tag != null">
+                    <if test="tbBasicTrackingPointRecordPo.tag == ''">
+                    `tbtpr`.`tag` = NULL,
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.tag != ''">
+                    `tbtpr`.`tag` = #{tbBasicTrackingPointRecordPo.tag},
+                    </if>
+                </if>
+                <if test="tbBasicTrackingPointRecordPo.createdAt != null">
+                    <if test="tbBasicTrackingPointRecordPo.createdAt == ''">
+                    `tbtpr`.`createdAt` = '',
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.createdAt != ''">
+                    `tbtpr`.`createdAt` = #{tbBasicTrackingPointRecordPo.createdAt},
+                    </if>
+                </if>
+                <if test="tbBasicTrackingPointRecordPo.UA != null">
+                    <if test="tbBasicTrackingPointRecordPo.UA == ''">
+                    `tbtpr`.`UA` = NULL,
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.UA != ''">
+                    `tbtpr`.`UA` = #{tbBasicTrackingPointRecordPo.UA},
+                    </if>
+                </if>
+                <if test="tbBasicTrackingPointRecordPo.ip != null">
+                    <if test="tbBasicTrackingPointRecordPo.ip == ''">
+                    `tbtpr`.`ip` = NULL,
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.ip != ''">
+                    `tbtpr`.`ip` = #{tbBasicTrackingPointRecordPo.ip},
+                    </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicTrackingPointRecordPo != null">
+                        <if test="tbBasicTrackingPointRecordPo.whereId != null">
+                            AND `tbtpr`.`id` = #{tbBasicTrackingPointRecordPo.whereId}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInIds != null and tbBasicTrackingPointRecordPo.whereInIds.size() > 0">
+                        AND `tbtpr`.`id` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrIds != null and tbBasicTrackingPointRecordPo.whereInOrIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`id` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`id` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotId != null">
+                            AND `tbtpr`.`id` != #{tbBasicTrackingPointRecordPo.whereNotId}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInIds != null and tbBasicTrackingPointRecordPo.whereNotInIds.size() > 0">
+                        AND `tbtpr`.`id` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartId != null">
+                            AND `tbtpr`.`id` &gt;= #{tbBasicTrackingPointRecordPo.whereStartId}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndId != null">
+                            AND `tbtpr`.`id` &lt;= #{tbBasicTrackingPointRecordPo.whereEndId}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.wherePage != null and tbBasicTrackingPointRecordPo.wherePage != ''">
+                            AND `tbtpr`.`page` = #{tbBasicTrackingPointRecordPo.wherePage}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInPages != null and tbBasicTrackingPointRecordPo.whereInPages.size() > 0">
+                        AND `tbtpr`.`page` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInPages"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrPages != null and tbBasicTrackingPointRecordPo.whereInOrPages.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrPages"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`page` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`page` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotPage != null and tbBasicTrackingPointRecordPo.whereNotPage != ''">
+                            AND `tbtpr`.`page` != #{tbBasicTrackingPointRecordPo.whereNotPage}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInPages != null and tbBasicTrackingPointRecordPo.whereNotInPages.size() > 0">
+                        AND `tbtpr`.`page` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInPages"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereLikePage != null and tbBasicTrackingPointRecordPo.whereLikePage != ''">
+                            AND `tbtpr`.`page` LIKE CONCAT('%', #{tbBasicTrackingPointRecordPo.whereLikePage}, '%')
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartPage != null and tbBasicTrackingPointRecordPo.whereStartPage != ''">
+                            AND `tbtpr`.`page` &gt;= #{tbBasicTrackingPointRecordPo.whereStartPage}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndPage != null and tbBasicTrackingPointRecordPo.whereEndPage != ''">
+                            AND `tbtpr`.`page` &lt;= #{tbBasicTrackingPointRecordPo.whereEndPage}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereTag != null and tbBasicTrackingPointRecordPo.whereTag != ''">
+                            AND `tbtpr`.`tag` = #{tbBasicTrackingPointRecordPo.whereTag}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInTags != null and tbBasicTrackingPointRecordPo.whereInTags.size() > 0">
+                        AND `tbtpr`.`tag` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInTags"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrTags != null and tbBasicTrackingPointRecordPo.whereInOrTags.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrTags"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`tag` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`tag` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotTag != null and tbBasicTrackingPointRecordPo.whereNotTag != ''">
+                            AND `tbtpr`.`tag` != #{tbBasicTrackingPointRecordPo.whereNotTag}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInTags != null and tbBasicTrackingPointRecordPo.whereNotInTags.size() > 0">
+                        AND `tbtpr`.`tag` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInTags"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereLikeTag != null and tbBasicTrackingPointRecordPo.whereLikeTag != ''">
+                            AND `tbtpr`.`tag` LIKE CONCAT('%', #{tbBasicTrackingPointRecordPo.whereLikeTag}, '%')
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartTag != null and tbBasicTrackingPointRecordPo.whereStartTag != ''">
+                            AND `tbtpr`.`tag` &gt;= #{tbBasicTrackingPointRecordPo.whereStartTag}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndTag != null and tbBasicTrackingPointRecordPo.whereEndTag != ''">
+                            AND `tbtpr`.`tag` &lt;= #{tbBasicTrackingPointRecordPo.whereEndTag}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereCreatedAt != null and tbBasicTrackingPointRecordPo.whereCreatedAt != ''">
+                            AND `tbtpr`.`createdAt` = #{tbBasicTrackingPointRecordPo.whereCreatedAt}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInCreatedAts != null and tbBasicTrackingPointRecordPo.whereInCreatedAts.size() > 0">
+                        AND `tbtpr`.`createdAt` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrCreatedAts != null and tbBasicTrackingPointRecordPo.whereInOrCreatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrCreatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`createdAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`createdAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotCreatedAt != null and tbBasicTrackingPointRecordPo.whereNotCreatedAt != ''">
+                            AND `tbtpr`.`createdAt` != #{tbBasicTrackingPointRecordPo.whereNotCreatedAt}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInCreatedAts != null and tbBasicTrackingPointRecordPo.whereNotInCreatedAts.size() > 0">
+                        AND `tbtpr`.`createdAt` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartCreatedAt != null and tbBasicTrackingPointRecordPo.whereStartCreatedAt != ''">
+                            AND `tbtpr`.`createdAt` &gt;= #{tbBasicTrackingPointRecordPo.whereStartCreatedAt}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndCreatedAt != null and tbBasicTrackingPointRecordPo.whereEndCreatedAt != ''">
+                            AND `tbtpr`.`createdAt` &lt;= #{tbBasicTrackingPointRecordPo.whereEndCreatedAt}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereUA != null and tbBasicTrackingPointRecordPo.whereUA != ''">
+                            AND `tbtpr`.`UA` = #{tbBasicTrackingPointRecordPo.whereUA}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInUAs != null and tbBasicTrackingPointRecordPo.whereInUAs.size() > 0">
+                        AND `tbtpr`.`UA` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInUAs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrUAs != null and tbBasicTrackingPointRecordPo.whereInOrUAs.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrUAs"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`UA` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`UA` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotUA != null and tbBasicTrackingPointRecordPo.whereNotUA != ''">
+                            AND `tbtpr`.`UA` != #{tbBasicTrackingPointRecordPo.whereNotUA}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInUAs != null and tbBasicTrackingPointRecordPo.whereNotInUAs.size() > 0">
+                        AND `tbtpr`.`UA` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInUAs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereLikeUA != null and tbBasicTrackingPointRecordPo.whereLikeUA != ''">
+                            AND `tbtpr`.`UA` LIKE CONCAT('%', #{tbBasicTrackingPointRecordPo.whereLikeUA}, '%')
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartUA != null and tbBasicTrackingPointRecordPo.whereStartUA != ''">
+                            AND `tbtpr`.`UA` &gt;= #{tbBasicTrackingPointRecordPo.whereStartUA}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndUA != null and tbBasicTrackingPointRecordPo.whereEndUA != ''">
+                            AND `tbtpr`.`UA` &lt;= #{tbBasicTrackingPointRecordPo.whereEndUA}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereIp != null and tbBasicTrackingPointRecordPo.whereIp != ''">
+                            AND `tbtpr`.`ip` = #{tbBasicTrackingPointRecordPo.whereIp}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInIps != null and tbBasicTrackingPointRecordPo.whereInIps.size() > 0">
+                        AND `tbtpr`.`ip` IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInIps"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereInOrIps != null and tbBasicTrackingPointRecordPo.whereInOrIps.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereInOrIps"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tbtpr`.`ip` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tbtpr`.`ip` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereNotIp != null and tbBasicTrackingPointRecordPo.whereNotIp != ''">
+                            AND `tbtpr`.`ip` != #{tbBasicTrackingPointRecordPo.whereNotIp}
+                        </if>
+                    <if test="tbBasicTrackingPointRecordPo.whereNotInIps != null and tbBasicTrackingPointRecordPo.whereNotInIps.size() > 0">
+                        AND `tbtpr`.`ip` NOT IN
+                        <foreach item="item" index="index" collection="tbBasicTrackingPointRecordPo.whereNotInIps"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereLikeIp != null and tbBasicTrackingPointRecordPo.whereLikeIp != ''">
+                            AND `tbtpr`.`ip` LIKE CONCAT('%', #{tbBasicTrackingPointRecordPo.whereLikeIp}, '%')
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereStartIp != null and tbBasicTrackingPointRecordPo.whereStartIp != ''">
+                            AND `tbtpr`.`ip` &gt;= #{tbBasicTrackingPointRecordPo.whereStartIp}
+                        </if>
+                        <if test="tbBasicTrackingPointRecordPo.whereEndIp != null and tbBasicTrackingPointRecordPo.whereEndIp != ''">
+                            AND `tbtpr`.`ip` &lt;= #{tbBasicTrackingPointRecordPo.whereEndIp}
+                        </if>
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicTrackingPointRecordPo"
+            resultType="com.api.basic.data.entity.TbBasicTrackingPointRecord">
+        <bind name="tbBasicTrackingPointRecordPo" value="_parameter"/>
+        SELECT `tbtpr`.*
+        FROM tb_basic_tracking_point_record as `tbtpr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicTrackingPointRecordPo"
+            resultType="int">
+        <bind name="tbBasicTrackingPointRecordPo" value="_parameter"/>
+        SELECT COUNT(*) as cnt
+        FROM tb_basic_tracking_point_record as `tbtpr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

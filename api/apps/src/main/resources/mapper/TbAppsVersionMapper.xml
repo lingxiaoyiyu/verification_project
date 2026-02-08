@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.apps.mapper.TbAppsVersionMapper">
+
+    <insert id="add"
+            parameterType="com.api.apps.data.entity.TbAppsVersion"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_apps_version (
+        <trim suffixOverrides=",">
+                        `appId`,
+                            <if test="versionCode != null">
+                                `versionCode`,
+                            </if>
+                            <if test="versionName != null and versionName != ''">
+                                `versionName`,
+                            </if>
+                            <if test="desc != null and desc != ''">
+                                `desc`,
+                            </if>
+                            <if test="status != null">
+                                `status`,
+                            </if>
+                            <if test="url != null and url != ''">
+                                `url`,
+                            </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                            <if test="updatedUserId != null">
+                                `updatedUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        #{appId},
+                            <if test="versionCode != null">
+                                #{versionCode},
+                            </if>
+                            <if test="versionName != null and versionName != ''">
+                                #{versionName},
+                            </if>
+                            <if test="desc != null and desc != ''">
+                                #{desc},
+                            </if>
+                            <if test="status != null">
+                                #{status},
+                            </if>
+                            <if test="url != null and url != ''">
+                                #{url},
+                            </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                            <if test="updatedUserId != null">
+                                #{updatedUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.apps.data.po.TbAppsVersionPo">
+        <bind name="tbAppsVersionPo" value="_parameter"/>
+        DELETE `tav` FROM tb_apps_version as `tav`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.apps.data.po.TbAppsVersionPo">
+        <bind name="tbAppsVersionPo" value="_parameter"/>
+        UPDATE tb_apps_version as `tav`
+        <set>
+                <if test="tbAppsVersionPo.id != null">
+                    <if test="tbAppsVersionPo.id == ''">
+                    `tav`.`id` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.id != ''">
+                    `tav`.`id` = #{tbAppsVersionPo.id},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.appId != null">
+                    <if test="tbAppsVersionPo.appId == ''">
+                    `tav`.`appId` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.appId != ''">
+                    `tav`.`appId` = #{tbAppsVersionPo.appId},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.versionCode != null">
+                    <if test="tbAppsVersionPo.versionCode == ''">
+                    `tav`.`versionCode` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.versionCode != ''">
+                    `tav`.`versionCode` = #{tbAppsVersionPo.versionCode},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.versionName != null">
+                    <if test="tbAppsVersionPo.versionName == ''">
+                    `tav`.`versionName` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.versionName != ''">
+                    `tav`.`versionName` = #{tbAppsVersionPo.versionName},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.desc != null">
+                    <if test="tbAppsVersionPo.desc == ''">
+                    `tav`.`desc` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.desc != ''">
+                    `tav`.`desc` = #{tbAppsVersionPo.desc},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.status != null">
+                    <if test="tbAppsVersionPo.status == ''">
+                    `tav`.`status` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.status != ''">
+                    `tav`.`status` = #{tbAppsVersionPo.status},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.url != null">
+                    <if test="tbAppsVersionPo.url == ''">
+                    `tav`.`url` = NULL,
+                    </if>
+                    <if test="tbAppsVersionPo.url != ''">
+                    `tav`.`url` = #{tbAppsVersionPo.url},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.createdAt != null">
+                    <if test="tbAppsVersionPo.createdAt == ''">
+                    `tav`.`createdAt` = '',
+                    </if>
+                    <if test="tbAppsVersionPo.createdAt != ''">
+                    `tav`.`createdAt` = #{tbAppsVersionPo.createdAt},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.createdUserId != null">
+                    <if test="tbAppsVersionPo.createdUserId == ''">
+                    `tav`.`createdUserId` = 1,
+                    </if>
+                    <if test="tbAppsVersionPo.createdUserId != ''">
+                    `tav`.`createdUserId` = #{tbAppsVersionPo.createdUserId},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.updatedAt != null">
+                    <if test="tbAppsVersionPo.updatedAt == ''">
+                    `tav`.`updatedAt` = '',
+                    </if>
+                    <if test="tbAppsVersionPo.updatedAt != ''">
+                    `tav`.`updatedAt` = #{tbAppsVersionPo.updatedAt},
+                    </if>
+                </if>
+                <if test="tbAppsVersionPo.updatedUserId != null">
+                    <if test="tbAppsVersionPo.updatedUserId == ''">
+                    `tav`.`updatedUserId` = 1,
+                    </if>
+                    <if test="tbAppsVersionPo.updatedUserId != ''">
+                    `tav`.`updatedUserId` = #{tbAppsVersionPo.updatedUserId},
+                    </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbAppsVersionPo != null">
+                        <if test="tbAppsVersionPo.whereId != null">
+                            AND `tav`.`id` = #{tbAppsVersionPo.whereId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInIds != null and tbAppsVersionPo.whereInIds.size() > 0">
+                        AND `tav`.`id` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrIds != null and tbAppsVersionPo.whereInOrIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`id` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`id` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotId != null">
+                            AND `tav`.`id` != #{tbAppsVersionPo.whereNotId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInIds != null and tbAppsVersionPo.whereNotInIds.size() > 0">
+                        AND `tav`.`id` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartId != null">
+                            AND `tav`.`id` &gt;= #{tbAppsVersionPo.whereStartId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndId != null">
+                            AND `tav`.`id` &lt;= #{tbAppsVersionPo.whereEndId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereAppId != null and tbAppsVersionPo.whereAppId != ''">
+                            AND `tav`.`appId` = #{tbAppsVersionPo.whereAppId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInAppIds != null and tbAppsVersionPo.whereInAppIds.size() > 0">
+                        AND `tav`.`appId` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInAppIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrAppIds != null and tbAppsVersionPo.whereInOrAppIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrAppIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`appId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`appId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotAppId != null and tbAppsVersionPo.whereNotAppId != ''">
+                            AND `tav`.`appId` != #{tbAppsVersionPo.whereNotAppId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInAppIds != null and tbAppsVersionPo.whereNotInAppIds.size() > 0">
+                        AND `tav`.`appId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInAppIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereLikeAppId != null and tbAppsVersionPo.whereLikeAppId != ''">
+                            AND `tav`.`appId` LIKE CONCAT('%', #{tbAppsVersionPo.whereLikeAppId}, '%')
+                        </if>
+                        <if test="tbAppsVersionPo.whereStartAppId != null and tbAppsVersionPo.whereStartAppId != ''">
+                            AND `tav`.`appId` &gt;= #{tbAppsVersionPo.whereStartAppId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndAppId != null and tbAppsVersionPo.whereEndAppId != ''">
+                            AND `tav`.`appId` &lt;= #{tbAppsVersionPo.whereEndAppId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereVersionCode != null">
+                            AND `tav`.`versionCode` = #{tbAppsVersionPo.whereVersionCode}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInVersionCodes != null and tbAppsVersionPo.whereInVersionCodes.size() > 0">
+                        AND `tav`.`versionCode` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInVersionCodes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrVersionCodes != null and tbAppsVersionPo.whereInOrVersionCodes.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrVersionCodes"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`versionCode` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`versionCode` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotVersionCode != null">
+                            AND `tav`.`versionCode` != #{tbAppsVersionPo.whereNotVersionCode}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInVersionCodes != null and tbAppsVersionPo.whereNotInVersionCodes.size() > 0">
+                        AND `tav`.`versionCode` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInVersionCodes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartVersionCode != null">
+                            AND `tav`.`versionCode` &gt;= #{tbAppsVersionPo.whereStartVersionCode}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndVersionCode != null">
+                            AND `tav`.`versionCode` &lt;= #{tbAppsVersionPo.whereEndVersionCode}
+                        </if>
+                        <if test="tbAppsVersionPo.whereVersionName != null and tbAppsVersionPo.whereVersionName != ''">
+                            AND `tav`.`versionName` = #{tbAppsVersionPo.whereVersionName}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInVersionNames != null and tbAppsVersionPo.whereInVersionNames.size() > 0">
+                        AND `tav`.`versionName` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInVersionNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrVersionNames != null and tbAppsVersionPo.whereInOrVersionNames.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrVersionNames"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`versionName` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`versionName` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotVersionName != null and tbAppsVersionPo.whereNotVersionName != ''">
+                            AND `tav`.`versionName` != #{tbAppsVersionPo.whereNotVersionName}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInVersionNames != null and tbAppsVersionPo.whereNotInVersionNames.size() > 0">
+                        AND `tav`.`versionName` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInVersionNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereLikeVersionName != null and tbAppsVersionPo.whereLikeVersionName != ''">
+                            AND `tav`.`versionName` LIKE CONCAT('%', #{tbAppsVersionPo.whereLikeVersionName}, '%')
+                        </if>
+                        <if test="tbAppsVersionPo.whereStartVersionName != null and tbAppsVersionPo.whereStartVersionName != ''">
+                            AND `tav`.`versionName` &gt;= #{tbAppsVersionPo.whereStartVersionName}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndVersionName != null and tbAppsVersionPo.whereEndVersionName != ''">
+                            AND `tav`.`versionName` &lt;= #{tbAppsVersionPo.whereEndVersionName}
+                        </if>
+                        <if test="tbAppsVersionPo.whereDesc != null and tbAppsVersionPo.whereDesc != ''">
+                            AND `tav`.`desc` = #{tbAppsVersionPo.whereDesc}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInDescs != null and tbAppsVersionPo.whereInDescs.size() > 0">
+                        AND `tav`.`desc` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrDescs != null and tbAppsVersionPo.whereInOrDescs.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrDescs"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`desc` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`desc` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotDesc != null and tbAppsVersionPo.whereNotDesc != ''">
+                            AND `tav`.`desc` != #{tbAppsVersionPo.whereNotDesc}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInDescs != null and tbAppsVersionPo.whereNotInDescs.size() > 0">
+                        AND `tav`.`desc` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereLikeDesc != null and tbAppsVersionPo.whereLikeDesc != ''">
+                            AND `tav`.`desc` LIKE CONCAT('%', #{tbAppsVersionPo.whereLikeDesc}, '%')
+                        </if>
+                        <if test="tbAppsVersionPo.whereStartDesc != null and tbAppsVersionPo.whereStartDesc != ''">
+                            AND `tav`.`desc` &gt;= #{tbAppsVersionPo.whereStartDesc}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndDesc != null and tbAppsVersionPo.whereEndDesc != ''">
+                            AND `tav`.`desc` &lt;= #{tbAppsVersionPo.whereEndDesc}
+                        </if>
+                        <if test="tbAppsVersionPo.whereStatus != null">
+                            AND `tav`.`status` = #{tbAppsVersionPo.whereStatus}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInStatuss != null and tbAppsVersionPo.whereInStatuss.size() > 0">
+                        AND `tav`.`status` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInStatuss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrStatuss != null and tbAppsVersionPo.whereInOrStatuss.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrStatuss"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`status` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`status` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotStatus != null">
+                            AND `tav`.`status` != #{tbAppsVersionPo.whereNotStatus}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInStatuss != null and tbAppsVersionPo.whereNotInStatuss.size() > 0">
+                        AND `tav`.`status` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInStatuss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartStatus != null">
+                            AND `tav`.`status` &gt;= #{tbAppsVersionPo.whereStartStatus}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndStatus != null">
+                            AND `tav`.`status` &lt;= #{tbAppsVersionPo.whereEndStatus}
+                        </if>
+                        <if test="tbAppsVersionPo.whereUrl != null and tbAppsVersionPo.whereUrl != ''">
+                            AND `tav`.`url` = #{tbAppsVersionPo.whereUrl}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInUrls != null and tbAppsVersionPo.whereInUrls.size() > 0">
+                        AND `tav`.`url` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInUrls"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrUrls != null and tbAppsVersionPo.whereInOrUrls.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrUrls"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`url` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`url` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotUrl != null and tbAppsVersionPo.whereNotUrl != ''">
+                            AND `tav`.`url` != #{tbAppsVersionPo.whereNotUrl}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInUrls != null and tbAppsVersionPo.whereNotInUrls.size() > 0">
+                        AND `tav`.`url` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInUrls"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereLikeUrl != null and tbAppsVersionPo.whereLikeUrl != ''">
+                            AND `tav`.`url` LIKE CONCAT('%', #{tbAppsVersionPo.whereLikeUrl}, '%')
+                        </if>
+                        <if test="tbAppsVersionPo.whereStartUrl != null and tbAppsVersionPo.whereStartUrl != ''">
+                            AND `tav`.`url` &gt;= #{tbAppsVersionPo.whereStartUrl}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndUrl != null and tbAppsVersionPo.whereEndUrl != ''">
+                            AND `tav`.`url` &lt;= #{tbAppsVersionPo.whereEndUrl}
+                        </if>
+                        <if test="tbAppsVersionPo.whereCreatedAt != null and tbAppsVersionPo.whereCreatedAt != ''">
+                            AND `tav`.`createdAt` = #{tbAppsVersionPo.whereCreatedAt}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInCreatedAts != null and tbAppsVersionPo.whereInCreatedAts.size() > 0">
+                        AND `tav`.`createdAt` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrCreatedAts != null and tbAppsVersionPo.whereInOrCreatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrCreatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`createdAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`createdAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotCreatedAt != null and tbAppsVersionPo.whereNotCreatedAt != ''">
+                            AND `tav`.`createdAt` != #{tbAppsVersionPo.whereNotCreatedAt}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInCreatedAts != null and tbAppsVersionPo.whereNotInCreatedAts.size() > 0">
+                        AND `tav`.`createdAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartCreatedAt != null and tbAppsVersionPo.whereStartCreatedAt != ''">
+                            AND `tav`.`createdAt` &gt;= #{tbAppsVersionPo.whereStartCreatedAt}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndCreatedAt != null and tbAppsVersionPo.whereEndCreatedAt != ''">
+                            AND `tav`.`createdAt` &lt;= #{tbAppsVersionPo.whereEndCreatedAt}
+                        </if>
+                        <if test="tbAppsVersionPo.whereCreatedUserId != null">
+                            AND `tav`.`createdUserId` = #{tbAppsVersionPo.whereCreatedUserId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInCreatedUserIds != null and tbAppsVersionPo.whereInCreatedUserIds.size() > 0">
+                        AND `tav`.`createdUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrCreatedUserIds != null and tbAppsVersionPo.whereInOrCreatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrCreatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`createdUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`createdUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotCreatedUserId != null">
+                            AND `tav`.`createdUserId` != #{tbAppsVersionPo.whereNotCreatedUserId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInCreatedUserIds != null and tbAppsVersionPo.whereNotInCreatedUserIds.size() > 0">
+                        AND `tav`.`createdUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartCreatedUserId != null">
+                            AND `tav`.`createdUserId` &gt;= #{tbAppsVersionPo.whereStartCreatedUserId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndCreatedUserId != null">
+                            AND `tav`.`createdUserId` &lt;= #{tbAppsVersionPo.whereEndCreatedUserId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereUpdatedAt != null and tbAppsVersionPo.whereUpdatedAt != ''">
+                            AND `tav`.`updatedAt` = #{tbAppsVersionPo.whereUpdatedAt}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInUpdatedAts != null and tbAppsVersionPo.whereInUpdatedAts.size() > 0">
+                        AND `tav`.`updatedAt` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrUpdatedAts != null and tbAppsVersionPo.whereInOrUpdatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrUpdatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`updatedAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`updatedAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotUpdatedAt != null and tbAppsVersionPo.whereNotUpdatedAt != ''">
+                            AND `tav`.`updatedAt` != #{tbAppsVersionPo.whereNotUpdatedAt}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInUpdatedAts != null and tbAppsVersionPo.whereNotInUpdatedAts.size() > 0">
+                        AND `tav`.`updatedAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartUpdatedAt != null and tbAppsVersionPo.whereStartUpdatedAt != ''">
+                            AND `tav`.`updatedAt` &gt;= #{tbAppsVersionPo.whereStartUpdatedAt}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndUpdatedAt != null and tbAppsVersionPo.whereEndUpdatedAt != ''">
+                            AND `tav`.`updatedAt` &lt;= #{tbAppsVersionPo.whereEndUpdatedAt}
+                        </if>
+                        <if test="tbAppsVersionPo.whereUpdatedUserId != null">
+                            AND `tav`.`updatedUserId` = #{tbAppsVersionPo.whereUpdatedUserId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereInUpdatedUserIds != null and tbAppsVersionPo.whereInUpdatedUserIds.size() > 0">
+                        AND `tav`.`updatedUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsVersionPo.whereInOrUpdatedUserIds != null and tbAppsVersionPo.whereInOrUpdatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereInOrUpdatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tav`.`updatedUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tav`.`updatedUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereNotUpdatedUserId != null">
+                            AND `tav`.`updatedUserId` != #{tbAppsVersionPo.whereNotUpdatedUserId}
+                        </if>
+                    <if test="tbAppsVersionPo.whereNotInUpdatedUserIds != null and tbAppsVersionPo.whereNotInUpdatedUserIds.size() > 0">
+                        AND `tav`.`updatedUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsVersionPo.whereNotInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsVersionPo.whereStartUpdatedUserId != null">
+                            AND `tav`.`updatedUserId` &gt;= #{tbAppsVersionPo.whereStartUpdatedUserId}
+                        </if>
+                        <if test="tbAppsVersionPo.whereEndUpdatedUserId != null">
+                            AND `tav`.`updatedUserId` &lt;= #{tbAppsVersionPo.whereEndUpdatedUserId}
+                        </if>
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.apps.data.po.TbAppsVersionPo"
+            resultType="com.api.apps.data.entity.TbAppsVersion">
+        <bind name="tbAppsVersionPo" value="_parameter"/>
+        SELECT `tav`.*
+        FROM tb_apps_version as `tav`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.apps.data.po.TbAppsVersionPo"
+            resultType="int">
+        <bind name="tbAppsVersionPo" value="_parameter"/>
+        SELECT COUNT(*) as cnt
+        FROM tb_apps_version as `tav`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

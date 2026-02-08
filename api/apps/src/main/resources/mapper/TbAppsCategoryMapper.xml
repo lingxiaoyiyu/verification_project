@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.apps.mapper.TbAppsCategoryMapper">
+
+    <insert id="add"
+            parameterType="com.api.apps.data.entity.TbAppsCategory"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_apps_category (
+        <trim suffixOverrides=",">
+                        `pid`,
+                            <if test="name != null and name != ''">
+                                `name`,
+                            </if>
+                            <if test="desc != null and desc != ''">
+                                `desc`,
+                            </if>
+                            <if test="sort != null">
+                                `sort`,
+                            </if>
+                            <if test="isShow != null">
+                                `isShow`,
+                            </if>
+                        `createdUserId`,
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                        `updatedUserId`,
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        #{pid},
+                            <if test="name != null and name != ''">
+                                #{name},
+                            </if>
+                            <if test="desc != null and desc != ''">
+                                #{desc},
+                            </if>
+                            <if test="sort != null">
+                                #{sort},
+                            </if>
+                            <if test="isShow != null">
+                                #{isShow},
+                            </if>
+                        #{createdUserId},
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                        #{updatedUserId},
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.apps.data.po.TbAppsCategoryPo">
+        <bind name="tbAppsCategoryPo" value="_parameter"/>
+        DELETE `tac` FROM tb_apps_category as `tac`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.apps.data.po.TbAppsCategoryPo">
+        <bind name="tbAppsCategoryPo" value="_parameter"/>
+        UPDATE tb_apps_category as `tac`
+        <set>
+                <if test="tbAppsCategoryPo.id != null">
+                    <if test="tbAppsCategoryPo.id == ''">
+                    `tac`.`id` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.id != ''">
+                    `tac`.`id` = #{tbAppsCategoryPo.id},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.pid != null">
+                    <if test="tbAppsCategoryPo.pid == ''">
+                    `tac`.`pid` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.pid != ''">
+                    `tac`.`pid` = #{tbAppsCategoryPo.pid},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.name != null">
+                    <if test="tbAppsCategoryPo.name == ''">
+                    `tac`.`name` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.name != ''">
+                    `tac`.`name` = #{tbAppsCategoryPo.name},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.desc != null">
+                    <if test="tbAppsCategoryPo.desc == ''">
+                    `tac`.`desc` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.desc != ''">
+                    `tac`.`desc` = #{tbAppsCategoryPo.desc},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.sort != null">
+                    <if test="tbAppsCategoryPo.sort == ''">
+                    `tac`.`sort` = 1,
+                    </if>
+                    <if test="tbAppsCategoryPo.sort != ''">
+                    `tac`.`sort` = #{tbAppsCategoryPo.sort},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.isShow != null">
+                    <if test="tbAppsCategoryPo.isShow == ''">
+                    `tac`.`isShow` = 1,
+                    </if>
+                    <if test="tbAppsCategoryPo.isShow != ''">
+                    `tac`.`isShow` = #{tbAppsCategoryPo.isShow},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.createdAt != null">
+                    <if test="tbAppsCategoryPo.createdAt == ''">
+                    `tac`.`createdAt` = '',
+                    </if>
+                    <if test="tbAppsCategoryPo.createdAt != ''">
+                    `tac`.`createdAt` = #{tbAppsCategoryPo.createdAt},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.createdUserId != null">
+                    <if test="tbAppsCategoryPo.createdUserId == ''">
+                    `tac`.`createdUserId` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.createdUserId != ''">
+                    `tac`.`createdUserId` = #{tbAppsCategoryPo.createdUserId},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.updatedAt != null">
+                    <if test="tbAppsCategoryPo.updatedAt == ''">
+                    `tac`.`updatedAt` = '',
+                    </if>
+                    <if test="tbAppsCategoryPo.updatedAt != ''">
+                    `tac`.`updatedAt` = #{tbAppsCategoryPo.updatedAt},
+                    </if>
+                </if>
+                <if test="tbAppsCategoryPo.updatedUserId != null">
+                    <if test="tbAppsCategoryPo.updatedUserId == ''">
+                    `tac`.`updatedUserId` = NULL,
+                    </if>
+                    <if test="tbAppsCategoryPo.updatedUserId != ''">
+                    `tac`.`updatedUserId` = #{tbAppsCategoryPo.updatedUserId},
+                    </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbAppsCategoryPo != null">
+                        <if test="tbAppsCategoryPo.whereId != null">
+                            AND `tac`.`id` = #{tbAppsCategoryPo.whereId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInIds != null and tbAppsCategoryPo.whereInIds.size() > 0">
+                        AND `tac`.`id` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrIds != null and tbAppsCategoryPo.whereInOrIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`id` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`id` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotId != null">
+                            AND `tac`.`id` != #{tbAppsCategoryPo.whereNotId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInIds != null and tbAppsCategoryPo.whereNotInIds.size() > 0">
+                        AND `tac`.`id` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartId != null">
+                            AND `tac`.`id` &gt;= #{tbAppsCategoryPo.whereStartId}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndId != null">
+                            AND `tac`.`id` &lt;= #{tbAppsCategoryPo.whereEndId}
+                        </if>
+                        <if test="tbAppsCategoryPo.wherePid != null">
+                            AND `tac`.`pid` = #{tbAppsCategoryPo.wherePid}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInPids != null and tbAppsCategoryPo.whereInPids.size() > 0">
+                        AND `tac`.`pid` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInPids"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrPids != null and tbAppsCategoryPo.whereInOrPids.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrPids"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`pid` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`pid` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotPid != null">
+                            AND `tac`.`pid` != #{tbAppsCategoryPo.whereNotPid}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInPids != null and tbAppsCategoryPo.whereNotInPids.size() > 0">
+                        AND `tac`.`pid` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInPids"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartPid != null">
+                            AND `tac`.`pid` &gt;= #{tbAppsCategoryPo.whereStartPid}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndPid != null">
+                            AND `tac`.`pid` &lt;= #{tbAppsCategoryPo.whereEndPid}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereName != null and tbAppsCategoryPo.whereName != ''">
+                            AND `tac`.`name` = #{tbAppsCategoryPo.whereName}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInNames != null and tbAppsCategoryPo.whereInNames.size() > 0">
+                        AND `tac`.`name` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrNames != null and tbAppsCategoryPo.whereInOrNames.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrNames"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`name` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`name` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotName != null and tbAppsCategoryPo.whereNotName != ''">
+                            AND `tac`.`name` != #{tbAppsCategoryPo.whereNotName}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInNames != null and tbAppsCategoryPo.whereNotInNames.size() > 0">
+                        AND `tac`.`name` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereLikeName != null and tbAppsCategoryPo.whereLikeName != ''">
+                            AND `tac`.`name` LIKE CONCAT('%', #{tbAppsCategoryPo.whereLikeName}, '%')
+                        </if>
+                        <if test="tbAppsCategoryPo.whereStartName != null and tbAppsCategoryPo.whereStartName != ''">
+                            AND `tac`.`name` &gt;= #{tbAppsCategoryPo.whereStartName}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndName != null and tbAppsCategoryPo.whereEndName != ''">
+                            AND `tac`.`name` &lt;= #{tbAppsCategoryPo.whereEndName}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereDesc != null and tbAppsCategoryPo.whereDesc != ''">
+                            AND `tac`.`desc` = #{tbAppsCategoryPo.whereDesc}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInDescs != null and tbAppsCategoryPo.whereInDescs.size() > 0">
+                        AND `tac`.`desc` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrDescs != null and tbAppsCategoryPo.whereInOrDescs.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrDescs"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`desc` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`desc` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotDesc != null and tbAppsCategoryPo.whereNotDesc != ''">
+                            AND `tac`.`desc` != #{tbAppsCategoryPo.whereNotDesc}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInDescs != null and tbAppsCategoryPo.whereNotInDescs.size() > 0">
+                        AND `tac`.`desc` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereLikeDesc != null and tbAppsCategoryPo.whereLikeDesc != ''">
+                            AND `tac`.`desc` LIKE CONCAT('%', #{tbAppsCategoryPo.whereLikeDesc}, '%')
+                        </if>
+                        <if test="tbAppsCategoryPo.whereStartDesc != null and tbAppsCategoryPo.whereStartDesc != ''">
+                            AND `tac`.`desc` &gt;= #{tbAppsCategoryPo.whereStartDesc}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndDesc != null and tbAppsCategoryPo.whereEndDesc != ''">
+                            AND `tac`.`desc` &lt;= #{tbAppsCategoryPo.whereEndDesc}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereSort != null">
+                            AND `tac`.`sort` = #{tbAppsCategoryPo.whereSort}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInSorts != null and tbAppsCategoryPo.whereInSorts.size() > 0">
+                        AND `tac`.`sort` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInSorts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrSorts != null and tbAppsCategoryPo.whereInOrSorts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrSorts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`sort` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`sort` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotSort != null">
+                            AND `tac`.`sort` != #{tbAppsCategoryPo.whereNotSort}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInSorts != null and tbAppsCategoryPo.whereNotInSorts.size() > 0">
+                        AND `tac`.`sort` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInSorts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartSort != null">
+                            AND `tac`.`sort` &gt;= #{tbAppsCategoryPo.whereStartSort}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndSort != null">
+                            AND `tac`.`sort` &lt;= #{tbAppsCategoryPo.whereEndSort}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereIsShow != null">
+                            AND `tac`.`isShow` = #{tbAppsCategoryPo.whereIsShow}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInIsShows != null and tbAppsCategoryPo.whereInIsShows.size() > 0">
+                        AND `tac`.`isShow` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInIsShows"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrIsShows != null and tbAppsCategoryPo.whereInOrIsShows.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrIsShows"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`isShow` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`isShow` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotIsShow != null">
+                            AND `tac`.`isShow` != #{tbAppsCategoryPo.whereNotIsShow}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInIsShows != null and tbAppsCategoryPo.whereNotInIsShows.size() > 0">
+                        AND `tac`.`isShow` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInIsShows"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartIsShow != null">
+                            AND `tac`.`isShow` &gt;= #{tbAppsCategoryPo.whereStartIsShow}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndIsShow != null">
+                            AND `tac`.`isShow` &lt;= #{tbAppsCategoryPo.whereEndIsShow}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereCreatedAt != null and tbAppsCategoryPo.whereCreatedAt != ''">
+                            AND `tac`.`createdAt` = #{tbAppsCategoryPo.whereCreatedAt}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInCreatedAts != null and tbAppsCategoryPo.whereInCreatedAts.size() > 0">
+                        AND `tac`.`createdAt` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrCreatedAts != null and tbAppsCategoryPo.whereInOrCreatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrCreatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`createdAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`createdAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotCreatedAt != null and tbAppsCategoryPo.whereNotCreatedAt != ''">
+                            AND `tac`.`createdAt` != #{tbAppsCategoryPo.whereNotCreatedAt}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInCreatedAts != null and tbAppsCategoryPo.whereNotInCreatedAts.size() > 0">
+                        AND `tac`.`createdAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartCreatedAt != null and tbAppsCategoryPo.whereStartCreatedAt != ''">
+                            AND `tac`.`createdAt` &gt;= #{tbAppsCategoryPo.whereStartCreatedAt}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndCreatedAt != null and tbAppsCategoryPo.whereEndCreatedAt != ''">
+                            AND `tac`.`createdAt` &lt;= #{tbAppsCategoryPo.whereEndCreatedAt}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereCreatedUserId != null">
+                            AND `tac`.`createdUserId` = #{tbAppsCategoryPo.whereCreatedUserId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInCreatedUserIds != null and tbAppsCategoryPo.whereInCreatedUserIds.size() > 0">
+                        AND `tac`.`createdUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrCreatedUserIds != null and tbAppsCategoryPo.whereInOrCreatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrCreatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`createdUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`createdUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotCreatedUserId != null">
+                            AND `tac`.`createdUserId` != #{tbAppsCategoryPo.whereNotCreatedUserId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInCreatedUserIds != null and tbAppsCategoryPo.whereNotInCreatedUserIds.size() > 0">
+                        AND `tac`.`createdUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartCreatedUserId != null">
+                            AND `tac`.`createdUserId` &gt;= #{tbAppsCategoryPo.whereStartCreatedUserId}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndCreatedUserId != null">
+                            AND `tac`.`createdUserId` &lt;= #{tbAppsCategoryPo.whereEndCreatedUserId}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereUpdatedAt != null and tbAppsCategoryPo.whereUpdatedAt != ''">
+                            AND `tac`.`updatedAt` = #{tbAppsCategoryPo.whereUpdatedAt}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInUpdatedAts != null and tbAppsCategoryPo.whereInUpdatedAts.size() > 0">
+                        AND `tac`.`updatedAt` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrUpdatedAts != null and tbAppsCategoryPo.whereInOrUpdatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrUpdatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`updatedAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`updatedAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotUpdatedAt != null and tbAppsCategoryPo.whereNotUpdatedAt != ''">
+                            AND `tac`.`updatedAt` != #{tbAppsCategoryPo.whereNotUpdatedAt}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInUpdatedAts != null and tbAppsCategoryPo.whereNotInUpdatedAts.size() > 0">
+                        AND `tac`.`updatedAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartUpdatedAt != null and tbAppsCategoryPo.whereStartUpdatedAt != ''">
+                            AND `tac`.`updatedAt` &gt;= #{tbAppsCategoryPo.whereStartUpdatedAt}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndUpdatedAt != null and tbAppsCategoryPo.whereEndUpdatedAt != ''">
+                            AND `tac`.`updatedAt` &lt;= #{tbAppsCategoryPo.whereEndUpdatedAt}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereUpdatedUserId != null">
+                            AND `tac`.`updatedUserId` = #{tbAppsCategoryPo.whereUpdatedUserId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereInUpdatedUserIds != null and tbAppsCategoryPo.whereInUpdatedUserIds.size() > 0">
+                        AND `tac`.`updatedUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsCategoryPo.whereInOrUpdatedUserIds != null and tbAppsCategoryPo.whereInOrUpdatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereInOrUpdatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `tac`.`updatedUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `tac`.`updatedUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereNotUpdatedUserId != null">
+                            AND `tac`.`updatedUserId` != #{tbAppsCategoryPo.whereNotUpdatedUserId}
+                        </if>
+                    <if test="tbAppsCategoryPo.whereNotInUpdatedUserIds != null and tbAppsCategoryPo.whereNotInUpdatedUserIds.size() > 0">
+                        AND `tac`.`updatedUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsCategoryPo.whereNotInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsCategoryPo.whereStartUpdatedUserId != null">
+                            AND `tac`.`updatedUserId` &gt;= #{tbAppsCategoryPo.whereStartUpdatedUserId}
+                        </if>
+                        <if test="tbAppsCategoryPo.whereEndUpdatedUserId != null">
+                            AND `tac`.`updatedUserId` &lt;= #{tbAppsCategoryPo.whereEndUpdatedUserId}
+                        </if>
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.apps.data.po.TbAppsCategoryPo"
+            resultType="com.api.apps.data.entity.TbAppsCategory">
+        <bind name="tbAppsCategoryPo" value="_parameter"/>
+        SELECT `tac`.*
+        FROM tb_apps_category as `tac`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.apps.data.po.TbAppsCategoryPo"
+            resultType="int">
+        <bind name="tbAppsCategoryPo" value="_parameter"/>
+        SELECT COUNT(*) as cnt
+        FROM tb_apps_category as `tac`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

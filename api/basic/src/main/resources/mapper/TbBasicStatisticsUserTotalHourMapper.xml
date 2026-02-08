@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicStatisticsUserTotalHourMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicStatisticsUserTotalHour"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_statistics_user_total_hour (
+        <trim suffixOverrides=",">
+                        <if test="dateHour != null">
+                            `dateHour`,
+                        </if>
+                            <if test="cnt != null">
+                                `cnt`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="dateHour != null">
+                            #{dateHour},
+                        </if>
+                            <if test="cnt != null">
+                                #{cnt},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        DELETE `tbsuth` FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        UPDATE tb_basic_statistics_user_total_hour as `tbsuth`
+        <set>
+                <if test="tbBasicStatisticsUserTotalHourPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsuth`.`id` = #{tbBasicStatisticsUserTotalHourPo.id},
+                </if>
+                <if test="tbBasicStatisticsUserTotalHourPo.dateHour != null">
+                        <if test="tbBasicStatisticsUserTotalHourPo.dateHour == ''">
+                    `tbsuth`.`dateHour` = NULL,
+                        </if>
+                        <if test="tbBasicStatisticsUserTotalHourPo.dateHour != ''">
+                    `tbsuth`.`dateHour` = #{tbBasicStatisticsUserTotalHourPo.dateHour},
+                        </if>
+                </if>
+                <if test="tbBasicStatisticsUserTotalHourPo.cnt != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsuth`.`cnt` = #{tbBasicStatisticsUserTotalHourPo.cnt},
+                </if>
+                <if test="tbBasicStatisticsUserTotalHourPo.updatedAt != null">
+                        <if test="tbBasicStatisticsUserTotalHourPo.updatedAt == ''">
+                    `tbsuth`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicStatisticsUserTotalHourPo.updatedAt != ''">
+                    `tbsuth`.`updatedAt` = #{tbBasicStatisticsUserTotalHourPo.updatedAt},
+                        </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicStatisticsUserTotalHourPo != null">
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereId != null">
+                                AND `tbsuth`.`id` = #{tbBasicStatisticsUserTotalHourPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInIds != null and tbBasicStatisticsUserTotalHourPo.whereInIds.size() > 0">
+                            AND `tbsuth`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInOrIds != null and tbBasicStatisticsUserTotalHourPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsuth`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsuth`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereNotId != null">
+                                AND `tbsuth`.`id` != #{tbBasicStatisticsUserTotalHourPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereNotInIds != null and tbBasicStatisticsUserTotalHourPo.whereNotInIds.size() > 0">
+                            AND `tbsuth`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNullId != null and tbBasicStatisticsUserTotalHourPo.whereIsNullId == true">
+                            AND `tbsuth`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotNullId != null and tbBasicStatisticsUserTotalHourPo.whereIsNotNullId == true">
+                            AND `tbsuth`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsEmptyId != null and tbBasicStatisticsUserTotalHourPo.whereIsEmptyId == true">
+                            AND (`tbsuth`.`id` IS NULL OR `tbsuth`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyId != null and tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyId == true">
+                            AND `tbsuth`.`id` IS NOT NULL AND `tbsuth`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGtId != null">
+                                AND `tbsuth`.`id` &gt; #{tbBasicStatisticsUserTotalHourPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGteId != null">
+                                AND `tbsuth`.`id` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLtId != null">
+                                AND `tbsuth`.`id` &lt; #{tbBasicStatisticsUserTotalHourPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLteId != null">
+                                AND `tbsuth`.`id` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereLteId}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereStartId != null">
+                                AND `tbsuth`.`id` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereEndId != null">
+                                AND `tbsuth`.`id` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereDateHour != null and tbBasicStatisticsUserTotalHourPo.whereDateHour != ''">
+                                AND `tbsuth`.`dateHour` = #{tbBasicStatisticsUserTotalHourPo.whereDateHour}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInDateHours != null and tbBasicStatisticsUserTotalHourPo.whereInDateHours.size() > 0">
+                            AND `tbsuth`.`dateHour` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInDateHours"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInOrDateHours != null and tbBasicStatisticsUserTotalHourPo.whereInOrDateHours.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInOrDateHours"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsuth`.`dateHour` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsuth`.`dateHour` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereNotDateHour != null and tbBasicStatisticsUserTotalHourPo.whereNotDateHour != ''">
+                                AND `tbsuth`.`dateHour` != #{tbBasicStatisticsUserTotalHourPo.whereNotDateHour}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereNotInDateHours != null and tbBasicStatisticsUserTotalHourPo.whereNotInDateHours.size() > 0">
+                            AND `tbsuth`.`dateHour` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereNotInDateHours"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNullDateHour != null and tbBasicStatisticsUserTotalHourPo.whereIsNullDateHour == true">
+                            AND `tbsuth`.`dateHour` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotNullDateHour != null and tbBasicStatisticsUserTotalHourPo.whereIsNotNullDateHour == true">
+                            AND `tbsuth`.`dateHour` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsEmptyDateHour != null and tbBasicStatisticsUserTotalHourPo.whereIsEmptyDateHour == true">
+                            AND (`tbsuth`.`dateHour` IS NULL OR `tbsuth`.`dateHour` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyDateHour != null and tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyDateHour == true">
+                            AND `tbsuth`.`dateHour` IS NOT NULL AND `tbsuth`.`dateHour` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGtDateHour != null and tbBasicStatisticsUserTotalHourPo.whereGtDateHour != ''">
+                                AND `tbsuth`.`dateHour` &gt; #{tbBasicStatisticsUserTotalHourPo.whereGtDateHour}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGteDateHour != null and tbBasicStatisticsUserTotalHourPo.whereGteDateHour != ''">
+                                AND `tbsuth`.`dateHour` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereGteDateHour}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLtDateHour != null and tbBasicStatisticsUserTotalHourPo.whereLtDateHour != ''">
+                                AND `tbsuth`.`dateHour` &lt; #{tbBasicStatisticsUserTotalHourPo.whereLtDateHour}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLteDateHour != null and tbBasicStatisticsUserTotalHourPo.whereLteDateHour != ''">
+                                AND `tbsuth`.`dateHour` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereLteDateHour}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLikeDateHour != null and tbBasicStatisticsUserTotalHourPo.whereLikeDateHour != ''">
+                                AND `tbsuth`.`dateHour` LIKE CONCAT('%', #{tbBasicStatisticsUserTotalHourPo.whereLikeDateHour}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereStartDateHour != null and tbBasicStatisticsUserTotalHourPo.whereStartDateHour != ''">
+                                AND `tbsuth`.`dateHour` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereStartDateHour}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereEndDateHour != null and tbBasicStatisticsUserTotalHourPo.whereEndDateHour != ''">
+                                AND `tbsuth`.`dateHour` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereEndDateHour}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereCnt != null">
+                                AND `tbsuth`.`cnt` = #{tbBasicStatisticsUserTotalHourPo.whereCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInCnts != null and tbBasicStatisticsUserTotalHourPo.whereInCnts.size() > 0">
+                            AND `tbsuth`.`cnt` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInCnts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInOrCnts != null and tbBasicStatisticsUserTotalHourPo.whereInOrCnts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInOrCnts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsuth`.`cnt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsuth`.`cnt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereNotCnt != null">
+                                AND `tbsuth`.`cnt` != #{tbBasicStatisticsUserTotalHourPo.whereNotCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereNotInCnts != null and tbBasicStatisticsUserTotalHourPo.whereNotInCnts.size() > 0">
+                            AND `tbsuth`.`cnt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereNotInCnts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNullCnt != null and tbBasicStatisticsUserTotalHourPo.whereIsNullCnt == true">
+                            AND `tbsuth`.`cnt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotNullCnt != null and tbBasicStatisticsUserTotalHourPo.whereIsNotNullCnt == true">
+                            AND `tbsuth`.`cnt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsEmptyCnt != null and tbBasicStatisticsUserTotalHourPo.whereIsEmptyCnt == true">
+                            AND (`tbsuth`.`cnt` IS NULL OR `tbsuth`.`cnt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyCnt != null and tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyCnt == true">
+                            AND `tbsuth`.`cnt` IS NOT NULL AND `tbsuth`.`cnt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGtCnt != null">
+                                AND `tbsuth`.`cnt` &gt; #{tbBasicStatisticsUserTotalHourPo.whereGtCnt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGteCnt != null">
+                                AND `tbsuth`.`cnt` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereGteCnt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLtCnt != null">
+                                AND `tbsuth`.`cnt` &lt; #{tbBasicStatisticsUserTotalHourPo.whereLtCnt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLteCnt != null">
+                                AND `tbsuth`.`cnt` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereLteCnt}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereStartCnt != null">
+                                AND `tbsuth`.`cnt` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereStartCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereEndCnt != null">
+                                AND `tbsuth`.`cnt` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereEndCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` = #{tbBasicStatisticsUserTotalHourPo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInUpdatedAts != null and tbBasicStatisticsUserTotalHourPo.whereInUpdatedAts.size() > 0">
+                            AND `tbsuth`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereInOrUpdatedAts != null and tbBasicStatisticsUserTotalHourPo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsuth`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsuth`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereNotUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereNotUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` != #{tbBasicStatisticsUserTotalHourPo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereNotInUpdatedAts != null and tbBasicStatisticsUserTotalHourPo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbsuth`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalHourPo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNullUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereIsNullUpdatedAt == true">
+                            AND `tbsuth`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotNullUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereIsNotNullUpdatedAt == true">
+                            AND `tbsuth`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsEmptyUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbsuth`.`updatedAt` IS NULL OR `tbsuth`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbsuth`.`updatedAt` IS NOT NULL AND `tbsuth`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGtUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereGtUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &gt; #{tbBasicStatisticsUserTotalHourPo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereGteUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereGteUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLtUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereLtUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &lt; #{tbBasicStatisticsUserTotalHourPo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereLteUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereLteUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereStartUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereStartUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &gt;= #{tbBasicStatisticsUserTotalHourPo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalHourPo.whereEndUpdatedAt != null and tbBasicStatisticsUserTotalHourPo.whereEndUpdatedAt != ''">
+                                AND `tbsuth`.`updatedAt` &lt;= #{tbBasicStatisticsUserTotalHourPo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="com.api.basic.data.entity.TbBasicStatisticsUserTotalHour">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.*
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="int">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT `tbsuth`.`id` </when>
+            <otherwise> `tbsuth`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`id`), 0) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`id`) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`id`) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`id`), 0) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`cnt`), 0) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`cnt`) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`cnt`) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalHourPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalHourPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalHourPo.useDistinct != null and tbBasicStatisticsUserTotalHourPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsuth`.`cnt`), 0) as result
+        FROM tb_basic_statistics_user_total_hour as `tbsuth`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalHourPo.groupByFields != null and tbBasicStatisticsUserTotalHourPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalHourPo.groupByFields" separator=",">
+            `tbsuth`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalHourPo.havingClause != null and tbBasicStatisticsUserTotalHourPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalHourPo.havingClause}
+        </if>
+    </select>
+</mapper>

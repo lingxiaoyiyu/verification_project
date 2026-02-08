@@ -1,0 +1,2855 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicSysRoleMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicSysRole"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_sys_role (
+        <trim suffixOverrides=",">
+                        <if test="name != null">
+                            `name`,
+                        </if>
+                        <if test="identifying != null">
+                            `identifying`,
+                        </if>
+                            <if test="remark != null and remark != ''">
+                                `remark`,
+                            </if>
+                            <if test="status != null">
+                                `status`,
+                            </if>
+                            <if test="isDelete != null">
+                                `isDelete`,
+                            </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                            <if test="updatedUserId != null">
+                                `updatedUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="name != null">
+                            #{name},
+                        </if>
+                        <if test="identifying != null">
+                            #{identifying},
+                        </if>
+                            <if test="remark != null and remark != ''">
+                                #{remark},
+                            </if>
+                            <if test="status != null">
+                                #{status},
+                            </if>
+                            <if test="isDelete != null">
+                                #{isDelete},
+                            </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                            <if test="updatedUserId != null">
+                                #{updatedUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicSysRolePo">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        DELETE `tbsr` FROM tb_basic_sys_role as `tbsr`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        UPDATE tb_basic_sys_role as `tbsr`
+        <set>
+                <if test="tbBasicSysRolePo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`id` = #{tbBasicSysRolePo.id},
+                </if>
+                <if test="tbBasicSysRolePo.name != null">
+                        <if test="tbBasicSysRolePo.name == ''">
+                    `tbsr`.`name` = NULL,
+                        </if>
+                        <if test="tbBasicSysRolePo.name != ''">
+                    `tbsr`.`name` = #{tbBasicSysRolePo.name},
+                        </if>
+                </if>
+                <if test="tbBasicSysRolePo.identifying != null">
+                        <if test="tbBasicSysRolePo.identifying == ''">
+                    `tbsr`.`identifying` = NULL,
+                        </if>
+                        <if test="tbBasicSysRolePo.identifying != ''">
+                    `tbsr`.`identifying` = #{tbBasicSysRolePo.identifying},
+                        </if>
+                </if>
+                <if test="tbBasicSysRolePo.remark != null">
+                        <if test="tbBasicSysRolePo.remark == ''">
+                    `tbsr`.`remark` = NULL,
+                        </if>
+                        <if test="tbBasicSysRolePo.remark != ''">
+                    `tbsr`.`remark` = #{tbBasicSysRolePo.remark},
+                        </if>
+                </if>
+                <if test="tbBasicSysRolePo.status != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`status` = #{tbBasicSysRolePo.status},
+                </if>
+                <if test="tbBasicSysRolePo.isDelete != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`isDelete` = #{tbBasicSysRolePo.isDelete},
+                </if>
+                <if test="tbBasicSysRolePo.createdAt != null">
+                        <if test="tbBasicSysRolePo.createdAt == ''">
+                    `tbsr`.`createdAt` = '',
+                        </if>
+                        <if test="tbBasicSysRolePo.createdAt != ''">
+                    `tbsr`.`createdAt` = #{tbBasicSysRolePo.createdAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysRolePo.createdUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`createdUserId` = #{tbBasicSysRolePo.createdUserId},
+                </if>
+                <if test="tbBasicSysRolePo.updatedAt != null">
+                        <if test="tbBasicSysRolePo.updatedAt == ''">
+                    `tbsr`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicSysRolePo.updatedAt != ''">
+                    `tbsr`.`updatedAt` = #{tbBasicSysRolePo.updatedAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysRolePo.updatedUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsr`.`updatedUserId` = #{tbBasicSysRolePo.updatedUserId},
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicSysRolePo != null">
+                            <if test="tbBasicSysRolePo.whereId != null">
+                                AND `tbsr`.`id` = #{tbBasicSysRolePo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInIds != null and tbBasicSysRolePo.whereInIds.size() > 0">
+                            AND `tbsr`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrIds != null and tbBasicSysRolePo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotId != null">
+                                AND `tbsr`.`id` != #{tbBasicSysRolePo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInIds != null and tbBasicSysRolePo.whereNotInIds.size() > 0">
+                            AND `tbsr`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullId != null and tbBasicSysRolePo.whereIsNullId == true">
+                            AND `tbsr`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullId != null and tbBasicSysRolePo.whereIsNotNullId == true">
+                            AND `tbsr`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyId != null and tbBasicSysRolePo.whereIsEmptyId == true">
+                            AND (`tbsr`.`id` IS NULL OR `tbsr`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyId != null and tbBasicSysRolePo.whereIsNotEmptyId == true">
+                            AND `tbsr`.`id` IS NOT NULL AND `tbsr`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtId != null">
+                                AND `tbsr`.`id` &gt; #{tbBasicSysRolePo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteId != null">
+                                AND `tbsr`.`id` &gt;= #{tbBasicSysRolePo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtId != null">
+                                AND `tbsr`.`id` &lt; #{tbBasicSysRolePo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteId != null">
+                                AND `tbsr`.`id` &lt;= #{tbBasicSysRolePo.whereLteId}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartId != null">
+                                AND `tbsr`.`id` &gt;= #{tbBasicSysRolePo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndId != null">
+                                AND `tbsr`.`id` &lt;= #{tbBasicSysRolePo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereName != null and tbBasicSysRolePo.whereName != ''">
+                                AND `tbsr`.`name` = #{tbBasicSysRolePo.whereName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInNames != null and tbBasicSysRolePo.whereInNames.size() > 0">
+                            AND `tbsr`.`name` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrNames != null and tbBasicSysRolePo.whereInOrNames.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrNames"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`name` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`name` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotName != null and tbBasicSysRolePo.whereNotName != ''">
+                                AND `tbsr`.`name` != #{tbBasicSysRolePo.whereNotName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInNames != null and tbBasicSysRolePo.whereNotInNames.size() > 0">
+                            AND `tbsr`.`name` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullName != null and tbBasicSysRolePo.whereIsNullName == true">
+                            AND `tbsr`.`name` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullName != null and tbBasicSysRolePo.whereIsNotNullName == true">
+                            AND `tbsr`.`name` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyName != null and tbBasicSysRolePo.whereIsEmptyName == true">
+                            AND (`tbsr`.`name` IS NULL OR `tbsr`.`name` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyName != null and tbBasicSysRolePo.whereIsNotEmptyName == true">
+                            AND `tbsr`.`name` IS NOT NULL AND `tbsr`.`name` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtName != null and tbBasicSysRolePo.whereGtName != ''">
+                                AND `tbsr`.`name` &gt; #{tbBasicSysRolePo.whereGtName}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteName != null and tbBasicSysRolePo.whereGteName != ''">
+                                AND `tbsr`.`name` &gt;= #{tbBasicSysRolePo.whereGteName}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtName != null and tbBasicSysRolePo.whereLtName != ''">
+                                AND `tbsr`.`name` &lt; #{tbBasicSysRolePo.whereLtName}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteName != null and tbBasicSysRolePo.whereLteName != ''">
+                                AND `tbsr`.`name` &lt;= #{tbBasicSysRolePo.whereLteName}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereLikeName != null and tbBasicSysRolePo.whereLikeName != ''">
+                                AND `tbsr`.`name` LIKE CONCAT('%', #{tbBasicSysRolePo.whereLikeName}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereStartName != null and tbBasicSysRolePo.whereStartName != ''">
+                                AND `tbsr`.`name` &gt;= #{tbBasicSysRolePo.whereStartName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndName != null and tbBasicSysRolePo.whereEndName != ''">
+                                AND `tbsr`.`name` &lt;= #{tbBasicSysRolePo.whereEndName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereIdentifying != null and tbBasicSysRolePo.whereIdentifying != ''">
+                                AND `tbsr`.`identifying` = #{tbBasicSysRolePo.whereIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInIdentifyings != null and tbBasicSysRolePo.whereInIdentifyings.size() > 0">
+                            AND `tbsr`.`identifying` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInIdentifyings"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrIdentifyings != null and tbBasicSysRolePo.whereInOrIdentifyings.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrIdentifyings"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`identifying` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`identifying` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotIdentifying != null and tbBasicSysRolePo.whereNotIdentifying != ''">
+                                AND `tbsr`.`identifying` != #{tbBasicSysRolePo.whereNotIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInIdentifyings != null and tbBasicSysRolePo.whereNotInIdentifyings.size() > 0">
+                            AND `tbsr`.`identifying` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInIdentifyings"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullIdentifying != null and tbBasicSysRolePo.whereIsNullIdentifying == true">
+                            AND `tbsr`.`identifying` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullIdentifying != null and tbBasicSysRolePo.whereIsNotNullIdentifying == true">
+                            AND `tbsr`.`identifying` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyIdentifying != null and tbBasicSysRolePo.whereIsEmptyIdentifying == true">
+                            AND (`tbsr`.`identifying` IS NULL OR `tbsr`.`identifying` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyIdentifying != null and tbBasicSysRolePo.whereIsNotEmptyIdentifying == true">
+                            AND `tbsr`.`identifying` IS NOT NULL AND `tbsr`.`identifying` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtIdentifying != null and tbBasicSysRolePo.whereGtIdentifying != ''">
+                                AND `tbsr`.`identifying` &gt; #{tbBasicSysRolePo.whereGtIdentifying}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteIdentifying != null and tbBasicSysRolePo.whereGteIdentifying != ''">
+                                AND `tbsr`.`identifying` &gt;= #{tbBasicSysRolePo.whereGteIdentifying}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtIdentifying != null and tbBasicSysRolePo.whereLtIdentifying != ''">
+                                AND `tbsr`.`identifying` &lt; #{tbBasicSysRolePo.whereLtIdentifying}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteIdentifying != null and tbBasicSysRolePo.whereLteIdentifying != ''">
+                                AND `tbsr`.`identifying` &lt;= #{tbBasicSysRolePo.whereLteIdentifying}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereLikeIdentifying != null and tbBasicSysRolePo.whereLikeIdentifying != ''">
+                                AND `tbsr`.`identifying` LIKE CONCAT('%', #{tbBasicSysRolePo.whereLikeIdentifying}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereStartIdentifying != null and tbBasicSysRolePo.whereStartIdentifying != ''">
+                                AND `tbsr`.`identifying` &gt;= #{tbBasicSysRolePo.whereStartIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndIdentifying != null and tbBasicSysRolePo.whereEndIdentifying != ''">
+                                AND `tbsr`.`identifying` &lt;= #{tbBasicSysRolePo.whereEndIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereRemark != null and tbBasicSysRolePo.whereRemark != ''">
+                                AND `tbsr`.`remark` = #{tbBasicSysRolePo.whereRemark}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInRemarks != null and tbBasicSysRolePo.whereInRemarks.size() > 0">
+                            AND `tbsr`.`remark` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInRemarks"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrRemarks != null and tbBasicSysRolePo.whereInOrRemarks.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrRemarks"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`remark` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`remark` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotRemark != null and tbBasicSysRolePo.whereNotRemark != ''">
+                                AND `tbsr`.`remark` != #{tbBasicSysRolePo.whereNotRemark}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInRemarks != null and tbBasicSysRolePo.whereNotInRemarks.size() > 0">
+                            AND `tbsr`.`remark` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInRemarks"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullRemark != null and tbBasicSysRolePo.whereIsNullRemark == true">
+                            AND `tbsr`.`remark` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullRemark != null and tbBasicSysRolePo.whereIsNotNullRemark == true">
+                            AND `tbsr`.`remark` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyRemark != null and tbBasicSysRolePo.whereIsEmptyRemark == true">
+                            AND (`tbsr`.`remark` IS NULL OR `tbsr`.`remark` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyRemark != null and tbBasicSysRolePo.whereIsNotEmptyRemark == true">
+                            AND `tbsr`.`remark` IS NOT NULL AND `tbsr`.`remark` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtRemark != null and tbBasicSysRolePo.whereGtRemark != ''">
+                                AND `tbsr`.`remark` &gt; #{tbBasicSysRolePo.whereGtRemark}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteRemark != null and tbBasicSysRolePo.whereGteRemark != ''">
+                                AND `tbsr`.`remark` &gt;= #{tbBasicSysRolePo.whereGteRemark}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtRemark != null and tbBasicSysRolePo.whereLtRemark != ''">
+                                AND `tbsr`.`remark` &lt; #{tbBasicSysRolePo.whereLtRemark}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteRemark != null and tbBasicSysRolePo.whereLteRemark != ''">
+                                AND `tbsr`.`remark` &lt;= #{tbBasicSysRolePo.whereLteRemark}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereLikeRemark != null and tbBasicSysRolePo.whereLikeRemark != ''">
+                                AND `tbsr`.`remark` LIKE CONCAT('%', #{tbBasicSysRolePo.whereLikeRemark}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereStartRemark != null and tbBasicSysRolePo.whereStartRemark != ''">
+                                AND `tbsr`.`remark` &gt;= #{tbBasicSysRolePo.whereStartRemark}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndRemark != null and tbBasicSysRolePo.whereEndRemark != ''">
+                                AND `tbsr`.`remark` &lt;= #{tbBasicSysRolePo.whereEndRemark}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereStatus != null">
+                                AND `tbsr`.`status` = #{tbBasicSysRolePo.whereStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInStatuss != null and tbBasicSysRolePo.whereInStatuss.size() > 0">
+                            AND `tbsr`.`status` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrStatuss != null and tbBasicSysRolePo.whereInOrStatuss.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrStatuss"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`status` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`status` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotStatus != null">
+                                AND `tbsr`.`status` != #{tbBasicSysRolePo.whereNotStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInStatuss != null and tbBasicSysRolePo.whereNotInStatuss.size() > 0">
+                            AND `tbsr`.`status` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullStatus != null and tbBasicSysRolePo.whereIsNullStatus == true">
+                            AND `tbsr`.`status` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullStatus != null and tbBasicSysRolePo.whereIsNotNullStatus == true">
+                            AND `tbsr`.`status` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyStatus != null and tbBasicSysRolePo.whereIsEmptyStatus == true">
+                            AND (`tbsr`.`status` IS NULL OR `tbsr`.`status` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyStatus != null and tbBasicSysRolePo.whereIsNotEmptyStatus == true">
+                            AND `tbsr`.`status` IS NOT NULL AND `tbsr`.`status` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtStatus != null">
+                                AND `tbsr`.`status` &gt; #{tbBasicSysRolePo.whereGtStatus}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteStatus != null">
+                                AND `tbsr`.`status` &gt;= #{tbBasicSysRolePo.whereGteStatus}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtStatus != null">
+                                AND `tbsr`.`status` &lt; #{tbBasicSysRolePo.whereLtStatus}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteStatus != null">
+                                AND `tbsr`.`status` &lt;= #{tbBasicSysRolePo.whereLteStatus}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartStatus != null">
+                                AND `tbsr`.`status` &gt;= #{tbBasicSysRolePo.whereStartStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndStatus != null">
+                                AND `tbsr`.`status` &lt;= #{tbBasicSysRolePo.whereEndStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereIsDelete != null">
+                                AND `tbsr`.`isDelete` = #{tbBasicSysRolePo.whereIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInIsDeletes != null and tbBasicSysRolePo.whereInIsDeletes.size() > 0">
+                            AND `tbsr`.`isDelete` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrIsDeletes != null and tbBasicSysRolePo.whereInOrIsDeletes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrIsDeletes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`isDelete` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`isDelete` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotIsDelete != null">
+                                AND `tbsr`.`isDelete` != #{tbBasicSysRolePo.whereNotIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInIsDeletes != null and tbBasicSysRolePo.whereNotInIsDeletes.size() > 0">
+                            AND `tbsr`.`isDelete` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullIsDelete != null and tbBasicSysRolePo.whereIsNullIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullIsDelete != null and tbBasicSysRolePo.whereIsNotNullIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyIsDelete != null and tbBasicSysRolePo.whereIsEmptyIsDelete == true">
+                            AND (`tbsr`.`isDelete` IS NULL OR `tbsr`.`isDelete` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyIsDelete != null and tbBasicSysRolePo.whereIsNotEmptyIsDelete == true">
+                            AND `tbsr`.`isDelete` IS NOT NULL AND `tbsr`.`isDelete` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt; #{tbBasicSysRolePo.whereGtIsDelete}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt;= #{tbBasicSysRolePo.whereGteIsDelete}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt; #{tbBasicSysRolePo.whereLtIsDelete}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt;= #{tbBasicSysRolePo.whereLteIsDelete}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartIsDelete != null">
+                                AND `tbsr`.`isDelete` &gt;= #{tbBasicSysRolePo.whereStartIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndIsDelete != null">
+                                AND `tbsr`.`isDelete` &lt;= #{tbBasicSysRolePo.whereEndIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereCreatedAt != null and tbBasicSysRolePo.whereCreatedAt != ''">
+                                AND `tbsr`.`createdAt` = #{tbBasicSysRolePo.whereCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInCreatedAts != null and tbBasicSysRolePo.whereInCreatedAts.size() > 0">
+                            AND `tbsr`.`createdAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrCreatedAts != null and tbBasicSysRolePo.whereInOrCreatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrCreatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`createdAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`createdAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotCreatedAt != null and tbBasicSysRolePo.whereNotCreatedAt != ''">
+                                AND `tbsr`.`createdAt` != #{tbBasicSysRolePo.whereNotCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInCreatedAts != null and tbBasicSysRolePo.whereNotInCreatedAts.size() > 0">
+                            AND `tbsr`.`createdAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullCreatedAt != null and tbBasicSysRolePo.whereIsNullCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullCreatedAt != null and tbBasicSysRolePo.whereIsNotNullCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyCreatedAt != null and tbBasicSysRolePo.whereIsEmptyCreatedAt == true">
+                            AND (`tbsr`.`createdAt` IS NULL OR `tbsr`.`createdAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyCreatedAt != null and tbBasicSysRolePo.whereIsNotEmptyCreatedAt == true">
+                            AND `tbsr`.`createdAt` IS NOT NULL AND `tbsr`.`createdAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtCreatedAt != null and tbBasicSysRolePo.whereGtCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt; #{tbBasicSysRolePo.whereGtCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteCreatedAt != null and tbBasicSysRolePo.whereGteCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt;= #{tbBasicSysRolePo.whereGteCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtCreatedAt != null and tbBasicSysRolePo.whereLtCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt; #{tbBasicSysRolePo.whereLtCreatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteCreatedAt != null and tbBasicSysRolePo.whereLteCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt;= #{tbBasicSysRolePo.whereLteCreatedAt}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartCreatedAt != null and tbBasicSysRolePo.whereStartCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &gt;= #{tbBasicSysRolePo.whereStartCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndCreatedAt != null and tbBasicSysRolePo.whereEndCreatedAt != ''">
+                                AND `tbsr`.`createdAt` &lt;= #{tbBasicSysRolePo.whereEndCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` = #{tbBasicSysRolePo.whereCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInCreatedUserIds != null and tbBasicSysRolePo.whereInCreatedUserIds.size() > 0">
+                            AND `tbsr`.`createdUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrCreatedUserIds != null and tbBasicSysRolePo.whereInOrCreatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrCreatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`createdUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`createdUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` != #{tbBasicSysRolePo.whereNotCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInCreatedUserIds != null and tbBasicSysRolePo.whereNotInCreatedUserIds.size() > 0">
+                            AND `tbsr`.`createdUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullCreatedUserId != null and tbBasicSysRolePo.whereIsNullCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullCreatedUserId != null and tbBasicSysRolePo.whereIsNotNullCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyCreatedUserId != null and tbBasicSysRolePo.whereIsEmptyCreatedUserId == true">
+                            AND (`tbsr`.`createdUserId` IS NULL OR `tbsr`.`createdUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyCreatedUserId != null and tbBasicSysRolePo.whereIsNotEmptyCreatedUserId == true">
+                            AND `tbsr`.`createdUserId` IS NOT NULL AND `tbsr`.`createdUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt; #{tbBasicSysRolePo.whereGtCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt;= #{tbBasicSysRolePo.whereGteCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt; #{tbBasicSysRolePo.whereLtCreatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt;= #{tbBasicSysRolePo.whereLteCreatedUserId}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &gt;= #{tbBasicSysRolePo.whereStartCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndCreatedUserId != null">
+                                AND `tbsr`.`createdUserId` &lt;= #{tbBasicSysRolePo.whereEndCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereUpdatedAt != null and tbBasicSysRolePo.whereUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` = #{tbBasicSysRolePo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInUpdatedAts != null and tbBasicSysRolePo.whereInUpdatedAts.size() > 0">
+                            AND `tbsr`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrUpdatedAts != null and tbBasicSysRolePo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotUpdatedAt != null and tbBasicSysRolePo.whereNotUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` != #{tbBasicSysRolePo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInUpdatedAts != null and tbBasicSysRolePo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbsr`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullUpdatedAt != null and tbBasicSysRolePo.whereIsNullUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullUpdatedAt != null and tbBasicSysRolePo.whereIsNotNullUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyUpdatedAt != null and tbBasicSysRolePo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbsr`.`updatedAt` IS NULL OR `tbsr`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyUpdatedAt != null and tbBasicSysRolePo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbsr`.`updatedAt` IS NOT NULL AND `tbsr`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtUpdatedAt != null and tbBasicSysRolePo.whereGtUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt; #{tbBasicSysRolePo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteUpdatedAt != null and tbBasicSysRolePo.whereGteUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt;= #{tbBasicSysRolePo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtUpdatedAt != null and tbBasicSysRolePo.whereLtUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt; #{tbBasicSysRolePo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteUpdatedAt != null and tbBasicSysRolePo.whereLteUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt;= #{tbBasicSysRolePo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartUpdatedAt != null and tbBasicSysRolePo.whereStartUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &gt;= #{tbBasicSysRolePo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndUpdatedAt != null and tbBasicSysRolePo.whereEndUpdatedAt != ''">
+                                AND `tbsr`.`updatedAt` &lt;= #{tbBasicSysRolePo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` = #{tbBasicSysRolePo.whereUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInUpdatedUserIds != null and tbBasicSysRolePo.whereInUpdatedUserIds.size() > 0">
+                            AND `tbsr`.`updatedUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereInOrUpdatedUserIds != null and tbBasicSysRolePo.whereInOrUpdatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereInOrUpdatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsr`.`updatedUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsr`.`updatedUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereNotUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` != #{tbBasicSysRolePo.whereNotUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereNotInUpdatedUserIds != null and tbBasicSysRolePo.whereNotInUpdatedUserIds.size() > 0">
+                            AND `tbsr`.`updatedUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysRolePo.whereNotInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysRolePo.whereIsNullUpdatedUserId != null and tbBasicSysRolePo.whereIsNullUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotNullUpdatedUserId != null and tbBasicSysRolePo.whereIsNotNullUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsEmptyUpdatedUserId != null and tbBasicSysRolePo.whereIsEmptyUpdatedUserId == true">
+                            AND (`tbsr`.`updatedUserId` IS NULL OR `tbsr`.`updatedUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysRolePo.whereIsNotEmptyUpdatedUserId != null and tbBasicSysRolePo.whereIsNotEmptyUpdatedUserId == true">
+                            AND `tbsr`.`updatedUserId` IS NOT NULL AND `tbsr`.`updatedUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysRolePo.whereGtUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt; #{tbBasicSysRolePo.whereGtUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysRolePo.whereGteUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt;= #{tbBasicSysRolePo.whereGteUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLtUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt; #{tbBasicSysRolePo.whereLtUpdatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereLteUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt;= #{tbBasicSysRolePo.whereLteUpdatedUserId}
+                            </if>
+                            <if test="tbBasicSysRolePo.whereStartUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &gt;= #{tbBasicSysRolePo.whereStartUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysRolePo.whereEndUpdatedUserId != null">
+                                AND `tbsr`.`updatedUserId` &lt;= #{tbBasicSysRolePo.whereEndUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="com.api.basic.data.entity.TbBasicSysRole">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.*
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="int">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT `tbsr`.`id` </when>
+            <otherwise> `tbsr`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`id`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`status`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`status`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`status`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`status`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`isDelete`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysRolePo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysRolePo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysRolePo.useDistinct != null and tbBasicSysRolePo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsr`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_role as `tbsr`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysRolePo.groupByFields != null and tbBasicSysRolePo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysRolePo.groupByFields" separator=",">
+            `tbsr`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysRolePo.havingClause != null and tbBasicSysRolePo.havingClause != ''">
+        HAVING #{tbBasicSysRolePo.havingClause}
+        </if>
+    </select>
+</mapper>

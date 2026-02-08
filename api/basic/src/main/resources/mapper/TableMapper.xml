@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TableMapper">
+    <sql id="whereClause">
+        <if test="whereTableSchema != null and whereTableSchema != ''">
+            AND table_schema = #{whereTableSchema}
+        </if>
+        <if test="whereTableName != null and whereTableName != ''">
+            AND `table_name` = #{whereTableName}
+        </if>
+        <if test="whereInTableNames != null and whereInTableNames.size() > 0">
+            AND `table_name` IN
+            <foreach item="item" index="index" collection="whereInTableNames"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="whereLikeTableName != null and whereLikeTableName != ''">
+            AND `table_name` LIKE CONCAT('%', #{whereLikeTableName}, '%')
+        </if>
+        <if test="whereLikeTableComment != null and whereLikeTableComment != ''">
+            AND table_comment = #{whereLikeTableName}
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TablePo"
+            resultType="com.api.basic.data.entity.Table">
+        SELECT * FROM INFORMATION_SCHEMA.tables
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TablePo"
+            resultType="int">
+        SELECT COUNT(*) as cnt
+        FROM INFORMATION_SCHEMA.tables
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

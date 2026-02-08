@@ -1,0 +1,4119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicFeedbackMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicFeedback"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_feedback (
+        <trim suffixOverrides=",">
+                        <if test="type != null">
+                            `type`,
+                        </if>
+                        <if test="content != null">
+                            `content`,
+                        </if>
+                            <if test="images != null and images != ''">
+                                `images`,
+                            </if>
+                            <if test="contact != null and contact != ''">
+                                `contact`,
+                            </if>
+                            <if test="status != null">
+                                `status`,
+                            </if>
+                            <if test="isDelete != null">
+                                `isDelete`,
+                            </if>
+                            <if test="deviceInfo != null and deviceInfo != ''">
+                                `deviceInfo`,
+                            </if>
+                            <if test="appVersion != null and appVersion != ''">
+                                `appVersion`,
+                            </if>
+                            <if test="replyContent != null and replyContent != ''">
+                                `replyContent`,
+                            </if>
+                            <if test="replyAt != null and replyAt != ''">
+                                `replyAt`,
+                            </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                            <if test="updatedUserId != null">
+                                `updatedUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="type != null">
+                            #{type},
+                        </if>
+                        <if test="content != null">
+                            #{content},
+                        </if>
+                            <if test="images != null and images != ''">
+                                #{images},
+                            </if>
+                            <if test="contact != null and contact != ''">
+                                #{contact},
+                            </if>
+                            <if test="status != null">
+                                #{status},
+                            </if>
+                            <if test="isDelete != null">
+                                #{isDelete},
+                            </if>
+                            <if test="deviceInfo != null and deviceInfo != ''">
+                                #{deviceInfo},
+                            </if>
+                            <if test="appVersion != null and appVersion != ''">
+                                #{appVersion},
+                            </if>
+                            <if test="replyContent != null and replyContent != ''">
+                                #{replyContent},
+                            </if>
+                            <if test="replyAt != null and replyAt != ''">
+                                #{replyAt},
+                            </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                            <if test="updatedUserId != null">
+                                #{updatedUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicFeedbackPo">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        DELETE `tbf` FROM tb_basic_feedback as `tbf`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        UPDATE tb_basic_feedback as `tbf`
+        <set>
+                <if test="tbBasicFeedbackPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`id` = #{tbBasicFeedbackPo.id},
+                </if>
+                <if test="tbBasicFeedbackPo.type != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`type` = #{tbBasicFeedbackPo.type},
+                </if>
+                <if test="tbBasicFeedbackPo.content != null">
+                        <if test="tbBasicFeedbackPo.content == ''">
+                    `tbf`.`content` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.content != ''">
+                    `tbf`.`content` = #{tbBasicFeedbackPo.content},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.images != null">
+                        <if test="tbBasicFeedbackPo.images == ''">
+                    `tbf`.`images` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.images != ''">
+                    `tbf`.`images` = #{tbBasicFeedbackPo.images},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.contact != null">
+                        <if test="tbBasicFeedbackPo.contact == ''">
+                    `tbf`.`contact` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.contact != ''">
+                    `tbf`.`contact` = #{tbBasicFeedbackPo.contact},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.status != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`status` = #{tbBasicFeedbackPo.status},
+                </if>
+                <if test="tbBasicFeedbackPo.isDelete != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`isDelete` = #{tbBasicFeedbackPo.isDelete},
+                </if>
+                <if test="tbBasicFeedbackPo.deviceInfo != null">
+                        <if test="tbBasicFeedbackPo.deviceInfo == ''">
+                    `tbf`.`deviceInfo` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.deviceInfo != ''">
+                    `tbf`.`deviceInfo` = #{tbBasicFeedbackPo.deviceInfo},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.appVersion != null">
+                        <if test="tbBasicFeedbackPo.appVersion == ''">
+                    `tbf`.`appVersion` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.appVersion != ''">
+                    `tbf`.`appVersion` = #{tbBasicFeedbackPo.appVersion},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.replyContent != null">
+                        <if test="tbBasicFeedbackPo.replyContent == ''">
+                    `tbf`.`replyContent` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.replyContent != ''">
+                    `tbf`.`replyContent` = #{tbBasicFeedbackPo.replyContent},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.replyAt != null">
+                        <if test="tbBasicFeedbackPo.replyAt == ''">
+                    `tbf`.`replyAt` = NULL,
+                        </if>
+                        <if test="tbBasicFeedbackPo.replyAt != ''">
+                    `tbf`.`replyAt` = #{tbBasicFeedbackPo.replyAt},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.createdAt != null">
+                        <if test="tbBasicFeedbackPo.createdAt == ''">
+                    `tbf`.`createdAt` = '',
+                        </if>
+                        <if test="tbBasicFeedbackPo.createdAt != ''">
+                    `tbf`.`createdAt` = #{tbBasicFeedbackPo.createdAt},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.createdUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`createdUserId` = #{tbBasicFeedbackPo.createdUserId},
+                </if>
+                <if test="tbBasicFeedbackPo.updatedAt != null">
+                        <if test="tbBasicFeedbackPo.updatedAt == ''">
+                    `tbf`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicFeedbackPo.updatedAt != ''">
+                    `tbf`.`updatedAt` = #{tbBasicFeedbackPo.updatedAt},
+                        </if>
+                </if>
+                <if test="tbBasicFeedbackPo.updatedUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbf`.`updatedUserId` = #{tbBasicFeedbackPo.updatedUserId},
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicFeedbackPo != null">
+                            <if test="tbBasicFeedbackPo.whereId != null">
+                                AND `tbf`.`id` = #{tbBasicFeedbackPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInIds != null and tbBasicFeedbackPo.whereInIds.size() > 0">
+                            AND `tbf`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrIds != null and tbBasicFeedbackPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotId != null">
+                                AND `tbf`.`id` != #{tbBasicFeedbackPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInIds != null and tbBasicFeedbackPo.whereNotInIds.size() > 0">
+                            AND `tbf`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullId != null and tbBasicFeedbackPo.whereIsNullId == true">
+                            AND `tbf`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullId != null and tbBasicFeedbackPo.whereIsNotNullId == true">
+                            AND `tbf`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyId != null and tbBasicFeedbackPo.whereIsEmptyId == true">
+                            AND (`tbf`.`id` IS NULL OR `tbf`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyId != null and tbBasicFeedbackPo.whereIsNotEmptyId == true">
+                            AND `tbf`.`id` IS NOT NULL AND `tbf`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtId != null">
+                                AND `tbf`.`id` &gt; #{tbBasicFeedbackPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteId != null">
+                                AND `tbf`.`id` &gt;= #{tbBasicFeedbackPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtId != null">
+                                AND `tbf`.`id` &lt; #{tbBasicFeedbackPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteId != null">
+                                AND `tbf`.`id` &lt;= #{tbBasicFeedbackPo.whereLteId}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartId != null">
+                                AND `tbf`.`id` &gt;= #{tbBasicFeedbackPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndId != null">
+                                AND `tbf`.`id` &lt;= #{tbBasicFeedbackPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereType != null">
+                                AND `tbf`.`type` = #{tbBasicFeedbackPo.whereType}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInTypes != null and tbBasicFeedbackPo.whereInTypes.size() > 0">
+                            AND `tbf`.`type` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInTypes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrTypes != null and tbBasicFeedbackPo.whereInOrTypes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrTypes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`type` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`type` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotType != null">
+                                AND `tbf`.`type` != #{tbBasicFeedbackPo.whereNotType}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInTypes != null and tbBasicFeedbackPo.whereNotInTypes.size() > 0">
+                            AND `tbf`.`type` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInTypes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullType != null and tbBasicFeedbackPo.whereIsNullType == true">
+                            AND `tbf`.`type` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullType != null and tbBasicFeedbackPo.whereIsNotNullType == true">
+                            AND `tbf`.`type` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyType != null and tbBasicFeedbackPo.whereIsEmptyType == true">
+                            AND (`tbf`.`type` IS NULL OR `tbf`.`type` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyType != null and tbBasicFeedbackPo.whereIsNotEmptyType == true">
+                            AND `tbf`.`type` IS NOT NULL AND `tbf`.`type` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtType != null">
+                                AND `tbf`.`type` &gt; #{tbBasicFeedbackPo.whereGtType}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteType != null">
+                                AND `tbf`.`type` &gt;= #{tbBasicFeedbackPo.whereGteType}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtType != null">
+                                AND `tbf`.`type` &lt; #{tbBasicFeedbackPo.whereLtType}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteType != null">
+                                AND `tbf`.`type` &lt;= #{tbBasicFeedbackPo.whereLteType}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartType != null">
+                                AND `tbf`.`type` &gt;= #{tbBasicFeedbackPo.whereStartType}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndType != null">
+                                AND `tbf`.`type` &lt;= #{tbBasicFeedbackPo.whereEndType}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereContent != null and tbBasicFeedbackPo.whereContent != ''">
+                                AND `tbf`.`content` = #{tbBasicFeedbackPo.whereContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInContents != null and tbBasicFeedbackPo.whereInContents.size() > 0">
+                            AND `tbf`.`content` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInContents"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrContents != null and tbBasicFeedbackPo.whereInOrContents.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrContents"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`content` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`content` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotContent != null and tbBasicFeedbackPo.whereNotContent != ''">
+                                AND `tbf`.`content` != #{tbBasicFeedbackPo.whereNotContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInContents != null and tbBasicFeedbackPo.whereNotInContents.size() > 0">
+                            AND `tbf`.`content` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInContents"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullContent != null and tbBasicFeedbackPo.whereIsNullContent == true">
+                            AND `tbf`.`content` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullContent != null and tbBasicFeedbackPo.whereIsNotNullContent == true">
+                            AND `tbf`.`content` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyContent != null and tbBasicFeedbackPo.whereIsEmptyContent == true">
+                            AND (`tbf`.`content` IS NULL OR `tbf`.`content` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyContent != null and tbBasicFeedbackPo.whereIsNotEmptyContent == true">
+                            AND `tbf`.`content` IS NOT NULL AND `tbf`.`content` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtContent != null and tbBasicFeedbackPo.whereGtContent != ''">
+                                AND `tbf`.`content` &gt; #{tbBasicFeedbackPo.whereGtContent}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteContent != null and tbBasicFeedbackPo.whereGteContent != ''">
+                                AND `tbf`.`content` &gt;= #{tbBasicFeedbackPo.whereGteContent}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtContent != null and tbBasicFeedbackPo.whereLtContent != ''">
+                                AND `tbf`.`content` &lt; #{tbBasicFeedbackPo.whereLtContent}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteContent != null and tbBasicFeedbackPo.whereLteContent != ''">
+                                AND `tbf`.`content` &lt;= #{tbBasicFeedbackPo.whereLteContent}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeContent != null and tbBasicFeedbackPo.whereLikeContent != ''">
+                                AND `tbf`.`content` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeContent}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartContent != null and tbBasicFeedbackPo.whereStartContent != ''">
+                                AND `tbf`.`content` &gt;= #{tbBasicFeedbackPo.whereStartContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndContent != null and tbBasicFeedbackPo.whereEndContent != ''">
+                                AND `tbf`.`content` &lt;= #{tbBasicFeedbackPo.whereEndContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereImages != null and tbBasicFeedbackPo.whereImages != ''">
+                                AND `tbf`.`images` = #{tbBasicFeedbackPo.whereImages}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInImagess != null and tbBasicFeedbackPo.whereInImagess.size() > 0">
+                            AND `tbf`.`images` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInImagess"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrImagess != null and tbBasicFeedbackPo.whereInOrImagess.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrImagess"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`images` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`images` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotImages != null and tbBasicFeedbackPo.whereNotImages != ''">
+                                AND `tbf`.`images` != #{tbBasicFeedbackPo.whereNotImages}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInImagess != null and tbBasicFeedbackPo.whereNotInImagess.size() > 0">
+                            AND `tbf`.`images` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInImagess"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullImages != null and tbBasicFeedbackPo.whereIsNullImages == true">
+                            AND `tbf`.`images` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullImages != null and tbBasicFeedbackPo.whereIsNotNullImages == true">
+                            AND `tbf`.`images` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyImages != null and tbBasicFeedbackPo.whereIsEmptyImages == true">
+                            AND (`tbf`.`images` IS NULL OR `tbf`.`images` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyImages != null and tbBasicFeedbackPo.whereIsNotEmptyImages == true">
+                            AND `tbf`.`images` IS NOT NULL AND `tbf`.`images` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtImages != null and tbBasicFeedbackPo.whereGtImages != ''">
+                                AND `tbf`.`images` &gt; #{tbBasicFeedbackPo.whereGtImages}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteImages != null and tbBasicFeedbackPo.whereGteImages != ''">
+                                AND `tbf`.`images` &gt;= #{tbBasicFeedbackPo.whereGteImages}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtImages != null and tbBasicFeedbackPo.whereLtImages != ''">
+                                AND `tbf`.`images` &lt; #{tbBasicFeedbackPo.whereLtImages}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteImages != null and tbBasicFeedbackPo.whereLteImages != ''">
+                                AND `tbf`.`images` &lt;= #{tbBasicFeedbackPo.whereLteImages}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeImages != null and tbBasicFeedbackPo.whereLikeImages != ''">
+                                AND `tbf`.`images` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeImages}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartImages != null and tbBasicFeedbackPo.whereStartImages != ''">
+                                AND `tbf`.`images` &gt;= #{tbBasicFeedbackPo.whereStartImages}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndImages != null and tbBasicFeedbackPo.whereEndImages != ''">
+                                AND `tbf`.`images` &lt;= #{tbBasicFeedbackPo.whereEndImages}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereContact != null and tbBasicFeedbackPo.whereContact != ''">
+                                AND `tbf`.`contact` = #{tbBasicFeedbackPo.whereContact}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInContacts != null and tbBasicFeedbackPo.whereInContacts.size() > 0">
+                            AND `tbf`.`contact` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInContacts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrContacts != null and tbBasicFeedbackPo.whereInOrContacts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrContacts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`contact` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`contact` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotContact != null and tbBasicFeedbackPo.whereNotContact != ''">
+                                AND `tbf`.`contact` != #{tbBasicFeedbackPo.whereNotContact}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInContacts != null and tbBasicFeedbackPo.whereNotInContacts.size() > 0">
+                            AND `tbf`.`contact` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInContacts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullContact != null and tbBasicFeedbackPo.whereIsNullContact == true">
+                            AND `tbf`.`contact` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullContact != null and tbBasicFeedbackPo.whereIsNotNullContact == true">
+                            AND `tbf`.`contact` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyContact != null and tbBasicFeedbackPo.whereIsEmptyContact == true">
+                            AND (`tbf`.`contact` IS NULL OR `tbf`.`contact` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyContact != null and tbBasicFeedbackPo.whereIsNotEmptyContact == true">
+                            AND `tbf`.`contact` IS NOT NULL AND `tbf`.`contact` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtContact != null and tbBasicFeedbackPo.whereGtContact != ''">
+                                AND `tbf`.`contact` &gt; #{tbBasicFeedbackPo.whereGtContact}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteContact != null and tbBasicFeedbackPo.whereGteContact != ''">
+                                AND `tbf`.`contact` &gt;= #{tbBasicFeedbackPo.whereGteContact}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtContact != null and tbBasicFeedbackPo.whereLtContact != ''">
+                                AND `tbf`.`contact` &lt; #{tbBasicFeedbackPo.whereLtContact}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteContact != null and tbBasicFeedbackPo.whereLteContact != ''">
+                                AND `tbf`.`contact` &lt;= #{tbBasicFeedbackPo.whereLteContact}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeContact != null and tbBasicFeedbackPo.whereLikeContact != ''">
+                                AND `tbf`.`contact` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeContact}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartContact != null and tbBasicFeedbackPo.whereStartContact != ''">
+                                AND `tbf`.`contact` &gt;= #{tbBasicFeedbackPo.whereStartContact}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndContact != null and tbBasicFeedbackPo.whereEndContact != ''">
+                                AND `tbf`.`contact` &lt;= #{tbBasicFeedbackPo.whereEndContact}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStatus != null">
+                                AND `tbf`.`status` = #{tbBasicFeedbackPo.whereStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInStatuss != null and tbBasicFeedbackPo.whereInStatuss.size() > 0">
+                            AND `tbf`.`status` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrStatuss != null and tbBasicFeedbackPo.whereInOrStatuss.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrStatuss"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`status` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`status` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotStatus != null">
+                                AND `tbf`.`status` != #{tbBasicFeedbackPo.whereNotStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInStatuss != null and tbBasicFeedbackPo.whereNotInStatuss.size() > 0">
+                            AND `tbf`.`status` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullStatus != null and tbBasicFeedbackPo.whereIsNullStatus == true">
+                            AND `tbf`.`status` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullStatus != null and tbBasicFeedbackPo.whereIsNotNullStatus == true">
+                            AND `tbf`.`status` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyStatus != null and tbBasicFeedbackPo.whereIsEmptyStatus == true">
+                            AND (`tbf`.`status` IS NULL OR `tbf`.`status` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyStatus != null and tbBasicFeedbackPo.whereIsNotEmptyStatus == true">
+                            AND `tbf`.`status` IS NOT NULL AND `tbf`.`status` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtStatus != null">
+                                AND `tbf`.`status` &gt; #{tbBasicFeedbackPo.whereGtStatus}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteStatus != null">
+                                AND `tbf`.`status` &gt;= #{tbBasicFeedbackPo.whereGteStatus}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtStatus != null">
+                                AND `tbf`.`status` &lt; #{tbBasicFeedbackPo.whereLtStatus}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteStatus != null">
+                                AND `tbf`.`status` &lt;= #{tbBasicFeedbackPo.whereLteStatus}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartStatus != null">
+                                AND `tbf`.`status` &gt;= #{tbBasicFeedbackPo.whereStartStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndStatus != null">
+                                AND `tbf`.`status` &lt;= #{tbBasicFeedbackPo.whereEndStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereIsDelete != null">
+                                AND `tbf`.`isDelete` = #{tbBasicFeedbackPo.whereIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInIsDeletes != null and tbBasicFeedbackPo.whereInIsDeletes.size() > 0">
+                            AND `tbf`.`isDelete` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrIsDeletes != null and tbBasicFeedbackPo.whereInOrIsDeletes.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrIsDeletes"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`isDelete` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`isDelete` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotIsDelete != null">
+                                AND `tbf`.`isDelete` != #{tbBasicFeedbackPo.whereNotIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInIsDeletes != null and tbBasicFeedbackPo.whereNotInIsDeletes.size() > 0">
+                            AND `tbf`.`isDelete` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInIsDeletes"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullIsDelete != null and tbBasicFeedbackPo.whereIsNullIsDelete == true">
+                            AND `tbf`.`isDelete` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullIsDelete != null and tbBasicFeedbackPo.whereIsNotNullIsDelete == true">
+                            AND `tbf`.`isDelete` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyIsDelete != null and tbBasicFeedbackPo.whereIsEmptyIsDelete == true">
+                            AND (`tbf`.`isDelete` IS NULL OR `tbf`.`isDelete` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyIsDelete != null and tbBasicFeedbackPo.whereIsNotEmptyIsDelete == true">
+                            AND `tbf`.`isDelete` IS NOT NULL AND `tbf`.`isDelete` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtIsDelete != null">
+                                AND `tbf`.`isDelete` &gt; #{tbBasicFeedbackPo.whereGtIsDelete}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteIsDelete != null">
+                                AND `tbf`.`isDelete` &gt;= #{tbBasicFeedbackPo.whereGteIsDelete}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtIsDelete != null">
+                                AND `tbf`.`isDelete` &lt; #{tbBasicFeedbackPo.whereLtIsDelete}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteIsDelete != null">
+                                AND `tbf`.`isDelete` &lt;= #{tbBasicFeedbackPo.whereLteIsDelete}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartIsDelete != null">
+                                AND `tbf`.`isDelete` &gt;= #{tbBasicFeedbackPo.whereStartIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndIsDelete != null">
+                                AND `tbf`.`isDelete` &lt;= #{tbBasicFeedbackPo.whereEndIsDelete}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereDeviceInfo != null and tbBasicFeedbackPo.whereDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` = #{tbBasicFeedbackPo.whereDeviceInfo}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInDeviceInfos != null and tbBasicFeedbackPo.whereInDeviceInfos.size() > 0">
+                            AND `tbf`.`deviceInfo` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInDeviceInfos"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrDeviceInfos != null and tbBasicFeedbackPo.whereInOrDeviceInfos.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrDeviceInfos"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`deviceInfo` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`deviceInfo` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotDeviceInfo != null and tbBasicFeedbackPo.whereNotDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` != #{tbBasicFeedbackPo.whereNotDeviceInfo}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInDeviceInfos != null and tbBasicFeedbackPo.whereNotInDeviceInfos.size() > 0">
+                            AND `tbf`.`deviceInfo` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInDeviceInfos"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullDeviceInfo != null and tbBasicFeedbackPo.whereIsNullDeviceInfo == true">
+                            AND `tbf`.`deviceInfo` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullDeviceInfo != null and tbBasicFeedbackPo.whereIsNotNullDeviceInfo == true">
+                            AND `tbf`.`deviceInfo` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyDeviceInfo != null and tbBasicFeedbackPo.whereIsEmptyDeviceInfo == true">
+                            AND (`tbf`.`deviceInfo` IS NULL OR `tbf`.`deviceInfo` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyDeviceInfo != null and tbBasicFeedbackPo.whereIsNotEmptyDeviceInfo == true">
+                            AND `tbf`.`deviceInfo` IS NOT NULL AND `tbf`.`deviceInfo` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtDeviceInfo != null and tbBasicFeedbackPo.whereGtDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &gt; #{tbBasicFeedbackPo.whereGtDeviceInfo}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteDeviceInfo != null and tbBasicFeedbackPo.whereGteDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &gt;= #{tbBasicFeedbackPo.whereGteDeviceInfo}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtDeviceInfo != null and tbBasicFeedbackPo.whereLtDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &lt; #{tbBasicFeedbackPo.whereLtDeviceInfo}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteDeviceInfo != null and tbBasicFeedbackPo.whereLteDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &lt;= #{tbBasicFeedbackPo.whereLteDeviceInfo}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeDeviceInfo != null and tbBasicFeedbackPo.whereLikeDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeDeviceInfo}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartDeviceInfo != null and tbBasicFeedbackPo.whereStartDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &gt;= #{tbBasicFeedbackPo.whereStartDeviceInfo}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndDeviceInfo != null and tbBasicFeedbackPo.whereEndDeviceInfo != ''">
+                                AND `tbf`.`deviceInfo` &lt;= #{tbBasicFeedbackPo.whereEndDeviceInfo}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereAppVersion != null and tbBasicFeedbackPo.whereAppVersion != ''">
+                                AND `tbf`.`appVersion` = #{tbBasicFeedbackPo.whereAppVersion}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInAppVersions != null and tbBasicFeedbackPo.whereInAppVersions.size() > 0">
+                            AND `tbf`.`appVersion` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInAppVersions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrAppVersions != null and tbBasicFeedbackPo.whereInOrAppVersions.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrAppVersions"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`appVersion` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`appVersion` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotAppVersion != null and tbBasicFeedbackPo.whereNotAppVersion != ''">
+                                AND `tbf`.`appVersion` != #{tbBasicFeedbackPo.whereNotAppVersion}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInAppVersions != null and tbBasicFeedbackPo.whereNotInAppVersions.size() > 0">
+                            AND `tbf`.`appVersion` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInAppVersions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullAppVersion != null and tbBasicFeedbackPo.whereIsNullAppVersion == true">
+                            AND `tbf`.`appVersion` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullAppVersion != null and tbBasicFeedbackPo.whereIsNotNullAppVersion == true">
+                            AND `tbf`.`appVersion` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyAppVersion != null and tbBasicFeedbackPo.whereIsEmptyAppVersion == true">
+                            AND (`tbf`.`appVersion` IS NULL OR `tbf`.`appVersion` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyAppVersion != null and tbBasicFeedbackPo.whereIsNotEmptyAppVersion == true">
+                            AND `tbf`.`appVersion` IS NOT NULL AND `tbf`.`appVersion` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtAppVersion != null and tbBasicFeedbackPo.whereGtAppVersion != ''">
+                                AND `tbf`.`appVersion` &gt; #{tbBasicFeedbackPo.whereGtAppVersion}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteAppVersion != null and tbBasicFeedbackPo.whereGteAppVersion != ''">
+                                AND `tbf`.`appVersion` &gt;= #{tbBasicFeedbackPo.whereGteAppVersion}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtAppVersion != null and tbBasicFeedbackPo.whereLtAppVersion != ''">
+                                AND `tbf`.`appVersion` &lt; #{tbBasicFeedbackPo.whereLtAppVersion}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteAppVersion != null and tbBasicFeedbackPo.whereLteAppVersion != ''">
+                                AND `tbf`.`appVersion` &lt;= #{tbBasicFeedbackPo.whereLteAppVersion}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeAppVersion != null and tbBasicFeedbackPo.whereLikeAppVersion != ''">
+                                AND `tbf`.`appVersion` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeAppVersion}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartAppVersion != null and tbBasicFeedbackPo.whereStartAppVersion != ''">
+                                AND `tbf`.`appVersion` &gt;= #{tbBasicFeedbackPo.whereStartAppVersion}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndAppVersion != null and tbBasicFeedbackPo.whereEndAppVersion != ''">
+                                AND `tbf`.`appVersion` &lt;= #{tbBasicFeedbackPo.whereEndAppVersion}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereReplyContent != null and tbBasicFeedbackPo.whereReplyContent != ''">
+                                AND `tbf`.`replyContent` = #{tbBasicFeedbackPo.whereReplyContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInReplyContents != null and tbBasicFeedbackPo.whereInReplyContents.size() > 0">
+                            AND `tbf`.`replyContent` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInReplyContents"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrReplyContents != null and tbBasicFeedbackPo.whereInOrReplyContents.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrReplyContents"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`replyContent` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`replyContent` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotReplyContent != null and tbBasicFeedbackPo.whereNotReplyContent != ''">
+                                AND `tbf`.`replyContent` != #{tbBasicFeedbackPo.whereNotReplyContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInReplyContents != null and tbBasicFeedbackPo.whereNotInReplyContents.size() > 0">
+                            AND `tbf`.`replyContent` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInReplyContents"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullReplyContent != null and tbBasicFeedbackPo.whereIsNullReplyContent == true">
+                            AND `tbf`.`replyContent` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullReplyContent != null and tbBasicFeedbackPo.whereIsNotNullReplyContent == true">
+                            AND `tbf`.`replyContent` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyReplyContent != null and tbBasicFeedbackPo.whereIsEmptyReplyContent == true">
+                            AND (`tbf`.`replyContent` IS NULL OR `tbf`.`replyContent` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyReplyContent != null and tbBasicFeedbackPo.whereIsNotEmptyReplyContent == true">
+                            AND `tbf`.`replyContent` IS NOT NULL AND `tbf`.`replyContent` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtReplyContent != null and tbBasicFeedbackPo.whereGtReplyContent != ''">
+                                AND `tbf`.`replyContent` &gt; #{tbBasicFeedbackPo.whereGtReplyContent}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteReplyContent != null and tbBasicFeedbackPo.whereGteReplyContent != ''">
+                                AND `tbf`.`replyContent` &gt;= #{tbBasicFeedbackPo.whereGteReplyContent}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtReplyContent != null and tbBasicFeedbackPo.whereLtReplyContent != ''">
+                                AND `tbf`.`replyContent` &lt; #{tbBasicFeedbackPo.whereLtReplyContent}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteReplyContent != null and tbBasicFeedbackPo.whereLteReplyContent != ''">
+                                AND `tbf`.`replyContent` &lt;= #{tbBasicFeedbackPo.whereLteReplyContent}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereLikeReplyContent != null and tbBasicFeedbackPo.whereLikeReplyContent != ''">
+                                AND `tbf`.`replyContent` LIKE CONCAT('%', #{tbBasicFeedbackPo.whereLikeReplyContent}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereStartReplyContent != null and tbBasicFeedbackPo.whereStartReplyContent != ''">
+                                AND `tbf`.`replyContent` &gt;= #{tbBasicFeedbackPo.whereStartReplyContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndReplyContent != null and tbBasicFeedbackPo.whereEndReplyContent != ''">
+                                AND `tbf`.`replyContent` &lt;= #{tbBasicFeedbackPo.whereEndReplyContent}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereReplyAt != null and tbBasicFeedbackPo.whereReplyAt != ''">
+                                AND `tbf`.`replyAt` = #{tbBasicFeedbackPo.whereReplyAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInReplyAts != null and tbBasicFeedbackPo.whereInReplyAts.size() > 0">
+                            AND `tbf`.`replyAt` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInReplyAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrReplyAts != null and tbBasicFeedbackPo.whereInOrReplyAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrReplyAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`replyAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`replyAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotReplyAt != null and tbBasicFeedbackPo.whereNotReplyAt != ''">
+                                AND `tbf`.`replyAt` != #{tbBasicFeedbackPo.whereNotReplyAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInReplyAts != null and tbBasicFeedbackPo.whereNotInReplyAts.size() > 0">
+                            AND `tbf`.`replyAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInReplyAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullReplyAt != null and tbBasicFeedbackPo.whereIsNullReplyAt == true">
+                            AND `tbf`.`replyAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullReplyAt != null and tbBasicFeedbackPo.whereIsNotNullReplyAt == true">
+                            AND `tbf`.`replyAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyReplyAt != null and tbBasicFeedbackPo.whereIsEmptyReplyAt == true">
+                            AND (`tbf`.`replyAt` IS NULL OR `tbf`.`replyAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyReplyAt != null and tbBasicFeedbackPo.whereIsNotEmptyReplyAt == true">
+                            AND `tbf`.`replyAt` IS NOT NULL AND `tbf`.`replyAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtReplyAt != null and tbBasicFeedbackPo.whereGtReplyAt != ''">
+                                AND `tbf`.`replyAt` &gt; #{tbBasicFeedbackPo.whereGtReplyAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteReplyAt != null and tbBasicFeedbackPo.whereGteReplyAt != ''">
+                                AND `tbf`.`replyAt` &gt;= #{tbBasicFeedbackPo.whereGteReplyAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtReplyAt != null and tbBasicFeedbackPo.whereLtReplyAt != ''">
+                                AND `tbf`.`replyAt` &lt; #{tbBasicFeedbackPo.whereLtReplyAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteReplyAt != null and tbBasicFeedbackPo.whereLteReplyAt != ''">
+                                AND `tbf`.`replyAt` &lt;= #{tbBasicFeedbackPo.whereLteReplyAt}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartReplyAt != null and tbBasicFeedbackPo.whereStartReplyAt != ''">
+                                AND `tbf`.`replyAt` &gt;= #{tbBasicFeedbackPo.whereStartReplyAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndReplyAt != null and tbBasicFeedbackPo.whereEndReplyAt != ''">
+                                AND `tbf`.`replyAt` &lt;= #{tbBasicFeedbackPo.whereEndReplyAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereCreatedAt != null and tbBasicFeedbackPo.whereCreatedAt != ''">
+                                AND `tbf`.`createdAt` = #{tbBasicFeedbackPo.whereCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInCreatedAts != null and tbBasicFeedbackPo.whereInCreatedAts.size() > 0">
+                            AND `tbf`.`createdAt` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrCreatedAts != null and tbBasicFeedbackPo.whereInOrCreatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrCreatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`createdAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`createdAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotCreatedAt != null and tbBasicFeedbackPo.whereNotCreatedAt != ''">
+                                AND `tbf`.`createdAt` != #{tbBasicFeedbackPo.whereNotCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInCreatedAts != null and tbBasicFeedbackPo.whereNotInCreatedAts.size() > 0">
+                            AND `tbf`.`createdAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullCreatedAt != null and tbBasicFeedbackPo.whereIsNullCreatedAt == true">
+                            AND `tbf`.`createdAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullCreatedAt != null and tbBasicFeedbackPo.whereIsNotNullCreatedAt == true">
+                            AND `tbf`.`createdAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyCreatedAt != null and tbBasicFeedbackPo.whereIsEmptyCreatedAt == true">
+                            AND (`tbf`.`createdAt` IS NULL OR `tbf`.`createdAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyCreatedAt != null and tbBasicFeedbackPo.whereIsNotEmptyCreatedAt == true">
+                            AND `tbf`.`createdAt` IS NOT NULL AND `tbf`.`createdAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtCreatedAt != null and tbBasicFeedbackPo.whereGtCreatedAt != ''">
+                                AND `tbf`.`createdAt` &gt; #{tbBasicFeedbackPo.whereGtCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteCreatedAt != null and tbBasicFeedbackPo.whereGteCreatedAt != ''">
+                                AND `tbf`.`createdAt` &gt;= #{tbBasicFeedbackPo.whereGteCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtCreatedAt != null and tbBasicFeedbackPo.whereLtCreatedAt != ''">
+                                AND `tbf`.`createdAt` &lt; #{tbBasicFeedbackPo.whereLtCreatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteCreatedAt != null and tbBasicFeedbackPo.whereLteCreatedAt != ''">
+                                AND `tbf`.`createdAt` &lt;= #{tbBasicFeedbackPo.whereLteCreatedAt}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartCreatedAt != null and tbBasicFeedbackPo.whereStartCreatedAt != ''">
+                                AND `tbf`.`createdAt` &gt;= #{tbBasicFeedbackPo.whereStartCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndCreatedAt != null and tbBasicFeedbackPo.whereEndCreatedAt != ''">
+                                AND `tbf`.`createdAt` &lt;= #{tbBasicFeedbackPo.whereEndCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereCreatedUserId != null">
+                                AND `tbf`.`createdUserId` = #{tbBasicFeedbackPo.whereCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInCreatedUserIds != null and tbBasicFeedbackPo.whereInCreatedUserIds.size() > 0">
+                            AND `tbf`.`createdUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrCreatedUserIds != null and tbBasicFeedbackPo.whereInOrCreatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrCreatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`createdUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`createdUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotCreatedUserId != null">
+                                AND `tbf`.`createdUserId` != #{tbBasicFeedbackPo.whereNotCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInCreatedUserIds != null and tbBasicFeedbackPo.whereNotInCreatedUserIds.size() > 0">
+                            AND `tbf`.`createdUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullCreatedUserId != null and tbBasicFeedbackPo.whereIsNullCreatedUserId == true">
+                            AND `tbf`.`createdUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullCreatedUserId != null and tbBasicFeedbackPo.whereIsNotNullCreatedUserId == true">
+                            AND `tbf`.`createdUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyCreatedUserId != null and tbBasicFeedbackPo.whereIsEmptyCreatedUserId == true">
+                            AND (`tbf`.`createdUserId` IS NULL OR `tbf`.`createdUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyCreatedUserId != null and tbBasicFeedbackPo.whereIsNotEmptyCreatedUserId == true">
+                            AND `tbf`.`createdUserId` IS NOT NULL AND `tbf`.`createdUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &gt; #{tbBasicFeedbackPo.whereGtCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &gt;= #{tbBasicFeedbackPo.whereGteCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &lt; #{tbBasicFeedbackPo.whereLtCreatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &lt;= #{tbBasicFeedbackPo.whereLteCreatedUserId}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &gt;= #{tbBasicFeedbackPo.whereStartCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndCreatedUserId != null">
+                                AND `tbf`.`createdUserId` &lt;= #{tbBasicFeedbackPo.whereEndCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereUpdatedAt != null and tbBasicFeedbackPo.whereUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` = #{tbBasicFeedbackPo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInUpdatedAts != null and tbBasicFeedbackPo.whereInUpdatedAts.size() > 0">
+                            AND `tbf`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrUpdatedAts != null and tbBasicFeedbackPo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotUpdatedAt != null and tbBasicFeedbackPo.whereNotUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` != #{tbBasicFeedbackPo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInUpdatedAts != null and tbBasicFeedbackPo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbf`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullUpdatedAt != null and tbBasicFeedbackPo.whereIsNullUpdatedAt == true">
+                            AND `tbf`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullUpdatedAt != null and tbBasicFeedbackPo.whereIsNotNullUpdatedAt == true">
+                            AND `tbf`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyUpdatedAt != null and tbBasicFeedbackPo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbf`.`updatedAt` IS NULL OR `tbf`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyUpdatedAt != null and tbBasicFeedbackPo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbf`.`updatedAt` IS NOT NULL AND `tbf`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtUpdatedAt != null and tbBasicFeedbackPo.whereGtUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &gt; #{tbBasicFeedbackPo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteUpdatedAt != null and tbBasicFeedbackPo.whereGteUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &gt;= #{tbBasicFeedbackPo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtUpdatedAt != null and tbBasicFeedbackPo.whereLtUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &lt; #{tbBasicFeedbackPo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteUpdatedAt != null and tbBasicFeedbackPo.whereLteUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &lt;= #{tbBasicFeedbackPo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartUpdatedAt != null and tbBasicFeedbackPo.whereStartUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &gt;= #{tbBasicFeedbackPo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndUpdatedAt != null and tbBasicFeedbackPo.whereEndUpdatedAt != ''">
+                                AND `tbf`.`updatedAt` &lt;= #{tbBasicFeedbackPo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` = #{tbBasicFeedbackPo.whereUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInUpdatedUserIds != null and tbBasicFeedbackPo.whereInUpdatedUserIds.size() > 0">
+                            AND `tbf`.`updatedUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereInOrUpdatedUserIds != null and tbBasicFeedbackPo.whereInOrUpdatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereInOrUpdatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbf`.`updatedUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbf`.`updatedUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereNotUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` != #{tbBasicFeedbackPo.whereNotUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereNotInUpdatedUserIds != null and tbBasicFeedbackPo.whereNotInUpdatedUserIds.size() > 0">
+                            AND `tbf`.`updatedUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicFeedbackPo.whereNotInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicFeedbackPo.whereIsNullUpdatedUserId != null and tbBasicFeedbackPo.whereIsNullUpdatedUserId == true">
+                            AND `tbf`.`updatedUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotNullUpdatedUserId != null and tbBasicFeedbackPo.whereIsNotNullUpdatedUserId == true">
+                            AND `tbf`.`updatedUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsEmptyUpdatedUserId != null and tbBasicFeedbackPo.whereIsEmptyUpdatedUserId == true">
+                            AND (`tbf`.`updatedUserId` IS NULL OR `tbf`.`updatedUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicFeedbackPo.whereIsNotEmptyUpdatedUserId != null and tbBasicFeedbackPo.whereIsNotEmptyUpdatedUserId == true">
+                            AND `tbf`.`updatedUserId` IS NOT NULL AND `tbf`.`updatedUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicFeedbackPo.whereGtUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &gt; #{tbBasicFeedbackPo.whereGtUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicFeedbackPo.whereGteUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &gt;= #{tbBasicFeedbackPo.whereGteUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLtUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &lt; #{tbBasicFeedbackPo.whereLtUpdatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereLteUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &lt;= #{tbBasicFeedbackPo.whereLteUpdatedUserId}
+                            </if>
+                            <if test="tbBasicFeedbackPo.whereStartUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &gt;= #{tbBasicFeedbackPo.whereStartUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicFeedbackPo.whereEndUpdatedUserId != null">
+                                AND `tbf`.`updatedUserId` &lt;= #{tbBasicFeedbackPo.whereEndUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="com.api.basic.data.entity.TbBasicFeedback">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.*
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="int">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT `tbf`.`id` </when>
+            <otherwise> `tbf`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`id`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`id`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`id`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`id`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumType"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`type`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxType"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`type`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minType"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`type`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgType"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`type`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumStatus"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`status`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxStatus"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`status`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minStatus"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`status`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgStatus"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`status`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`isDelete`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`isDelete`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`isDelete`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgIsDelete"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`isDelete`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`createdUserId`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`createdUserId`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`createdUserId`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`createdUserId`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`updatedUserId`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`updatedUserId`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`updatedUserId`) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicFeedbackPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicFeedbackPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicFeedbackPo.useDistinct != null and tbBasicFeedbackPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbf`.`updatedUserId`), 0) as result
+        FROM tb_basic_feedback as `tbf`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicFeedbackPo.groupByFields != null and tbBasicFeedbackPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicFeedbackPo.groupByFields" separator=",">
+            `tbf`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicFeedbackPo.havingClause != null and tbBasicFeedbackPo.havingClause != ''">
+        HAVING #{tbBasicFeedbackPo.havingClause}
+        </if>
+    </select>
+</mapper>

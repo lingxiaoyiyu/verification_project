@@ -1,0 +1,3176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicSysDictionaryMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicSysDictionary"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_sys_dictionary (
+        <trim suffixOverrides=",">
+                            <if test="parentId != null">
+                                `parentId`,
+                            </if>
+                        <if test="name != null">
+                            `name`,
+                        </if>
+                        <if test="identifying != null">
+                            `identifying`,
+                        </if>
+                            <if test="sort != null">
+                                `sort`,
+                            </if>
+                            <if test="description != null and description != ''">
+                                `description`,
+                            </if>
+                            <if test="status != null">
+                                `status`,
+                            </if>
+                        <if test="createdUserId != null">
+                            `createdUserId`,
+                        </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                        <if test="updatedUserId != null">
+                            `updatedUserId`,
+                        </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                            <if test="parentId != null">
+                                #{parentId},
+                            </if>
+                        <if test="name != null">
+                            #{name},
+                        </if>
+                        <if test="identifying != null">
+                            #{identifying},
+                        </if>
+                            <if test="sort != null">
+                                #{sort},
+                            </if>
+                            <if test="description != null and description != ''">
+                                #{description},
+                            </if>
+                            <if test="status != null">
+                                #{status},
+                            </if>
+                        <if test="createdUserId != null">
+                            #{createdUserId},
+                        </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                        <if test="updatedUserId != null">
+                            #{updatedUserId},
+                        </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        DELETE `tbsd` FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        UPDATE tb_basic_sys_dictionary as `tbsd`
+        <set>
+                <if test="tbBasicSysDictionaryPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`id` = #{tbBasicSysDictionaryPo.id},
+                </if>
+                <if test="tbBasicSysDictionaryPo.parentId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`parentId` = #{tbBasicSysDictionaryPo.parentId},
+                </if>
+                <if test="tbBasicSysDictionaryPo.name != null">
+                        <if test="tbBasicSysDictionaryPo.name == ''">
+                    `tbsd`.`name` = NULL,
+                        </if>
+                        <if test="tbBasicSysDictionaryPo.name != ''">
+                    `tbsd`.`name` = #{tbBasicSysDictionaryPo.name},
+                        </if>
+                </if>
+                <if test="tbBasicSysDictionaryPo.identifying != null">
+                        <if test="tbBasicSysDictionaryPo.identifying == ''">
+                    `tbsd`.`identifying` = NULL,
+                        </if>
+                        <if test="tbBasicSysDictionaryPo.identifying != ''">
+                    `tbsd`.`identifying` = #{tbBasicSysDictionaryPo.identifying},
+                        </if>
+                </if>
+                <if test="tbBasicSysDictionaryPo.sort != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`sort` = #{tbBasicSysDictionaryPo.sort},
+                </if>
+                <if test="tbBasicSysDictionaryPo.description != null">
+                        <if test="tbBasicSysDictionaryPo.description == ''">
+                    `tbsd`.`description` = NULL,
+                        </if>
+                        <if test="tbBasicSysDictionaryPo.description != ''">
+                    `tbsd`.`description` = #{tbBasicSysDictionaryPo.description},
+                        </if>
+                </if>
+                <if test="tbBasicSysDictionaryPo.status != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`status` = #{tbBasicSysDictionaryPo.status},
+                </if>
+                <if test="tbBasicSysDictionaryPo.createdAt != null">
+                        <if test="tbBasicSysDictionaryPo.createdAt == ''">
+                    `tbsd`.`createdAt` = '',
+                        </if>
+                        <if test="tbBasicSysDictionaryPo.createdAt != ''">
+                    `tbsd`.`createdAt` = #{tbBasicSysDictionaryPo.createdAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysDictionaryPo.createdUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`createdUserId` = #{tbBasicSysDictionaryPo.createdUserId},
+                </if>
+                <if test="tbBasicSysDictionaryPo.updatedAt != null">
+                        <if test="tbBasicSysDictionaryPo.updatedAt == ''">
+                    `tbsd`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicSysDictionaryPo.updatedAt != ''">
+                    `tbsd`.`updatedAt` = #{tbBasicSysDictionaryPo.updatedAt},
+                        </if>
+                </if>
+                <if test="tbBasicSysDictionaryPo.updatedUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsd`.`updatedUserId` = #{tbBasicSysDictionaryPo.updatedUserId},
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicSysDictionaryPo != null">
+                            <if test="tbBasicSysDictionaryPo.whereId != null">
+                                AND `tbsd`.`id` = #{tbBasicSysDictionaryPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInIds != null and tbBasicSysDictionaryPo.whereInIds.size() > 0">
+                            AND `tbsd`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrIds != null and tbBasicSysDictionaryPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotId != null">
+                                AND `tbsd`.`id` != #{tbBasicSysDictionaryPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInIds != null and tbBasicSysDictionaryPo.whereNotInIds.size() > 0">
+                            AND `tbsd`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullId != null and tbBasicSysDictionaryPo.whereIsNullId == true">
+                            AND `tbsd`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullId != null and tbBasicSysDictionaryPo.whereIsNotNullId == true">
+                            AND `tbsd`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyId != null and tbBasicSysDictionaryPo.whereIsEmptyId == true">
+                            AND (`tbsd`.`id` IS NULL OR `tbsd`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyId != null and tbBasicSysDictionaryPo.whereIsNotEmptyId == true">
+                            AND `tbsd`.`id` IS NOT NULL AND `tbsd`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtId != null">
+                                AND `tbsd`.`id` &gt; #{tbBasicSysDictionaryPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteId != null">
+                                AND `tbsd`.`id` &gt;= #{tbBasicSysDictionaryPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtId != null">
+                                AND `tbsd`.`id` &lt; #{tbBasicSysDictionaryPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteId != null">
+                                AND `tbsd`.`id` &lt;= #{tbBasicSysDictionaryPo.whereLteId}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartId != null">
+                                AND `tbsd`.`id` &gt;= #{tbBasicSysDictionaryPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndId != null">
+                                AND `tbsd`.`id` &lt;= #{tbBasicSysDictionaryPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereParentId != null">
+                                AND `tbsd`.`parentId` = #{tbBasicSysDictionaryPo.whereParentId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInParentIds != null and tbBasicSysDictionaryPo.whereInParentIds.size() > 0">
+                            AND `tbsd`.`parentId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInParentIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrParentIds != null and tbBasicSysDictionaryPo.whereInOrParentIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrParentIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`parentId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`parentId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotParentId != null">
+                                AND `tbsd`.`parentId` != #{tbBasicSysDictionaryPo.whereNotParentId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInParentIds != null and tbBasicSysDictionaryPo.whereNotInParentIds.size() > 0">
+                            AND `tbsd`.`parentId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInParentIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullParentId != null and tbBasicSysDictionaryPo.whereIsNullParentId == true">
+                            AND `tbsd`.`parentId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullParentId != null and tbBasicSysDictionaryPo.whereIsNotNullParentId == true">
+                            AND `tbsd`.`parentId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyParentId != null and tbBasicSysDictionaryPo.whereIsEmptyParentId == true">
+                            AND (`tbsd`.`parentId` IS NULL OR `tbsd`.`parentId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyParentId != null and tbBasicSysDictionaryPo.whereIsNotEmptyParentId == true">
+                            AND `tbsd`.`parentId` IS NOT NULL AND `tbsd`.`parentId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtParentId != null">
+                                AND `tbsd`.`parentId` &gt; #{tbBasicSysDictionaryPo.whereGtParentId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteParentId != null">
+                                AND `tbsd`.`parentId` &gt;= #{tbBasicSysDictionaryPo.whereGteParentId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtParentId != null">
+                                AND `tbsd`.`parentId` &lt; #{tbBasicSysDictionaryPo.whereLtParentId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteParentId != null">
+                                AND `tbsd`.`parentId` &lt;= #{tbBasicSysDictionaryPo.whereLteParentId}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartParentId != null">
+                                AND `tbsd`.`parentId` &gt;= #{tbBasicSysDictionaryPo.whereStartParentId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndParentId != null">
+                                AND `tbsd`.`parentId` &lt;= #{tbBasicSysDictionaryPo.whereEndParentId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereName != null and tbBasicSysDictionaryPo.whereName != ''">
+                                AND `tbsd`.`name` = #{tbBasicSysDictionaryPo.whereName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInNames != null and tbBasicSysDictionaryPo.whereInNames.size() > 0">
+                            AND `tbsd`.`name` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrNames != null and tbBasicSysDictionaryPo.whereInOrNames.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrNames"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`name` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`name` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotName != null and tbBasicSysDictionaryPo.whereNotName != ''">
+                                AND `tbsd`.`name` != #{tbBasicSysDictionaryPo.whereNotName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInNames != null and tbBasicSysDictionaryPo.whereNotInNames.size() > 0">
+                            AND `tbsd`.`name` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullName != null and tbBasicSysDictionaryPo.whereIsNullName == true">
+                            AND `tbsd`.`name` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullName != null and tbBasicSysDictionaryPo.whereIsNotNullName == true">
+                            AND `tbsd`.`name` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyName != null and tbBasicSysDictionaryPo.whereIsEmptyName == true">
+                            AND (`tbsd`.`name` IS NULL OR `tbsd`.`name` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyName != null and tbBasicSysDictionaryPo.whereIsNotEmptyName == true">
+                            AND `tbsd`.`name` IS NOT NULL AND `tbsd`.`name` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtName != null and tbBasicSysDictionaryPo.whereGtName != ''">
+                                AND `tbsd`.`name` &gt; #{tbBasicSysDictionaryPo.whereGtName}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteName != null and tbBasicSysDictionaryPo.whereGteName != ''">
+                                AND `tbsd`.`name` &gt;= #{tbBasicSysDictionaryPo.whereGteName}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtName != null and tbBasicSysDictionaryPo.whereLtName != ''">
+                                AND `tbsd`.`name` &lt; #{tbBasicSysDictionaryPo.whereLtName}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteName != null and tbBasicSysDictionaryPo.whereLteName != ''">
+                                AND `tbsd`.`name` &lt;= #{tbBasicSysDictionaryPo.whereLteName}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereLikeName != null and tbBasicSysDictionaryPo.whereLikeName != ''">
+                                AND `tbsd`.`name` LIKE CONCAT('%', #{tbBasicSysDictionaryPo.whereLikeName}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereStartName != null and tbBasicSysDictionaryPo.whereStartName != ''">
+                                AND `tbsd`.`name` &gt;= #{tbBasicSysDictionaryPo.whereStartName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndName != null and tbBasicSysDictionaryPo.whereEndName != ''">
+                                AND `tbsd`.`name` &lt;= #{tbBasicSysDictionaryPo.whereEndName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereIdentifying != null and tbBasicSysDictionaryPo.whereIdentifying != ''">
+                                AND `tbsd`.`identifying` = #{tbBasicSysDictionaryPo.whereIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInIdentifyings != null and tbBasicSysDictionaryPo.whereInIdentifyings.size() > 0">
+                            AND `tbsd`.`identifying` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInIdentifyings"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrIdentifyings != null and tbBasicSysDictionaryPo.whereInOrIdentifyings.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrIdentifyings"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`identifying` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`identifying` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotIdentifying != null and tbBasicSysDictionaryPo.whereNotIdentifying != ''">
+                                AND `tbsd`.`identifying` != #{tbBasicSysDictionaryPo.whereNotIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInIdentifyings != null and tbBasicSysDictionaryPo.whereNotInIdentifyings.size() > 0">
+                            AND `tbsd`.`identifying` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInIdentifyings"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullIdentifying != null and tbBasicSysDictionaryPo.whereIsNullIdentifying == true">
+                            AND `tbsd`.`identifying` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullIdentifying != null and tbBasicSysDictionaryPo.whereIsNotNullIdentifying == true">
+                            AND `tbsd`.`identifying` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyIdentifying != null and tbBasicSysDictionaryPo.whereIsEmptyIdentifying == true">
+                            AND (`tbsd`.`identifying` IS NULL OR `tbsd`.`identifying` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyIdentifying != null and tbBasicSysDictionaryPo.whereIsNotEmptyIdentifying == true">
+                            AND `tbsd`.`identifying` IS NOT NULL AND `tbsd`.`identifying` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtIdentifying != null and tbBasicSysDictionaryPo.whereGtIdentifying != ''">
+                                AND `tbsd`.`identifying` &gt; #{tbBasicSysDictionaryPo.whereGtIdentifying}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteIdentifying != null and tbBasicSysDictionaryPo.whereGteIdentifying != ''">
+                                AND `tbsd`.`identifying` &gt;= #{tbBasicSysDictionaryPo.whereGteIdentifying}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtIdentifying != null and tbBasicSysDictionaryPo.whereLtIdentifying != ''">
+                                AND `tbsd`.`identifying` &lt; #{tbBasicSysDictionaryPo.whereLtIdentifying}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteIdentifying != null and tbBasicSysDictionaryPo.whereLteIdentifying != ''">
+                                AND `tbsd`.`identifying` &lt;= #{tbBasicSysDictionaryPo.whereLteIdentifying}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereLikeIdentifying != null and tbBasicSysDictionaryPo.whereLikeIdentifying != ''">
+                                AND `tbsd`.`identifying` LIKE CONCAT('%', #{tbBasicSysDictionaryPo.whereLikeIdentifying}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereStartIdentifying != null and tbBasicSysDictionaryPo.whereStartIdentifying != ''">
+                                AND `tbsd`.`identifying` &gt;= #{tbBasicSysDictionaryPo.whereStartIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndIdentifying != null and tbBasicSysDictionaryPo.whereEndIdentifying != ''">
+                                AND `tbsd`.`identifying` &lt;= #{tbBasicSysDictionaryPo.whereEndIdentifying}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereSort != null">
+                                AND `tbsd`.`sort` = #{tbBasicSysDictionaryPo.whereSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInSorts != null and tbBasicSysDictionaryPo.whereInSorts.size() > 0">
+                            AND `tbsd`.`sort` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInSorts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrSorts != null and tbBasicSysDictionaryPo.whereInOrSorts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrSorts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`sort` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`sort` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotSort != null">
+                                AND `tbsd`.`sort` != #{tbBasicSysDictionaryPo.whereNotSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInSorts != null and tbBasicSysDictionaryPo.whereNotInSorts.size() > 0">
+                            AND `tbsd`.`sort` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInSorts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullSort != null and tbBasicSysDictionaryPo.whereIsNullSort == true">
+                            AND `tbsd`.`sort` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullSort != null and tbBasicSysDictionaryPo.whereIsNotNullSort == true">
+                            AND `tbsd`.`sort` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptySort != null and tbBasicSysDictionaryPo.whereIsEmptySort == true">
+                            AND (`tbsd`.`sort` IS NULL OR `tbsd`.`sort` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptySort != null and tbBasicSysDictionaryPo.whereIsNotEmptySort == true">
+                            AND `tbsd`.`sort` IS NOT NULL AND `tbsd`.`sort` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtSort != null">
+                                AND `tbsd`.`sort` &gt; #{tbBasicSysDictionaryPo.whereGtSort}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteSort != null">
+                                AND `tbsd`.`sort` &gt;= #{tbBasicSysDictionaryPo.whereGteSort}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtSort != null">
+                                AND `tbsd`.`sort` &lt; #{tbBasicSysDictionaryPo.whereLtSort}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteSort != null">
+                                AND `tbsd`.`sort` &lt;= #{tbBasicSysDictionaryPo.whereLteSort}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartSort != null">
+                                AND `tbsd`.`sort` &gt;= #{tbBasicSysDictionaryPo.whereStartSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndSort != null">
+                                AND `tbsd`.`sort` &lt;= #{tbBasicSysDictionaryPo.whereEndSort}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereDescription != null and tbBasicSysDictionaryPo.whereDescription != ''">
+                                AND `tbsd`.`description` = #{tbBasicSysDictionaryPo.whereDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInDescriptions != null and tbBasicSysDictionaryPo.whereInDescriptions.size() > 0">
+                            AND `tbsd`.`description` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInDescriptions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrDescriptions != null and tbBasicSysDictionaryPo.whereInOrDescriptions.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrDescriptions"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`description` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`description` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotDescription != null and tbBasicSysDictionaryPo.whereNotDescription != ''">
+                                AND `tbsd`.`description` != #{tbBasicSysDictionaryPo.whereNotDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInDescriptions != null and tbBasicSysDictionaryPo.whereNotInDescriptions.size() > 0">
+                            AND `tbsd`.`description` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInDescriptions"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullDescription != null and tbBasicSysDictionaryPo.whereIsNullDescription == true">
+                            AND `tbsd`.`description` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullDescription != null and tbBasicSysDictionaryPo.whereIsNotNullDescription == true">
+                            AND `tbsd`.`description` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyDescription != null and tbBasicSysDictionaryPo.whereIsEmptyDescription == true">
+                            AND (`tbsd`.`description` IS NULL OR `tbsd`.`description` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyDescription != null and tbBasicSysDictionaryPo.whereIsNotEmptyDescription == true">
+                            AND `tbsd`.`description` IS NOT NULL AND `tbsd`.`description` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtDescription != null and tbBasicSysDictionaryPo.whereGtDescription != ''">
+                                AND `tbsd`.`description` &gt; #{tbBasicSysDictionaryPo.whereGtDescription}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteDescription != null and tbBasicSysDictionaryPo.whereGteDescription != ''">
+                                AND `tbsd`.`description` &gt;= #{tbBasicSysDictionaryPo.whereGteDescription}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtDescription != null and tbBasicSysDictionaryPo.whereLtDescription != ''">
+                                AND `tbsd`.`description` &lt; #{tbBasicSysDictionaryPo.whereLtDescription}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteDescription != null and tbBasicSysDictionaryPo.whereLteDescription != ''">
+                                AND `tbsd`.`description` &lt;= #{tbBasicSysDictionaryPo.whereLteDescription}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereLikeDescription != null and tbBasicSysDictionaryPo.whereLikeDescription != ''">
+                                AND `tbsd`.`description` LIKE CONCAT('%', #{tbBasicSysDictionaryPo.whereLikeDescription}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereStartDescription != null and tbBasicSysDictionaryPo.whereStartDescription != ''">
+                                AND `tbsd`.`description` &gt;= #{tbBasicSysDictionaryPo.whereStartDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndDescription != null and tbBasicSysDictionaryPo.whereEndDescription != ''">
+                                AND `tbsd`.`description` &lt;= #{tbBasicSysDictionaryPo.whereEndDescription}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereStatus != null">
+                                AND `tbsd`.`status` = #{tbBasicSysDictionaryPo.whereStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInStatuss != null and tbBasicSysDictionaryPo.whereInStatuss.size() > 0">
+                            AND `tbsd`.`status` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrStatuss != null and tbBasicSysDictionaryPo.whereInOrStatuss.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrStatuss"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`status` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`status` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotStatus != null">
+                                AND `tbsd`.`status` != #{tbBasicSysDictionaryPo.whereNotStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInStatuss != null and tbBasicSysDictionaryPo.whereNotInStatuss.size() > 0">
+                            AND `tbsd`.`status` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInStatuss"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullStatus != null and tbBasicSysDictionaryPo.whereIsNullStatus == true">
+                            AND `tbsd`.`status` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullStatus != null and tbBasicSysDictionaryPo.whereIsNotNullStatus == true">
+                            AND `tbsd`.`status` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyStatus != null and tbBasicSysDictionaryPo.whereIsEmptyStatus == true">
+                            AND (`tbsd`.`status` IS NULL OR `tbsd`.`status` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyStatus != null and tbBasicSysDictionaryPo.whereIsNotEmptyStatus == true">
+                            AND `tbsd`.`status` IS NOT NULL AND `tbsd`.`status` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtStatus != null">
+                                AND `tbsd`.`status` &gt; #{tbBasicSysDictionaryPo.whereGtStatus}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteStatus != null">
+                                AND `tbsd`.`status` &gt;= #{tbBasicSysDictionaryPo.whereGteStatus}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtStatus != null">
+                                AND `tbsd`.`status` &lt; #{tbBasicSysDictionaryPo.whereLtStatus}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteStatus != null">
+                                AND `tbsd`.`status` &lt;= #{tbBasicSysDictionaryPo.whereLteStatus}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartStatus != null">
+                                AND `tbsd`.`status` &gt;= #{tbBasicSysDictionaryPo.whereStartStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndStatus != null">
+                                AND `tbsd`.`status` &lt;= #{tbBasicSysDictionaryPo.whereEndStatus}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereCreatedAt != null and tbBasicSysDictionaryPo.whereCreatedAt != ''">
+                                AND `tbsd`.`createdAt` = #{tbBasicSysDictionaryPo.whereCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInCreatedAts != null and tbBasicSysDictionaryPo.whereInCreatedAts.size() > 0">
+                            AND `tbsd`.`createdAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrCreatedAts != null and tbBasicSysDictionaryPo.whereInOrCreatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrCreatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`createdAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`createdAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotCreatedAt != null and tbBasicSysDictionaryPo.whereNotCreatedAt != ''">
+                                AND `tbsd`.`createdAt` != #{tbBasicSysDictionaryPo.whereNotCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInCreatedAts != null and tbBasicSysDictionaryPo.whereNotInCreatedAts.size() > 0">
+                            AND `tbsd`.`createdAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullCreatedAt != null and tbBasicSysDictionaryPo.whereIsNullCreatedAt == true">
+                            AND `tbsd`.`createdAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullCreatedAt != null and tbBasicSysDictionaryPo.whereIsNotNullCreatedAt == true">
+                            AND `tbsd`.`createdAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyCreatedAt != null and tbBasicSysDictionaryPo.whereIsEmptyCreatedAt == true">
+                            AND (`tbsd`.`createdAt` IS NULL OR `tbsd`.`createdAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyCreatedAt != null and tbBasicSysDictionaryPo.whereIsNotEmptyCreatedAt == true">
+                            AND `tbsd`.`createdAt` IS NOT NULL AND `tbsd`.`createdAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtCreatedAt != null and tbBasicSysDictionaryPo.whereGtCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &gt; #{tbBasicSysDictionaryPo.whereGtCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteCreatedAt != null and tbBasicSysDictionaryPo.whereGteCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &gt;= #{tbBasicSysDictionaryPo.whereGteCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtCreatedAt != null and tbBasicSysDictionaryPo.whereLtCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &lt; #{tbBasicSysDictionaryPo.whereLtCreatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteCreatedAt != null and tbBasicSysDictionaryPo.whereLteCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &lt;= #{tbBasicSysDictionaryPo.whereLteCreatedAt}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartCreatedAt != null and tbBasicSysDictionaryPo.whereStartCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &gt;= #{tbBasicSysDictionaryPo.whereStartCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndCreatedAt != null and tbBasicSysDictionaryPo.whereEndCreatedAt != ''">
+                                AND `tbsd`.`createdAt` &lt;= #{tbBasicSysDictionaryPo.whereEndCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` = #{tbBasicSysDictionaryPo.whereCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInCreatedUserIds != null and tbBasicSysDictionaryPo.whereInCreatedUserIds.size() > 0">
+                            AND `tbsd`.`createdUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrCreatedUserIds != null and tbBasicSysDictionaryPo.whereInOrCreatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrCreatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`createdUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`createdUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` != #{tbBasicSysDictionaryPo.whereNotCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInCreatedUserIds != null and tbBasicSysDictionaryPo.whereNotInCreatedUserIds.size() > 0">
+                            AND `tbsd`.`createdUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullCreatedUserId != null and tbBasicSysDictionaryPo.whereIsNullCreatedUserId == true">
+                            AND `tbsd`.`createdUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullCreatedUserId != null and tbBasicSysDictionaryPo.whereIsNotNullCreatedUserId == true">
+                            AND `tbsd`.`createdUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyCreatedUserId != null and tbBasicSysDictionaryPo.whereIsEmptyCreatedUserId == true">
+                            AND (`tbsd`.`createdUserId` IS NULL OR `tbsd`.`createdUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyCreatedUserId != null and tbBasicSysDictionaryPo.whereIsNotEmptyCreatedUserId == true">
+                            AND `tbsd`.`createdUserId` IS NOT NULL AND `tbsd`.`createdUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &gt; #{tbBasicSysDictionaryPo.whereGtCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &gt;= #{tbBasicSysDictionaryPo.whereGteCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &lt; #{tbBasicSysDictionaryPo.whereLtCreatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &lt;= #{tbBasicSysDictionaryPo.whereLteCreatedUserId}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &gt;= #{tbBasicSysDictionaryPo.whereStartCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndCreatedUserId != null">
+                                AND `tbsd`.`createdUserId` &lt;= #{tbBasicSysDictionaryPo.whereEndCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereUpdatedAt != null and tbBasicSysDictionaryPo.whereUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` = #{tbBasicSysDictionaryPo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInUpdatedAts != null and tbBasicSysDictionaryPo.whereInUpdatedAts.size() > 0">
+                            AND `tbsd`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrUpdatedAts != null and tbBasicSysDictionaryPo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotUpdatedAt != null and tbBasicSysDictionaryPo.whereNotUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` != #{tbBasicSysDictionaryPo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInUpdatedAts != null and tbBasicSysDictionaryPo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbsd`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullUpdatedAt != null and tbBasicSysDictionaryPo.whereIsNullUpdatedAt == true">
+                            AND `tbsd`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullUpdatedAt != null and tbBasicSysDictionaryPo.whereIsNotNullUpdatedAt == true">
+                            AND `tbsd`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyUpdatedAt != null and tbBasicSysDictionaryPo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbsd`.`updatedAt` IS NULL OR `tbsd`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyUpdatedAt != null and tbBasicSysDictionaryPo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbsd`.`updatedAt` IS NOT NULL AND `tbsd`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtUpdatedAt != null and tbBasicSysDictionaryPo.whereGtUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &gt; #{tbBasicSysDictionaryPo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteUpdatedAt != null and tbBasicSysDictionaryPo.whereGteUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &gt;= #{tbBasicSysDictionaryPo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtUpdatedAt != null and tbBasicSysDictionaryPo.whereLtUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &lt; #{tbBasicSysDictionaryPo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteUpdatedAt != null and tbBasicSysDictionaryPo.whereLteUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &lt;= #{tbBasicSysDictionaryPo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartUpdatedAt != null and tbBasicSysDictionaryPo.whereStartUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &gt;= #{tbBasicSysDictionaryPo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndUpdatedAt != null and tbBasicSysDictionaryPo.whereEndUpdatedAt != ''">
+                                AND `tbsd`.`updatedAt` &lt;= #{tbBasicSysDictionaryPo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` = #{tbBasicSysDictionaryPo.whereUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInUpdatedUserIds != null and tbBasicSysDictionaryPo.whereInUpdatedUserIds.size() > 0">
+                            AND `tbsd`.`updatedUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereInOrUpdatedUserIds != null and tbBasicSysDictionaryPo.whereInOrUpdatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereInOrUpdatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsd`.`updatedUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsd`.`updatedUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereNotUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` != #{tbBasicSysDictionaryPo.whereNotUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereNotInUpdatedUserIds != null and tbBasicSysDictionaryPo.whereNotInUpdatedUserIds.size() > 0">
+                            AND `tbsd`.`updatedUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicSysDictionaryPo.whereNotInUpdatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicSysDictionaryPo.whereIsNullUpdatedUserId != null and tbBasicSysDictionaryPo.whereIsNullUpdatedUserId == true">
+                            AND `tbsd`.`updatedUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotNullUpdatedUserId != null and tbBasicSysDictionaryPo.whereIsNotNullUpdatedUserId == true">
+                            AND `tbsd`.`updatedUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsEmptyUpdatedUserId != null and tbBasicSysDictionaryPo.whereIsEmptyUpdatedUserId == true">
+                            AND (`tbsd`.`updatedUserId` IS NULL OR `tbsd`.`updatedUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicSysDictionaryPo.whereIsNotEmptyUpdatedUserId != null and tbBasicSysDictionaryPo.whereIsNotEmptyUpdatedUserId == true">
+                            AND `tbsd`.`updatedUserId` IS NOT NULL AND `tbsd`.`updatedUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicSysDictionaryPo.whereGtUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &gt; #{tbBasicSysDictionaryPo.whereGtUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicSysDictionaryPo.whereGteUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &gt;= #{tbBasicSysDictionaryPo.whereGteUpdatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLtUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &lt; #{tbBasicSysDictionaryPo.whereLtUpdatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereLteUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &lt;= #{tbBasicSysDictionaryPo.whereLteUpdatedUserId}
+                            </if>
+                            <if test="tbBasicSysDictionaryPo.whereStartUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &gt;= #{tbBasicSysDictionaryPo.whereStartUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicSysDictionaryPo.whereEndUpdatedUserId != null">
+                                AND `tbsd`.`updatedUserId` &lt;= #{tbBasicSysDictionaryPo.whereEndUpdatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="com.api.basic.data.entity.TbBasicSysDictionary">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.*
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="int">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT `tbsd`.`id` </when>
+            <otherwise> `tbsd`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`id`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`id`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`id`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`id`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumParentId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`parentId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxParentId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`parentId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minParentId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`parentId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgParentId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`parentId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumSort"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`sort`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxSort"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`sort`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minSort"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`sort`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgSort"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`sort`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`status`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`status`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`status`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgStatus"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`status`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`createdUserId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`createdUserId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`createdUserId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`updatedUserId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`updatedUserId`) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgUpdatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicSysDictionaryPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicSysDictionaryPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicSysDictionaryPo.useDistinct != null and tbBasicSysDictionaryPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsd`.`updatedUserId`), 0) as result
+        FROM tb_basic_sys_dictionary as `tbsd`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicSysDictionaryPo.groupByFields != null and tbBasicSysDictionaryPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicSysDictionaryPo.groupByFields" separator=",">
+            `tbsd`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicSysDictionaryPo.havingClause != null and tbBasicSysDictionaryPo.havingClause != ''">
+        HAVING #{tbBasicSysDictionaryPo.havingClause}
+        </if>
+    </select>
+</mapper>

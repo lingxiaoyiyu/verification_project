@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicStatisticsUserTotalMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicStatisticsUserTotal"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_statistics_user_total (
+        <trim suffixOverrides=",">
+                        <if test="day != null">
+                            `day`,
+                        </if>
+                            <if test="cnt != null">
+                                `cnt`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="day != null">
+                            #{day},
+                        </if>
+                            <if test="cnt != null">
+                                #{cnt},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        DELETE `tbsut` FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        UPDATE tb_basic_statistics_user_total as `tbsut`
+        <set>
+                <if test="tbBasicStatisticsUserTotalPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsut`.`id` = #{tbBasicStatisticsUserTotalPo.id},
+                </if>
+                <if test="tbBasicStatisticsUserTotalPo.day != null">
+                        <if test="tbBasicStatisticsUserTotalPo.day == ''">
+                    `tbsut`.`day` = NULL,
+                        </if>
+                        <if test="tbBasicStatisticsUserTotalPo.day != ''">
+                    `tbsut`.`day` = #{tbBasicStatisticsUserTotalPo.day},
+                        </if>
+                </if>
+                <if test="tbBasicStatisticsUserTotalPo.cnt != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbsut`.`cnt` = #{tbBasicStatisticsUserTotalPo.cnt},
+                </if>
+                <if test="tbBasicStatisticsUserTotalPo.updatedAt != null">
+                        <if test="tbBasicStatisticsUserTotalPo.updatedAt == ''">
+                    `tbsut`.`updatedAt` = '',
+                        </if>
+                        <if test="tbBasicStatisticsUserTotalPo.updatedAt != ''">
+                    `tbsut`.`updatedAt` = #{tbBasicStatisticsUserTotalPo.updatedAt},
+                        </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicStatisticsUserTotalPo != null">
+                            <if test="tbBasicStatisticsUserTotalPo.whereId != null">
+                                AND `tbsut`.`id` = #{tbBasicStatisticsUserTotalPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInIds != null and tbBasicStatisticsUserTotalPo.whereInIds.size() > 0">
+                            AND `tbsut`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInOrIds != null and tbBasicStatisticsUserTotalPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsut`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsut`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereNotId != null">
+                                AND `tbsut`.`id` != #{tbBasicStatisticsUserTotalPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereNotInIds != null and tbBasicStatisticsUserTotalPo.whereNotInIds.size() > 0">
+                            AND `tbsut`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNullId != null and tbBasicStatisticsUserTotalPo.whereIsNullId == true">
+                            AND `tbsut`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotNullId != null and tbBasicStatisticsUserTotalPo.whereIsNotNullId == true">
+                            AND `tbsut`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsEmptyId != null and tbBasicStatisticsUserTotalPo.whereIsEmptyId == true">
+                            AND (`tbsut`.`id` IS NULL OR `tbsut`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotEmptyId != null and tbBasicStatisticsUserTotalPo.whereIsNotEmptyId == true">
+                            AND `tbsut`.`id` IS NOT NULL AND `tbsut`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalPo.whereGtId != null">
+                                AND `tbsut`.`id` &gt; #{tbBasicStatisticsUserTotalPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereGteId != null">
+                                AND `tbsut`.`id` &gt;= #{tbBasicStatisticsUserTotalPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLtId != null">
+                                AND `tbsut`.`id` &lt; #{tbBasicStatisticsUserTotalPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLteId != null">
+                                AND `tbsut`.`id` &lt;= #{tbBasicStatisticsUserTotalPo.whereLteId}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalPo.whereStartId != null">
+                                AND `tbsut`.`id` &gt;= #{tbBasicStatisticsUserTotalPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereEndId != null">
+                                AND `tbsut`.`id` &lt;= #{tbBasicStatisticsUserTotalPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereDay != null and tbBasicStatisticsUserTotalPo.whereDay != ''">
+                                AND `tbsut`.`day` = #{tbBasicStatisticsUserTotalPo.whereDay}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInDays != null and tbBasicStatisticsUserTotalPo.whereInDays.size() > 0">
+                            AND `tbsut`.`day` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInDays"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInOrDays != null and tbBasicStatisticsUserTotalPo.whereInOrDays.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInOrDays"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsut`.`day` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsut`.`day` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereNotDay != null and tbBasicStatisticsUserTotalPo.whereNotDay != ''">
+                                AND `tbsut`.`day` != #{tbBasicStatisticsUserTotalPo.whereNotDay}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereNotInDays != null and tbBasicStatisticsUserTotalPo.whereNotInDays.size() > 0">
+                            AND `tbsut`.`day` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereNotInDays"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNullDay != null and tbBasicStatisticsUserTotalPo.whereIsNullDay == true">
+                            AND `tbsut`.`day` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotNullDay != null and tbBasicStatisticsUserTotalPo.whereIsNotNullDay == true">
+                            AND `tbsut`.`day` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsEmptyDay != null and tbBasicStatisticsUserTotalPo.whereIsEmptyDay == true">
+                            AND (`tbsut`.`day` IS NULL OR `tbsut`.`day` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotEmptyDay != null and tbBasicStatisticsUserTotalPo.whereIsNotEmptyDay == true">
+                            AND `tbsut`.`day` IS NOT NULL AND `tbsut`.`day` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalPo.whereGtDay != null and tbBasicStatisticsUserTotalPo.whereGtDay != ''">
+                                AND `tbsut`.`day` &gt; #{tbBasicStatisticsUserTotalPo.whereGtDay}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereGteDay != null and tbBasicStatisticsUserTotalPo.whereGteDay != ''">
+                                AND `tbsut`.`day` &gt;= #{tbBasicStatisticsUserTotalPo.whereGteDay}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLtDay != null and tbBasicStatisticsUserTotalPo.whereLtDay != ''">
+                                AND `tbsut`.`day` &lt; #{tbBasicStatisticsUserTotalPo.whereLtDay}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLteDay != null and tbBasicStatisticsUserTotalPo.whereLteDay != ''">
+                                AND `tbsut`.`day` &lt;= #{tbBasicStatisticsUserTotalPo.whereLteDay}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalPo.whereLikeDay != null and tbBasicStatisticsUserTotalPo.whereLikeDay != ''">
+                                AND `tbsut`.`day` LIKE CONCAT('%', #{tbBasicStatisticsUserTotalPo.whereLikeDay}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereStartDay != null and tbBasicStatisticsUserTotalPo.whereStartDay != ''">
+                                AND `tbsut`.`day` &gt;= #{tbBasicStatisticsUserTotalPo.whereStartDay}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereEndDay != null and tbBasicStatisticsUserTotalPo.whereEndDay != ''">
+                                AND `tbsut`.`day` &lt;= #{tbBasicStatisticsUserTotalPo.whereEndDay}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereCnt != null">
+                                AND `tbsut`.`cnt` = #{tbBasicStatisticsUserTotalPo.whereCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInCnts != null and tbBasicStatisticsUserTotalPo.whereInCnts.size() > 0">
+                            AND `tbsut`.`cnt` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInCnts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInOrCnts != null and tbBasicStatisticsUserTotalPo.whereInOrCnts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInOrCnts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsut`.`cnt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsut`.`cnt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereNotCnt != null">
+                                AND `tbsut`.`cnt` != #{tbBasicStatisticsUserTotalPo.whereNotCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereNotInCnts != null and tbBasicStatisticsUserTotalPo.whereNotInCnts.size() > 0">
+                            AND `tbsut`.`cnt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereNotInCnts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNullCnt != null and tbBasicStatisticsUserTotalPo.whereIsNullCnt == true">
+                            AND `tbsut`.`cnt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotNullCnt != null and tbBasicStatisticsUserTotalPo.whereIsNotNullCnt == true">
+                            AND `tbsut`.`cnt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsEmptyCnt != null and tbBasicStatisticsUserTotalPo.whereIsEmptyCnt == true">
+                            AND (`tbsut`.`cnt` IS NULL OR `tbsut`.`cnt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotEmptyCnt != null and tbBasicStatisticsUserTotalPo.whereIsNotEmptyCnt == true">
+                            AND `tbsut`.`cnt` IS NOT NULL AND `tbsut`.`cnt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalPo.whereGtCnt != null">
+                                AND `tbsut`.`cnt` &gt; #{tbBasicStatisticsUserTotalPo.whereGtCnt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereGteCnt != null">
+                                AND `tbsut`.`cnt` &gt;= #{tbBasicStatisticsUserTotalPo.whereGteCnt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLtCnt != null">
+                                AND `tbsut`.`cnt` &lt; #{tbBasicStatisticsUserTotalPo.whereLtCnt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLteCnt != null">
+                                AND `tbsut`.`cnt` &lt;= #{tbBasicStatisticsUserTotalPo.whereLteCnt}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalPo.whereStartCnt != null">
+                                AND `tbsut`.`cnt` &gt;= #{tbBasicStatisticsUserTotalPo.whereStartCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereEndCnt != null">
+                                AND `tbsut`.`cnt` &lt;= #{tbBasicStatisticsUserTotalPo.whereEndCnt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` = #{tbBasicStatisticsUserTotalPo.whereUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInUpdatedAts != null and tbBasicStatisticsUserTotalPo.whereInUpdatedAts.size() > 0">
+                            AND `tbsut`.`updatedAt` IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereInOrUpdatedAts != null and tbBasicStatisticsUserTotalPo.whereInOrUpdatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereInOrUpdatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbsut`.`updatedAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbsut`.`updatedAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereNotUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereNotUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` != #{tbBasicStatisticsUserTotalPo.whereNotUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereNotInUpdatedAts != null and tbBasicStatisticsUserTotalPo.whereNotInUpdatedAts.size() > 0">
+                            AND `tbsut`.`updatedAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicStatisticsUserTotalPo.whereNotInUpdatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNullUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereIsNullUpdatedAt == true">
+                            AND `tbsut`.`updatedAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotNullUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereIsNotNullUpdatedAt == true">
+                            AND `tbsut`.`updatedAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsEmptyUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereIsEmptyUpdatedAt == true">
+                            AND (`tbsut`.`updatedAt` IS NULL OR `tbsut`.`updatedAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicStatisticsUserTotalPo.whereIsNotEmptyUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereIsNotEmptyUpdatedAt == true">
+                            AND `tbsut`.`updatedAt` IS NOT NULL AND `tbsut`.`updatedAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicStatisticsUserTotalPo.whereGtUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereGtUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &gt; #{tbBasicStatisticsUserTotalPo.whereGtUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereGteUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereGteUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &gt;= #{tbBasicStatisticsUserTotalPo.whereGteUpdatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLtUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereLtUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &lt; #{tbBasicStatisticsUserTotalPo.whereLtUpdatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereLteUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereLteUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &lt;= #{tbBasicStatisticsUserTotalPo.whereLteUpdatedAt}
+                            </if>
+                            <if test="tbBasicStatisticsUserTotalPo.whereStartUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereStartUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &gt;= #{tbBasicStatisticsUserTotalPo.whereStartUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicStatisticsUserTotalPo.whereEndUpdatedAt != null and tbBasicStatisticsUserTotalPo.whereEndUpdatedAt != ''">
+                                AND `tbsut`.`updatedAt` &lt;= #{tbBasicStatisticsUserTotalPo.whereEndUpdatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="com.api.basic.data.entity.TbBasicStatisticsUserTotal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.*
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="int">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT `tbsut`.`id` </when>
+            <otherwise> `tbsut`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`id`), 0) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`id`) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`id`) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`id`), 0) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`cnt`), 0) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`cnt`) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`cnt`) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCnt"
+            parameterType="com.api.basic.data.po.TbBasicStatisticsUserTotalPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicStatisticsUserTotalPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicStatisticsUserTotalPo.useDistinct != null and tbBasicStatisticsUserTotalPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbsut`.`cnt`), 0) as result
+        FROM tb_basic_statistics_user_total as `tbsut`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicStatisticsUserTotalPo.groupByFields != null and tbBasicStatisticsUserTotalPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicStatisticsUserTotalPo.groupByFields" separator=",">
+            `tbsut`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicStatisticsUserTotalPo.havingClause != null and tbBasicStatisticsUserTotalPo.havingClause != ''">
+        HAVING #{tbBasicStatisticsUserTotalPo.havingClause}
+        </if>
+    </select>
+</mapper>

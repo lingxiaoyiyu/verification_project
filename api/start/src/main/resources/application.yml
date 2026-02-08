@@ -1,0 +1,261 @@
+server:
+  address: 127.0.0.1
+  port: 1000
+
+debug: true
+
+spring:
+  profiles:
+    active: dev
+  main:
+    lazy-initialization: true
+  application:
+    name: basic_api
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  devtools:
+    restart:
+      enabled: false
+      additional-paths: src/main/java
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/basic?useSSL=false&removeAbandoned=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: basic
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver # mysql8 的连接驱动
+    type: com.alibaba.druid.pool.DruidDataSource  # 指定数据源类型
+    ########## 连接池 配置 ##########
+    druid:
+      # 配置初始化大小、最小、最大
+      initial-size: 3
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间(单位：毫秒)
+      max-wait: 1000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 600000
+      max-evictable-idle-time-millis: 900000
+      # 用来测试连接是否可用的SQL语句,默认值每种数据库都不相同,这是mysql
+      validation-query: select 1
+      # 应用向连接池申请连接，并且testOnBorrow为false时，连接池将会判断连接是否处于空闲状态，如果是，则验证这条连接是否可用
+      test-while-idle: true
+      # 如果为true，默认是false，应用向连接池申请连接时，连接池会判断这条连接是否是可用的
+      test-on-borrow: false
+      # 如果为true（默认false），当应用使用完连接，连接池回收连接的时候会判断该连接是否还可用
+      test-on-return: false
+      # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle
+      pool-prepared-statements: false
+      # 连接池中的minIdle数量以内的连接，空闲时间超过minEvictableIdleTimeMillis，则会执行keepAlive操作
+      keep-alive: true
+      # Spring 监控，利用aop 对指定接口的执行时间，jdbc数进行记录
+      aop-patterns: "com.api.*.controller.*"
+      use-global-data-source: true
+      ########### 启用内置过滤器（只保留stat）##########
+      filters: stat
+      # 自己配置监控统计拦截的filter
+      filter:
+        # 开启druiddatasource的状态监控
+        stat:
+          enabled: true
+          db-type: mysql
+          # 开启慢sql监控，超过2s 就认为是慢sql，记录到日志中
+          log-slow-sql: false
+          slow-sql-millis: 2000
+          # 关闭日志格式化
+          format-sql: false
+      ########## 配置WebStatFilter，用于采集web关联监控的数据 ##########
+      web-stat-filter:
+        enabled: false                  # 关闭WebStatFilter
+      ########## 配置StatViewServlet（监控页面），用于展示Druid的统计信息 ##########
+      stat-view-servlet:
+        enabled: false                  # 关闭StatViewServlet
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: ""
+      database: 0
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 10
+          # 连接池中的最小空闲连接
+          min-idle: 0
+  mail:
+    host: smtp.163.com # smtp.gmail.com  smtp.163.com
+    port: 465 # 587 465
+    username: pjw_1224@163.com # lante852@gmail.com  pjw_1224@163.com https://lante852.google.com/
+    password: UTHZQKYZOZVLFEFA # lantelante UTHZQKYZOZVLFEFA
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            checkserveridentity: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # 暴露所有监控端点（健康检查、指标、日志等）
+  endpoint:
+    health:
+      show-details: always
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+    use-actual-param-name: true
+    aggressive-lazy-loading: false
+    shrink-whitespaces-in-sql: true  # 强力压缩SQL空白
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: Authorization
+  # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+  timeout: 2592000
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: false
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+  # 是否尝试从 header 里读取 Token
+  is-read-header:  true
+  # 是否尝试从 cookie 里读取 Token，此值为 false 后，StpUtil.login(id) 登录时也不会再往前端注入Cookie
+  is-read-cookie: false
+  token-prefix: Bearer
+  jwt-secret-key: WKVJm3LgCQWyDIwgx8TM3tu8WeTM7n0b
+
+#jwt:
+#  tokenHeader: Authorization
+#  tokenHead: Bearer
+#  secret: WKVJm3LgCQWyDIwgx8TM3tu8WeTM7n0b
+#  expiration: 864000
+#  refreshTokenExpiration: 1800
+
+logging:
+  level:
+    root: DEBUG              # 全局默认日志级别
+    com.api: DEBUG         # 项目包路径下的DEBUG级别（覆盖root）
+    org.springframework: WARN  # 框架日志降级以减少噪音
+    druid.sql.Statement: DEBUG  # 控制Druid的SQL日志级
+    druid.sql.Connection: DEBUG
+    org.mybatis: DEBUG      # MyBatis核心日志
+    java.sql.Connection: WARN  # JDBC连接日志仅报错
+    io.lettuce.core: DEBUG
+
+config:
+  result:
+    code:
+      success: 0 # 表示业务处理成功
+      badRequest: 400 # 表示客户端请求有误，例如参数验证失败
+      unauthorized: 401 # 表示用户未登录或权限不足
+      forbidden: 403 # 表示服务器理解请求，但拒绝处理。未登录，或登录已过期
+      notFound: 404
+      methodNotAllowed: 405
+      error: 500 # 表示异常错误
+    access-token-name: accessToken
+  captchaType: math
+  upload:
+    file_max_size: 52428800 # 50 * 1024 * 1024 (50M)
+    img_max_size: 20971520 # 20 * 1024 * 1024 (20M)
+    storage_type: local # 上传文件保存方式。local：本地，aliyunOSS：阿里云oss，selfOSS：自建对象存储
+    oss_root_dir: # OSS根路径
+  upload_file_domain: http://127.0.0.1:1000
+  api_domain: http://127.0.0.1:1000
+  default_avatar: https://foruda.gitee.com/avatar/1677022544584087390/4835367_jmysy_1578975358.png
+
+wx:
+  miniapp: # 小程序配置(必填)
+    appid: 1
+    secret: 1
+    token: 1
+    aeskey: 1
+#    msgDataFormat: @msgDataFormat # 消息格式，XML或者JSON.
+#    use-stable-access-token: =@useStableAccessToken
+    config-storage: # 存储配置redis(可选)
+      type: RedisTemplate
+      key-prefix: wx_basic
+      redis:
+        host: 127.0.0.1
+        port: 6379
+#         sentinel-ips: 127.0.0.1:16379,127.0.0.1:26379
+#         sentinel-name: mymaster
+      # http客户端配置
+      http-client-type: httpclient
+      http-proxy-host:
+      http-proxy-port:
+      http-proxy-username:
+      http-proxy-password:
+  mp: # 公众号配置(必填)
+    appId: 1
+    secret: 1
+#    token: @token
+#    aes-key: @aesKey
+#    use-stable-access-token: @useStableAccessToken
+    config-storage: # 存储配置redis(可选)
+      type: RedisTemplate
+      key-prefix: wx_basic
+      redis:
+        host: 127.0.0.1
+        port: 6379
+#         sentinel-ips: 127.0.0.1:16379,127.0.0.1:26379
+#         sentinel-name: mymaster
+      # http客户端配置
+      http-client-type: httpclient
+      http-proxy-host:
+      http-proxy-port:
+      http-proxy-username:
+      http-proxy-password:
+  pay:
+    # V2版本
+    appId: 1 #微信公众号或者小程序等的appid (V3商户模式需要)
+    mchId: 1 #微信支付商户号 (V3商户模式需要)
+    mchKey: 1 #微信支付商户密钥
+    keyPath: 1 # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+
+    # V3版本
+#    appId:
+#    mchId:
+#    apiV3Key: # apiV3 秘钥值 (V3商户模式需要)
+#    certSerialNo: # apiV3 证书序列号值 (V3商户模式需要)
+#    privateCertPath: # apiclient_cert.pem证书文件的绝对路径或者以classpath:开头的类路径. (V3商户模式需要)
+#    privateKeyPath: # apiclient_key.pem证书文件的绝对路径或者以classpath:开头的类路径. (V3商户模式需要)
+
+#    subAppId: #服务商模式下的子商户公众账号ID
+#    subMchId: #服务商模式下的子商户号
+#
+#    publicKeyPath: # 微信支付公钥，pub_key.pem证书文件的绝对路径或者以classpath:开头的类路径. (V3商户模式需要)
+#    publicKeyId: # 微信支付公钥ID (V3商户模式需要)
+#    notifyUrl: http://basic.test.com/order/payCallback
+
+aliyun:
+  oss:
+    endpoint: 1
+    access-key-id: 1
+    access-key-secret: 1
+    bucket-name: 1
+
+selfS3:
+  endpoint: https://oss.ppnews.sbs
+  access_key: FodQw8HSO5nx3ZGbPBJT
+  secret_key: ykLptXhQmIfaoPJ3BFg7wEncU6jANsGueT1l2b8C
+  bucket: 1
+  access_domain: https://oss.ppnews.sbs

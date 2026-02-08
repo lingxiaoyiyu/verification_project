@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.apps.mapper.TbAppsMapper">
+
+    <insert id="add"
+            parameterType="com.api.apps.data.entity.TbApps"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_apps (
+        <trim suffixOverrides=",">
+                            <if test="appSecret != null and appSecret != ''">
+                                `appSecret`,
+                            </if>
+                        `type`,
+                            <if test="sort != null">
+                                `sort`,
+                            </if>
+                            <if test="uniAppid != null and uniAppid != ''">
+                                `uniAppid`,
+                            </if>
+                            <if test="accessType != null">
+                                `accessType`,
+                            </if>
+                            <if test="accessRoleIds != null and accessRoleIds != ''">
+                                `accessRoleIds`,
+                            </if>
+                            <if test="accessUserIds != null and accessUserIds != ''">
+                                `accessUserIds`,
+                            </if>
+                        `name`,
+                            <if test="desc != null and desc != ''">
+                                `desc`,
+                            </if>
+                            <if test="img != null and img != ''">
+                                `img`,
+                            </if>
+                            <if test="status != null">
+                                `status`,
+                            </if>
+                            <if test="isEntranceMp != null">
+                                `isEntranceMp`,
+                            </if>
+                            <if test="categoryId != null">
+                                `categoryId`,
+                            </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                `updatedAt`,
+                            </if>
+                            <if test="updatedUserId != null">
+                                `updatedUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                            <if test="appSecret != null and appSecret != ''">
+                                #{appSecret},
+                            </if>
+                        #{type},
+                            <if test="sort != null">
+                                #{sort},
+                            </if>
+                            <if test="uniAppid != null and uniAppid != ''">
+                                #{uniAppid},
+                            </if>
+                            <if test="accessType != null">
+                                #{accessType},
+                            </if>
+                            <if test="accessRoleIds != null and accessRoleIds != ''">
+                                #{accessRoleIds},
+                            </if>
+                            <if test="accessUserIds != null and accessUserIds != ''">
+                                #{accessUserIds},
+                            </if>
+                        #{name},
+                            <if test="desc != null and desc != ''">
+                                #{desc},
+                            </if>
+                            <if test="img != null and img != ''">
+                                #{img},
+                            </if>
+                            <if test="status != null">
+                                #{status},
+                            </if>
+                            <if test="isEntranceMp != null">
+                                #{isEntranceMp},
+                            </if>
+                            <if test="categoryId != null">
+                                #{categoryId},
+                            </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+                            <if test="updatedAt != null and updatedAt != ''">
+                                #{updatedAt},
+                            </if>
+                            <if test="updatedUserId != null">
+                                #{updatedUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.apps.data.po.TbAppsPo">
+        <bind name="tbAppsPo" value="_parameter"/>
+        DELETE `ta` FROM tb_apps as `ta`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.apps.data.po.TbAppsPo">
+        <bind name="tbAppsPo" value="_parameter"/>
+        UPDATE tb_apps as `ta`
+        <set>
+                <if test="tbAppsPo.id != null">
+                    <if test="tbAppsPo.id == ''">
+                    `ta`.`id` = '',
+                    </if>
+                    <if test="tbAppsPo.id != ''">
+                    `ta`.`id` = #{tbAppsPo.id},
+                    </if>
+                </if>
+                <if test="tbAppsPo.appSecret != null">
+                    <if test="tbAppsPo.appSecret == ''">
+                    `ta`.`appSecret` = NULL,
+                    </if>
+                    <if test="tbAppsPo.appSecret != ''">
+                    `ta`.`appSecret` = #{tbAppsPo.appSecret},
+                    </if>
+                </if>
+                <if test="tbAppsPo.type != null">
+                    <if test="tbAppsPo.type == ''">
+                    `ta`.`type` = NULL,
+                    </if>
+                    <if test="tbAppsPo.type != ''">
+                    `ta`.`type` = #{tbAppsPo.type},
+                    </if>
+                </if>
+                <if test="tbAppsPo.sort != null">
+                    <if test="tbAppsPo.sort == ''">
+                    `ta`.`sort` = 1,
+                    </if>
+                    <if test="tbAppsPo.sort != ''">
+                    `ta`.`sort` = #{tbAppsPo.sort},
+                    </if>
+                </if>
+                <if test="tbAppsPo.uniAppid != null">
+                    <if test="tbAppsPo.uniAppid == ''">
+                    `ta`.`uniAppid` = '',
+                    </if>
+                    <if test="tbAppsPo.uniAppid != ''">
+                    `ta`.`uniAppid` = #{tbAppsPo.uniAppid},
+                    </if>
+                </if>
+                <if test="tbAppsPo.accessType != null">
+                    <if test="tbAppsPo.accessType == ''">
+                    `ta`.`accessType` = 1,
+                    </if>
+                    <if test="tbAppsPo.accessType != ''">
+                    `ta`.`accessType` = #{tbAppsPo.accessType},
+                    </if>
+                </if>
+                <if test="tbAppsPo.accessRoleIds != null">
+                    <if test="tbAppsPo.accessRoleIds == ''">
+                    `ta`.`accessRoleIds` = NULL,
+                    </if>
+                    <if test="tbAppsPo.accessRoleIds != ''">
+                    `ta`.`accessRoleIds` = #{tbAppsPo.accessRoleIds},
+                    </if>
+                </if>
+                <if test="tbAppsPo.accessUserIds != null">
+                    <if test="tbAppsPo.accessUserIds == ''">
+                    `ta`.`accessUserIds` = NULL,
+                    </if>
+                    <if test="tbAppsPo.accessUserIds != ''">
+                    `ta`.`accessUserIds` = #{tbAppsPo.accessUserIds},
+                    </if>
+                </if>
+                <if test="tbAppsPo.name != null">
+                    <if test="tbAppsPo.name == ''">
+                    `ta`.`name` = NULL,
+                    </if>
+                    <if test="tbAppsPo.name != ''">
+                    `ta`.`name` = #{tbAppsPo.name},
+                    </if>
+                </if>
+                <if test="tbAppsPo.desc != null">
+                    <if test="tbAppsPo.desc == ''">
+                    `ta`.`desc` = NULL,
+                    </if>
+                    <if test="tbAppsPo.desc != ''">
+                    `ta`.`desc` = #{tbAppsPo.desc},
+                    </if>
+                </if>
+                <if test="tbAppsPo.img != null">
+                    <if test="tbAppsPo.img == ''">
+                    `ta`.`img` = NULL,
+                    </if>
+                    <if test="tbAppsPo.img != ''">
+                    `ta`.`img` = #{tbAppsPo.img},
+                    </if>
+                </if>
+                <if test="tbAppsPo.status != null">
+                    <if test="tbAppsPo.status == ''">
+                    `ta`.`status` = 1,
+                    </if>
+                    <if test="tbAppsPo.status != ''">
+                    `ta`.`status` = #{tbAppsPo.status},
+                    </if>
+                </if>
+                <if test="tbAppsPo.isEntranceMp != null">
+                    <if test="tbAppsPo.isEntranceMp == ''">
+                    `ta`.`isEntranceMp` = 2,
+                    </if>
+                    <if test="tbAppsPo.isEntranceMp != ''">
+                    `ta`.`isEntranceMp` = #{tbAppsPo.isEntranceMp},
+                    </if>
+                </if>
+                <if test="tbAppsPo.categoryId != null">
+                    <if test="tbAppsPo.categoryId == ''">
+                    `ta`.`categoryId` = 0,
+                    </if>
+                    <if test="tbAppsPo.categoryId != ''">
+                    `ta`.`categoryId` = #{tbAppsPo.categoryId},
+                    </if>
+                </if>
+                <if test="tbAppsPo.createdAt != null">
+                    <if test="tbAppsPo.createdAt == ''">
+                    `ta`.`createdAt` = '',
+                    </if>
+                    <if test="tbAppsPo.createdAt != ''">
+                    `ta`.`createdAt` = #{tbAppsPo.createdAt},
+                    </if>
+                </if>
+                <if test="tbAppsPo.createdUserId != null">
+                    <if test="tbAppsPo.createdUserId == ''">
+                    `ta`.`createdUserId` = 1,
+                    </if>
+                    <if test="tbAppsPo.createdUserId != ''">
+                    `ta`.`createdUserId` = #{tbAppsPo.createdUserId},
+                    </if>
+                </if>
+                <if test="tbAppsPo.updatedAt != null">
+                    <if test="tbAppsPo.updatedAt == ''">
+                    `ta`.`updatedAt` = '',
+                    </if>
+                    <if test="tbAppsPo.updatedAt != ''">
+                    `ta`.`updatedAt` = #{tbAppsPo.updatedAt},
+                    </if>
+                </if>
+                <if test="tbAppsPo.updatedUserId != null">
+                    <if test="tbAppsPo.updatedUserId == ''">
+                    `ta`.`updatedUserId` = 1,
+                    </if>
+                    <if test="tbAppsPo.updatedUserId != ''">
+                    `ta`.`updatedUserId` = #{tbAppsPo.updatedUserId},
+                    </if>
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbAppsPo != null">
+                        <if test="tbAppsPo.whereId != null and tbAppsPo.whereId != ''">
+                            AND `ta`.`id` = #{tbAppsPo.whereId}
+                        </if>
+                    <if test="tbAppsPo.whereInIds != null and tbAppsPo.whereInIds.size() > 0">
+                        AND `ta`.`id` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrIds != null and tbAppsPo.whereInOrIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`id` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`id` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotId != null and tbAppsPo.whereNotId != ''">
+                            AND `ta`.`id` != #{tbAppsPo.whereNotId}
+                        </if>
+                    <if test="tbAppsPo.whereNotInIds != null and tbAppsPo.whereNotInIds.size() > 0">
+                        AND `ta`.`id` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeId != null and tbAppsPo.whereLikeId != ''">
+                            AND `ta`.`id` LIKE CONCAT('%', #{tbAppsPo.whereLikeId}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartId != null and tbAppsPo.whereStartId != ''">
+                            AND `ta`.`id` &gt;= #{tbAppsPo.whereStartId}
+                        </if>
+                        <if test="tbAppsPo.whereEndId != null and tbAppsPo.whereEndId != ''">
+                            AND `ta`.`id` &lt;= #{tbAppsPo.whereEndId}
+                        </if>
+                        <if test="tbAppsPo.whereAppSecret != null and tbAppsPo.whereAppSecret != ''">
+                            AND `ta`.`appSecret` = #{tbAppsPo.whereAppSecret}
+                        </if>
+                    <if test="tbAppsPo.whereInAppSecrets != null and tbAppsPo.whereInAppSecrets.size() > 0">
+                        AND `ta`.`appSecret` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInAppSecrets"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrAppSecrets != null and tbAppsPo.whereInOrAppSecrets.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrAppSecrets"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`appSecret` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`appSecret` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotAppSecret != null and tbAppsPo.whereNotAppSecret != ''">
+                            AND `ta`.`appSecret` != #{tbAppsPo.whereNotAppSecret}
+                        </if>
+                    <if test="tbAppsPo.whereNotInAppSecrets != null and tbAppsPo.whereNotInAppSecrets.size() > 0">
+                        AND `ta`.`appSecret` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInAppSecrets"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeAppSecret != null and tbAppsPo.whereLikeAppSecret != ''">
+                            AND `ta`.`appSecret` LIKE CONCAT('%', #{tbAppsPo.whereLikeAppSecret}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartAppSecret != null and tbAppsPo.whereStartAppSecret != ''">
+                            AND `ta`.`appSecret` &gt;= #{tbAppsPo.whereStartAppSecret}
+                        </if>
+                        <if test="tbAppsPo.whereEndAppSecret != null and tbAppsPo.whereEndAppSecret != ''">
+                            AND `ta`.`appSecret` &lt;= #{tbAppsPo.whereEndAppSecret}
+                        </if>
+                        <if test="tbAppsPo.whereType != null">
+                            AND `ta`.`type` = #{tbAppsPo.whereType}
+                        </if>
+                    <if test="tbAppsPo.whereInTypes != null and tbAppsPo.whereInTypes.size() > 0">
+                        AND `ta`.`type` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInTypes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrTypes != null and tbAppsPo.whereInOrTypes.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrTypes"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`type` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`type` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotType != null">
+                            AND `ta`.`type` != #{tbAppsPo.whereNotType}
+                        </if>
+                    <if test="tbAppsPo.whereNotInTypes != null and tbAppsPo.whereNotInTypes.size() > 0">
+                        AND `ta`.`type` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInTypes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartType != null">
+                            AND `ta`.`type` &gt;= #{tbAppsPo.whereStartType}
+                        </if>
+                        <if test="tbAppsPo.whereEndType != null">
+                            AND `ta`.`type` &lt;= #{tbAppsPo.whereEndType}
+                        </if>
+                        <if test="tbAppsPo.whereSort != null">
+                            AND `ta`.`sort` = #{tbAppsPo.whereSort}
+                        </if>
+                    <if test="tbAppsPo.whereInSorts != null and tbAppsPo.whereInSorts.size() > 0">
+                        AND `ta`.`sort` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInSorts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrSorts != null and tbAppsPo.whereInOrSorts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrSorts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`sort` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`sort` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotSort != null">
+                            AND `ta`.`sort` != #{tbAppsPo.whereNotSort}
+                        </if>
+                    <if test="tbAppsPo.whereNotInSorts != null and tbAppsPo.whereNotInSorts.size() > 0">
+                        AND `ta`.`sort` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInSorts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartSort != null">
+                            AND `ta`.`sort` &gt;= #{tbAppsPo.whereStartSort}
+                        </if>
+                        <if test="tbAppsPo.whereEndSort != null">
+                            AND `ta`.`sort` &lt;= #{tbAppsPo.whereEndSort}
+                        </if>
+                        <if test="tbAppsPo.whereUniAppid != null and tbAppsPo.whereUniAppid != ''">
+                            AND `ta`.`uniAppid` = #{tbAppsPo.whereUniAppid}
+                        </if>
+                    <if test="tbAppsPo.whereInUniAppids != null and tbAppsPo.whereInUniAppids.size() > 0">
+                        AND `ta`.`uniAppid` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInUniAppids"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrUniAppids != null and tbAppsPo.whereInOrUniAppids.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrUniAppids"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`uniAppid` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`uniAppid` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotUniAppid != null and tbAppsPo.whereNotUniAppid != ''">
+                            AND `ta`.`uniAppid` != #{tbAppsPo.whereNotUniAppid}
+                        </if>
+                    <if test="tbAppsPo.whereNotInUniAppids != null and tbAppsPo.whereNotInUniAppids.size() > 0">
+                        AND `ta`.`uniAppid` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInUniAppids"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeUniAppid != null and tbAppsPo.whereLikeUniAppid != ''">
+                            AND `ta`.`uniAppid` LIKE CONCAT('%', #{tbAppsPo.whereLikeUniAppid}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartUniAppid != null and tbAppsPo.whereStartUniAppid != ''">
+                            AND `ta`.`uniAppid` &gt;= #{tbAppsPo.whereStartUniAppid}
+                        </if>
+                        <if test="tbAppsPo.whereEndUniAppid != null and tbAppsPo.whereEndUniAppid != ''">
+                            AND `ta`.`uniAppid` &lt;= #{tbAppsPo.whereEndUniAppid}
+                        </if>
+                        <if test="tbAppsPo.whereAccessType != null">
+                            AND `ta`.`accessType` = #{tbAppsPo.whereAccessType}
+                        </if>
+                    <if test="tbAppsPo.whereInAccessTypes != null and tbAppsPo.whereInAccessTypes.size() > 0">
+                        AND `ta`.`accessType` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInAccessTypes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrAccessTypes != null and tbAppsPo.whereInOrAccessTypes.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrAccessTypes"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`accessType` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`accessType` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotAccessType != null">
+                            AND `ta`.`accessType` != #{tbAppsPo.whereNotAccessType}
+                        </if>
+                    <if test="tbAppsPo.whereNotInAccessTypes != null and tbAppsPo.whereNotInAccessTypes.size() > 0">
+                        AND `ta`.`accessType` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInAccessTypes"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartAccessType != null">
+                            AND `ta`.`accessType` &gt;= #{tbAppsPo.whereStartAccessType}
+                        </if>
+                        <if test="tbAppsPo.whereEndAccessType != null">
+                            AND `ta`.`accessType` &lt;= #{tbAppsPo.whereEndAccessType}
+                        </if>
+                        <if test="tbAppsPo.whereAccessRoleIds != null and tbAppsPo.whereAccessRoleIds != ''">
+                            AND `ta`.`accessRoleIds` = #{tbAppsPo.whereAccessRoleIds}
+                        </if>
+                    <if test="tbAppsPo.whereInAccessRoleIdss != null and tbAppsPo.whereInAccessRoleIdss.size() > 0">
+                        AND `ta`.`accessRoleIds` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInAccessRoleIdss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrAccessRoleIdss != null and tbAppsPo.whereInOrAccessRoleIdss.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrAccessRoleIdss"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`accessRoleIds` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`accessRoleIds` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotAccessRoleIds != null and tbAppsPo.whereNotAccessRoleIds != ''">
+                            AND `ta`.`accessRoleIds` != #{tbAppsPo.whereNotAccessRoleIds}
+                        </if>
+                    <if test="tbAppsPo.whereNotInAccessRoleIdss != null and tbAppsPo.whereNotInAccessRoleIdss.size() > 0">
+                        AND `ta`.`accessRoleIds` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInAccessRoleIdss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeAccessRoleIds != null and tbAppsPo.whereLikeAccessRoleIds != ''">
+                            AND `ta`.`accessRoleIds` LIKE CONCAT('%', #{tbAppsPo.whereLikeAccessRoleIds}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartAccessRoleIds != null and tbAppsPo.whereStartAccessRoleIds != ''">
+                            AND `ta`.`accessRoleIds` &gt;= #{tbAppsPo.whereStartAccessRoleIds}
+                        </if>
+                        <if test="tbAppsPo.whereEndAccessRoleIds != null and tbAppsPo.whereEndAccessRoleIds != ''">
+                            AND `ta`.`accessRoleIds` &lt;= #{tbAppsPo.whereEndAccessRoleIds}
+                        </if>
+                        <if test="tbAppsPo.whereAccessUserIds != null and tbAppsPo.whereAccessUserIds != ''">
+                            AND `ta`.`accessUserIds` = #{tbAppsPo.whereAccessUserIds}
+                        </if>
+                    <if test="tbAppsPo.whereInAccessUserIdss != null and tbAppsPo.whereInAccessUserIdss.size() > 0">
+                        AND `ta`.`accessUserIds` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInAccessUserIdss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrAccessUserIdss != null and tbAppsPo.whereInOrAccessUserIdss.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrAccessUserIdss"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`accessUserIds` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`accessUserIds` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotAccessUserIds != null and tbAppsPo.whereNotAccessUserIds != ''">
+                            AND `ta`.`accessUserIds` != #{tbAppsPo.whereNotAccessUserIds}
+                        </if>
+                    <if test="tbAppsPo.whereNotInAccessUserIdss != null and tbAppsPo.whereNotInAccessUserIdss.size() > 0">
+                        AND `ta`.`accessUserIds` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInAccessUserIdss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeAccessUserIds != null and tbAppsPo.whereLikeAccessUserIds != ''">
+                            AND `ta`.`accessUserIds` LIKE CONCAT('%', #{tbAppsPo.whereLikeAccessUserIds}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartAccessUserIds != null and tbAppsPo.whereStartAccessUserIds != ''">
+                            AND `ta`.`accessUserIds` &gt;= #{tbAppsPo.whereStartAccessUserIds}
+                        </if>
+                        <if test="tbAppsPo.whereEndAccessUserIds != null and tbAppsPo.whereEndAccessUserIds != ''">
+                            AND `ta`.`accessUserIds` &lt;= #{tbAppsPo.whereEndAccessUserIds}
+                        </if>
+                        <if test="tbAppsPo.whereName != null and tbAppsPo.whereName != ''">
+                            AND `ta`.`name` = #{tbAppsPo.whereName}
+                        </if>
+                    <if test="tbAppsPo.whereInNames != null and tbAppsPo.whereInNames.size() > 0">
+                        AND `ta`.`name` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrNames != null and tbAppsPo.whereInOrNames.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrNames"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`name` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`name` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotName != null and tbAppsPo.whereNotName != ''">
+                            AND `ta`.`name` != #{tbAppsPo.whereNotName}
+                        </if>
+                    <if test="tbAppsPo.whereNotInNames != null and tbAppsPo.whereNotInNames.size() > 0">
+                        AND `ta`.`name` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInNames"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeName != null and tbAppsPo.whereLikeName != ''">
+                            AND `ta`.`name` LIKE CONCAT('%', #{tbAppsPo.whereLikeName}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartName != null and tbAppsPo.whereStartName != ''">
+                            AND `ta`.`name` &gt;= #{tbAppsPo.whereStartName}
+                        </if>
+                        <if test="tbAppsPo.whereEndName != null and tbAppsPo.whereEndName != ''">
+                            AND `ta`.`name` &lt;= #{tbAppsPo.whereEndName}
+                        </if>
+                        <if test="tbAppsPo.whereDesc != null and tbAppsPo.whereDesc != ''">
+                            AND `ta`.`desc` = #{tbAppsPo.whereDesc}
+                        </if>
+                    <if test="tbAppsPo.whereInDescs != null and tbAppsPo.whereInDescs.size() > 0">
+                        AND `ta`.`desc` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrDescs != null and tbAppsPo.whereInOrDescs.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrDescs"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`desc` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`desc` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotDesc != null and tbAppsPo.whereNotDesc != ''">
+                            AND `ta`.`desc` != #{tbAppsPo.whereNotDesc}
+                        </if>
+                    <if test="tbAppsPo.whereNotInDescs != null and tbAppsPo.whereNotInDescs.size() > 0">
+                        AND `ta`.`desc` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInDescs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeDesc != null and tbAppsPo.whereLikeDesc != ''">
+                            AND `ta`.`desc` LIKE CONCAT('%', #{tbAppsPo.whereLikeDesc}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartDesc != null and tbAppsPo.whereStartDesc != ''">
+                            AND `ta`.`desc` &gt;= #{tbAppsPo.whereStartDesc}
+                        </if>
+                        <if test="tbAppsPo.whereEndDesc != null and tbAppsPo.whereEndDesc != ''">
+                            AND `ta`.`desc` &lt;= #{tbAppsPo.whereEndDesc}
+                        </if>
+                        <if test="tbAppsPo.whereImg != null and tbAppsPo.whereImg != ''">
+                            AND `ta`.`img` = #{tbAppsPo.whereImg}
+                        </if>
+                    <if test="tbAppsPo.whereInImgs != null and tbAppsPo.whereInImgs.size() > 0">
+                        AND `ta`.`img` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInImgs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrImgs != null and tbAppsPo.whereInOrImgs.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrImgs"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`img` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`img` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotImg != null and tbAppsPo.whereNotImg != ''">
+                            AND `ta`.`img` != #{tbAppsPo.whereNotImg}
+                        </if>
+                    <if test="tbAppsPo.whereNotInImgs != null and tbAppsPo.whereNotInImgs.size() > 0">
+                        AND `ta`.`img` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInImgs"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereLikeImg != null and tbAppsPo.whereLikeImg != ''">
+                            AND `ta`.`img` LIKE CONCAT('%', #{tbAppsPo.whereLikeImg}, '%')
+                        </if>
+                        <if test="tbAppsPo.whereStartImg != null and tbAppsPo.whereStartImg != ''">
+                            AND `ta`.`img` &gt;= #{tbAppsPo.whereStartImg}
+                        </if>
+                        <if test="tbAppsPo.whereEndImg != null and tbAppsPo.whereEndImg != ''">
+                            AND `ta`.`img` &lt;= #{tbAppsPo.whereEndImg}
+                        </if>
+                        <if test="tbAppsPo.whereStatus != null">
+                            AND `ta`.`status` = #{tbAppsPo.whereStatus}
+                        </if>
+                    <if test="tbAppsPo.whereInStatuss != null and tbAppsPo.whereInStatuss.size() > 0">
+                        AND `ta`.`status` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInStatuss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrStatuss != null and tbAppsPo.whereInOrStatuss.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrStatuss"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`status` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`status` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotStatus != null">
+                            AND `ta`.`status` != #{tbAppsPo.whereNotStatus}
+                        </if>
+                    <if test="tbAppsPo.whereNotInStatuss != null and tbAppsPo.whereNotInStatuss.size() > 0">
+                        AND `ta`.`status` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInStatuss"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartStatus != null">
+                            AND `ta`.`status` &gt;= #{tbAppsPo.whereStartStatus}
+                        </if>
+                        <if test="tbAppsPo.whereEndStatus != null">
+                            AND `ta`.`status` &lt;= #{tbAppsPo.whereEndStatus}
+                        </if>
+                        <if test="tbAppsPo.whereIsEntranceMp != null">
+                            AND `ta`.`isEntranceMp` = #{tbAppsPo.whereIsEntranceMp}
+                        </if>
+                    <if test="tbAppsPo.whereInIsEntranceMps != null and tbAppsPo.whereInIsEntranceMps.size() > 0">
+                        AND `ta`.`isEntranceMp` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInIsEntranceMps"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrIsEntranceMps != null and tbAppsPo.whereInOrIsEntranceMps.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrIsEntranceMps"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`isEntranceMp` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`isEntranceMp` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotIsEntranceMp != null">
+                            AND `ta`.`isEntranceMp` != #{tbAppsPo.whereNotIsEntranceMp}
+                        </if>
+                    <if test="tbAppsPo.whereNotInIsEntranceMps != null and tbAppsPo.whereNotInIsEntranceMps.size() > 0">
+                        AND `ta`.`isEntranceMp` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInIsEntranceMps"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartIsEntranceMp != null">
+                            AND `ta`.`isEntranceMp` &gt;= #{tbAppsPo.whereStartIsEntranceMp}
+                        </if>
+                        <if test="tbAppsPo.whereEndIsEntranceMp != null">
+                            AND `ta`.`isEntranceMp` &lt;= #{tbAppsPo.whereEndIsEntranceMp}
+                        </if>
+                        <if test="tbAppsPo.whereCategoryId != null">
+                            AND `ta`.`categoryId` = #{tbAppsPo.whereCategoryId}
+                        </if>
+                    <if test="tbAppsPo.whereInCategoryIds != null and tbAppsPo.whereInCategoryIds.size() > 0">
+                        AND `ta`.`categoryId` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInCategoryIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrCategoryIds != null and tbAppsPo.whereInOrCategoryIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrCategoryIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`categoryId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`categoryId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotCategoryId != null">
+                            AND `ta`.`categoryId` != #{tbAppsPo.whereNotCategoryId}
+                        </if>
+                    <if test="tbAppsPo.whereNotInCategoryIds != null and tbAppsPo.whereNotInCategoryIds.size() > 0">
+                        AND `ta`.`categoryId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInCategoryIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartCategoryId != null">
+                            AND `ta`.`categoryId` &gt;= #{tbAppsPo.whereStartCategoryId}
+                        </if>
+                        <if test="tbAppsPo.whereEndCategoryId != null">
+                            AND `ta`.`categoryId` &lt;= #{tbAppsPo.whereEndCategoryId}
+                        </if>
+                        <if test="tbAppsPo.whereCreatedAt != null and tbAppsPo.whereCreatedAt != ''">
+                            AND `ta`.`createdAt` = #{tbAppsPo.whereCreatedAt}
+                        </if>
+                    <if test="tbAppsPo.whereInCreatedAts != null and tbAppsPo.whereInCreatedAts.size() > 0">
+                        AND `ta`.`createdAt` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrCreatedAts != null and tbAppsPo.whereInOrCreatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrCreatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`createdAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`createdAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotCreatedAt != null and tbAppsPo.whereNotCreatedAt != ''">
+                            AND `ta`.`createdAt` != #{tbAppsPo.whereNotCreatedAt}
+                        </if>
+                    <if test="tbAppsPo.whereNotInCreatedAts != null and tbAppsPo.whereNotInCreatedAts.size() > 0">
+                        AND `ta`.`createdAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInCreatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartCreatedAt != null and tbAppsPo.whereStartCreatedAt != ''">
+                            AND `ta`.`createdAt` &gt;= #{tbAppsPo.whereStartCreatedAt}
+                        </if>
+                        <if test="tbAppsPo.whereEndCreatedAt != null and tbAppsPo.whereEndCreatedAt != ''">
+                            AND `ta`.`createdAt` &lt;= #{tbAppsPo.whereEndCreatedAt}
+                        </if>
+                        <if test="tbAppsPo.whereCreatedUserId != null">
+                            AND `ta`.`createdUserId` = #{tbAppsPo.whereCreatedUserId}
+                        </if>
+                    <if test="tbAppsPo.whereInCreatedUserIds != null and tbAppsPo.whereInCreatedUserIds.size() > 0">
+                        AND `ta`.`createdUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrCreatedUserIds != null and tbAppsPo.whereInOrCreatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrCreatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`createdUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`createdUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotCreatedUserId != null">
+                            AND `ta`.`createdUserId` != #{tbAppsPo.whereNotCreatedUserId}
+                        </if>
+                    <if test="tbAppsPo.whereNotInCreatedUserIds != null and tbAppsPo.whereNotInCreatedUserIds.size() > 0">
+                        AND `ta`.`createdUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInCreatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartCreatedUserId != null">
+                            AND `ta`.`createdUserId` &gt;= #{tbAppsPo.whereStartCreatedUserId}
+                        </if>
+                        <if test="tbAppsPo.whereEndCreatedUserId != null">
+                            AND `ta`.`createdUserId` &lt;= #{tbAppsPo.whereEndCreatedUserId}
+                        </if>
+                        <if test="tbAppsPo.whereUpdatedAt != null and tbAppsPo.whereUpdatedAt != ''">
+                            AND `ta`.`updatedAt` = #{tbAppsPo.whereUpdatedAt}
+                        </if>
+                    <if test="tbAppsPo.whereInUpdatedAts != null and tbAppsPo.whereInUpdatedAts.size() > 0">
+                        AND `ta`.`updatedAt` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrUpdatedAts != null and tbAppsPo.whereInOrUpdatedAts.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrUpdatedAts"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`updatedAt` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`updatedAt` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotUpdatedAt != null and tbAppsPo.whereNotUpdatedAt != ''">
+                            AND `ta`.`updatedAt` != #{tbAppsPo.whereNotUpdatedAt}
+                        </if>
+                    <if test="tbAppsPo.whereNotInUpdatedAts != null and tbAppsPo.whereNotInUpdatedAts.size() > 0">
+                        AND `ta`.`updatedAt` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInUpdatedAts"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartUpdatedAt != null and tbAppsPo.whereStartUpdatedAt != ''">
+                            AND `ta`.`updatedAt` &gt;= #{tbAppsPo.whereStartUpdatedAt}
+                        </if>
+                        <if test="tbAppsPo.whereEndUpdatedAt != null and tbAppsPo.whereEndUpdatedAt != ''">
+                            AND `ta`.`updatedAt` &lt;= #{tbAppsPo.whereEndUpdatedAt}
+                        </if>
+                        <if test="tbAppsPo.whereUpdatedUserId != null">
+                            AND `ta`.`updatedUserId` = #{tbAppsPo.whereUpdatedUserId}
+                        </if>
+                    <if test="tbAppsPo.whereInUpdatedUserIds != null and tbAppsPo.whereInUpdatedUserIds.size() > 0">
+                        AND `ta`.`updatedUserId` IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                    <if test="tbAppsPo.whereInOrUpdatedUserIds != null and tbAppsPo.whereInOrUpdatedUserIds.size() > 0">
+                        AND
+                        <foreach item="item" index="index" collection="tbAppsPo.whereInOrUpdatedUserIds"
+                                 open="(" separator="or" close=")">
+                            <if test="item != null">
+                            `ta`.`updatedUserId` = #{item}
+                            </if>
+                            <if test="item == null">
+                                `ta`.`updatedUserId` is null
+                            </if>
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereNotUpdatedUserId != null">
+                            AND `ta`.`updatedUserId` != #{tbAppsPo.whereNotUpdatedUserId}
+                        </if>
+                    <if test="tbAppsPo.whereNotInUpdatedUserIds != null and tbAppsPo.whereNotInUpdatedUserIds.size() > 0">
+                        AND `ta`.`updatedUserId` NOT IN
+                        <foreach item="item" index="index" collection="tbAppsPo.whereNotInUpdatedUserIds"
+                                 open="(" separator="," close=")">
+                            #{item}
+                        </foreach>
+                    </if>
+                        <if test="tbAppsPo.whereStartUpdatedUserId != null">
+                            AND `ta`.`updatedUserId` &gt;= #{tbAppsPo.whereStartUpdatedUserId}
+                        </if>
+                        <if test="tbAppsPo.whereEndUpdatedUserId != null">
+                            AND `ta`.`updatedUserId` &lt;= #{tbAppsPo.whereEndUpdatedUserId}
+                        </if>
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.apps.data.po.TbAppsPo"
+            resultType="com.api.apps.data.entity.TbApps">
+        <bind name="tbAppsPo" value="_parameter"/>
+        SELECT `ta`.*
+        FROM tb_apps as `ta`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.apps.data.po.TbAppsPo"
+            resultType="int">
+        <bind name="tbAppsPo" value="_parameter"/>
+        SELECT COUNT(*) as cnt
+        FROM tb_apps as `ta`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </select>
+</mapper>

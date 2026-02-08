@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.mapper.CommonSqlFragments">
+    <sql id="orderByAndLimit">
+        <trim prefix="ORDER BY" prefixOverrides="." >
+            <if test="sortList != null and sortList.size() > 0">
+                <foreach collection="sortList" item="sort" separator=", ">
+                    <if test="sort.sortField != null and sort.sortField != '' and sort.sortType != '' and sort.sortType != null">
+                        ${sort.alias}.`${sort.sortField}` ${sort.sortType}
+                    </if>
+                </foreach>
+            </if>
+        </trim>
+        <trim prefix="LIMIT">
+            <if test="limit != null and limit > 0">
+                #{offset}, #{limit}
+            </if>
+        </trim>
+    </sql>
+</mapper>

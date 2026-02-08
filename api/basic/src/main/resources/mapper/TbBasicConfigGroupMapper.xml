@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.basic.mapper.TbBasicConfigGroupMapper">
+
+    <insert id="add"
+            parameterType="com.api.basic.data.entity.TbBasicConfigGroup"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_basic_config_group (
+        <trim suffixOverrides=",">
+                        <if test="name != null">
+                            `name`,
+                        </if>
+                        <if test="value != null">
+                            `value`,
+                        </if>
+                            <if test="createdUserId != null">
+                                `createdUserId`,
+                            </if>
+        </trim>
+        )
+        VALUES (
+        <trim suffixOverrides=",">
+                        <if test="name != null">
+                            #{name},
+                        </if>
+                        <if test="value != null">
+                            #{value},
+                        </if>
+                            <if test="createdUserId != null">
+                                #{createdUserId},
+                            </if>
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="com.api.basic.data.po.TbBasicConfigGroupPo">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        DELETE `tbcg` FROM tb_basic_config_group as `tbcg`
+        <where>
+        <include refid="whereClause"/>
+        </where>
+    </delete>
+
+    <update id="update"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        UPDATE tb_basic_config_group as `tbcg`
+        <set>
+                <if test="tbBasicConfigGroupPo.id != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbcg`.`id` = #{tbBasicConfigGroupPo.id},
+                </if>
+                <if test="tbBasicConfigGroupPo.name != null">
+                        <if test="tbBasicConfigGroupPo.name == ''">
+                    `tbcg`.`name` = NULL,
+                        </if>
+                        <if test="tbBasicConfigGroupPo.name != ''">
+                    `tbcg`.`name` = #{tbBasicConfigGroupPo.name},
+                        </if>
+                </if>
+                <if test="tbBasicConfigGroupPo.value != null">
+                        <if test="tbBasicConfigGroupPo.value == ''">
+                    `tbcg`.`value` = NULL,
+                        </if>
+                        <if test="tbBasicConfigGroupPo.value != ''">
+                    `tbcg`.`value` = #{tbBasicConfigGroupPo.value},
+                        </if>
+                </if>
+                <if test="tbBasicConfigGroupPo.createdAt != null">
+                        <if test="tbBasicConfigGroupPo.createdAt == ''">
+                    `tbcg`.`createdAt` = '',
+                        </if>
+                        <if test="tbBasicConfigGroupPo.createdAt != ''">
+                    `tbcg`.`createdAt` = #{tbBasicConfigGroupPo.createdAt},
+                        </if>
+                </if>
+                <if test="tbBasicConfigGroupPo.createdUserId != null">
+                        <!-- 非字符串类型，直接更新，包括0值和false值 -->
+                    `tbcg`.`createdUserId` = #{tbBasicConfigGroupPo.createdUserId},
+                </if>
+        </set>
+        <where>
+            <include refid="whereClause"/>
+        </where>
+    </update>
+
+    <sql id="whereClause">
+        <if test="tbBasicConfigGroupPo != null">
+                            <if test="tbBasicConfigGroupPo.whereId != null">
+                                AND `tbcg`.`id` = #{tbBasicConfigGroupPo.whereId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInIds != null and tbBasicConfigGroupPo.whereInIds.size() > 0">
+                            AND `tbcg`.`id` IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInOrIds != null and tbBasicConfigGroupPo.whereInOrIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInOrIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbcg`.`id` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbcg`.`id` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereNotId != null">
+                                AND `tbcg`.`id` != #{tbBasicConfigGroupPo.whereNotId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereNotInIds != null and tbBasicConfigGroupPo.whereNotInIds.size() > 0">
+                            AND `tbcg`.`id` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereNotInIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicConfigGroupPo.whereIsNullId != null and tbBasicConfigGroupPo.whereIsNullId == true">
+                            AND `tbcg`.`id` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotNullId != null and tbBasicConfigGroupPo.whereIsNotNullId == true">
+                            AND `tbcg`.`id` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsEmptyId != null and tbBasicConfigGroupPo.whereIsEmptyId == true">
+                            AND (`tbcg`.`id` IS NULL OR `tbcg`.`id` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotEmptyId != null and tbBasicConfigGroupPo.whereIsNotEmptyId == true">
+                            AND `tbcg`.`id` IS NOT NULL AND `tbcg`.`id` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicConfigGroupPo.whereGtId != null">
+                                AND `tbcg`.`id` &gt; #{tbBasicConfigGroupPo.whereGtId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicConfigGroupPo.whereGteId != null">
+                                AND `tbcg`.`id` &gt;= #{tbBasicConfigGroupPo.whereGteId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLtId != null">
+                                AND `tbcg`.`id` &lt; #{tbBasicConfigGroupPo.whereLtId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLteId != null">
+                                AND `tbcg`.`id` &lt;= #{tbBasicConfigGroupPo.whereLteId}
+                            </if>
+                            <if test="tbBasicConfigGroupPo.whereStartId != null">
+                                AND `tbcg`.`id` &gt;= #{tbBasicConfigGroupPo.whereStartId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereEndId != null">
+                                AND `tbcg`.`id` &lt;= #{tbBasicConfigGroupPo.whereEndId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereName != null and tbBasicConfigGroupPo.whereName != ''">
+                                AND `tbcg`.`name` = #{tbBasicConfigGroupPo.whereName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInNames != null and tbBasicConfigGroupPo.whereInNames.size() > 0">
+                            AND `tbcg`.`name` IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInOrNames != null and tbBasicConfigGroupPo.whereInOrNames.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInOrNames"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbcg`.`name` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbcg`.`name` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereNotName != null and tbBasicConfigGroupPo.whereNotName != ''">
+                                AND `tbcg`.`name` != #{tbBasicConfigGroupPo.whereNotName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereNotInNames != null and tbBasicConfigGroupPo.whereNotInNames.size() > 0">
+                            AND `tbcg`.`name` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereNotInNames"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicConfigGroupPo.whereIsNullName != null and tbBasicConfigGroupPo.whereIsNullName == true">
+                            AND `tbcg`.`name` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotNullName != null and tbBasicConfigGroupPo.whereIsNotNullName == true">
+                            AND `tbcg`.`name` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsEmptyName != null and tbBasicConfigGroupPo.whereIsEmptyName == true">
+                            AND (`tbcg`.`name` IS NULL OR `tbcg`.`name` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotEmptyName != null and tbBasicConfigGroupPo.whereIsNotEmptyName == true">
+                            AND `tbcg`.`name` IS NOT NULL AND `tbcg`.`name` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicConfigGroupPo.whereGtName != null and tbBasicConfigGroupPo.whereGtName != ''">
+                                AND `tbcg`.`name` &gt; #{tbBasicConfigGroupPo.whereGtName}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicConfigGroupPo.whereGteName != null and tbBasicConfigGroupPo.whereGteName != ''">
+                                AND `tbcg`.`name` &gt;= #{tbBasicConfigGroupPo.whereGteName}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLtName != null and tbBasicConfigGroupPo.whereLtName != ''">
+                                AND `tbcg`.`name` &lt; #{tbBasicConfigGroupPo.whereLtName}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLteName != null and tbBasicConfigGroupPo.whereLteName != ''">
+                                AND `tbcg`.`name` &lt;= #{tbBasicConfigGroupPo.whereLteName}
+                            </if>
+                            <if test="tbBasicConfigGroupPo.whereLikeName != null and tbBasicConfigGroupPo.whereLikeName != ''">
+                                AND `tbcg`.`name` LIKE CONCAT('%', #{tbBasicConfigGroupPo.whereLikeName}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereStartName != null and tbBasicConfigGroupPo.whereStartName != ''">
+                                AND `tbcg`.`name` &gt;= #{tbBasicConfigGroupPo.whereStartName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereEndName != null and tbBasicConfigGroupPo.whereEndName != ''">
+                                AND `tbcg`.`name` &lt;= #{tbBasicConfigGroupPo.whereEndName}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereValue != null and tbBasicConfigGroupPo.whereValue != ''">
+                                AND `tbcg`.`value` = #{tbBasicConfigGroupPo.whereValue}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInValues != null and tbBasicConfigGroupPo.whereInValues.size() > 0">
+                            AND `tbcg`.`value` IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInValues"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInOrValues != null and tbBasicConfigGroupPo.whereInOrValues.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInOrValues"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbcg`.`value` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbcg`.`value` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereNotValue != null and tbBasicConfigGroupPo.whereNotValue != ''">
+                                AND `tbcg`.`value` != #{tbBasicConfigGroupPo.whereNotValue}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereNotInValues != null and tbBasicConfigGroupPo.whereNotInValues.size() > 0">
+                            AND `tbcg`.`value` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereNotInValues"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicConfigGroupPo.whereIsNullValue != null and tbBasicConfigGroupPo.whereIsNullValue == true">
+                            AND `tbcg`.`value` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotNullValue != null and tbBasicConfigGroupPo.whereIsNotNullValue == true">
+                            AND `tbcg`.`value` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsEmptyValue != null and tbBasicConfigGroupPo.whereIsEmptyValue == true">
+                            AND (`tbcg`.`value` IS NULL OR `tbcg`.`value` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotEmptyValue != null and tbBasicConfigGroupPo.whereIsNotEmptyValue == true">
+                            AND `tbcg`.`value` IS NOT NULL AND `tbcg`.`value` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicConfigGroupPo.whereGtValue != null and tbBasicConfigGroupPo.whereGtValue != ''">
+                                AND `tbcg`.`value` &gt; #{tbBasicConfigGroupPo.whereGtValue}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicConfigGroupPo.whereGteValue != null and tbBasicConfigGroupPo.whereGteValue != ''">
+                                AND `tbcg`.`value` &gt;= #{tbBasicConfigGroupPo.whereGteValue}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLtValue != null and tbBasicConfigGroupPo.whereLtValue != ''">
+                                AND `tbcg`.`value` &lt; #{tbBasicConfigGroupPo.whereLtValue}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLteValue != null and tbBasicConfigGroupPo.whereLteValue != ''">
+                                AND `tbcg`.`value` &lt;= #{tbBasicConfigGroupPo.whereLteValue}
+                            </if>
+                            <if test="tbBasicConfigGroupPo.whereLikeValue != null and tbBasicConfigGroupPo.whereLikeValue != ''">
+                                AND `tbcg`.`value` LIKE CONCAT('%', #{tbBasicConfigGroupPo.whereLikeValue}, '%')
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereStartValue != null and tbBasicConfigGroupPo.whereStartValue != ''">
+                                AND `tbcg`.`value` &gt;= #{tbBasicConfigGroupPo.whereStartValue}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereEndValue != null and tbBasicConfigGroupPo.whereEndValue != ''">
+                                AND `tbcg`.`value` &lt;= #{tbBasicConfigGroupPo.whereEndValue}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereCreatedAt != null and tbBasicConfigGroupPo.whereCreatedAt != ''">
+                                AND `tbcg`.`createdAt` = #{tbBasicConfigGroupPo.whereCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInCreatedAts != null and tbBasicConfigGroupPo.whereInCreatedAts.size() > 0">
+                            AND `tbcg`.`createdAt` IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInOrCreatedAts != null and tbBasicConfigGroupPo.whereInOrCreatedAts.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInOrCreatedAts"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbcg`.`createdAt` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbcg`.`createdAt` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereNotCreatedAt != null and tbBasicConfigGroupPo.whereNotCreatedAt != ''">
+                                AND `tbcg`.`createdAt` != #{tbBasicConfigGroupPo.whereNotCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereNotInCreatedAts != null and tbBasicConfigGroupPo.whereNotInCreatedAts.size() > 0">
+                            AND `tbcg`.`createdAt` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereNotInCreatedAts"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicConfigGroupPo.whereIsNullCreatedAt != null and tbBasicConfigGroupPo.whereIsNullCreatedAt == true">
+                            AND `tbcg`.`createdAt` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotNullCreatedAt != null and tbBasicConfigGroupPo.whereIsNotNullCreatedAt == true">
+                            AND `tbcg`.`createdAt` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsEmptyCreatedAt != null and tbBasicConfigGroupPo.whereIsEmptyCreatedAt == true">
+                            AND (`tbcg`.`createdAt` IS NULL OR `tbcg`.`createdAt` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotEmptyCreatedAt != null and tbBasicConfigGroupPo.whereIsNotEmptyCreatedAt == true">
+                            AND `tbcg`.`createdAt` IS NOT NULL AND `tbcg`.`createdAt` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicConfigGroupPo.whereGtCreatedAt != null and tbBasicConfigGroupPo.whereGtCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &gt; #{tbBasicConfigGroupPo.whereGtCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicConfigGroupPo.whereGteCreatedAt != null and tbBasicConfigGroupPo.whereGteCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &gt;= #{tbBasicConfigGroupPo.whereGteCreatedAt}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLtCreatedAt != null and tbBasicConfigGroupPo.whereLtCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &lt; #{tbBasicConfigGroupPo.whereLtCreatedAt}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLteCreatedAt != null and tbBasicConfigGroupPo.whereLteCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &lt;= #{tbBasicConfigGroupPo.whereLteCreatedAt}
+                            </if>
+                            <if test="tbBasicConfigGroupPo.whereStartCreatedAt != null and tbBasicConfigGroupPo.whereStartCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &gt;= #{tbBasicConfigGroupPo.whereStartCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereEndCreatedAt != null and tbBasicConfigGroupPo.whereEndCreatedAt != ''">
+                                AND `tbcg`.`createdAt` &lt;= #{tbBasicConfigGroupPo.whereEndCreatedAt}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` = #{tbBasicConfigGroupPo.whereCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInCreatedUserIds != null and tbBasicConfigGroupPo.whereInCreatedUserIds.size() > 0">
+                            AND `tbcg`.`createdUserId` IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereInOrCreatedUserIds != null and tbBasicConfigGroupPo.whereInOrCreatedUserIds.size() > 0">
+                            AND
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereInOrCreatedUserIds"
+                                     open="(" separator="or" close=")">
+                                <if test="item != null">
+                                `tbcg`.`createdUserId` = #{item}
+                                </if>
+                                <if test="item == null">
+                                    `tbcg`.`createdUserId` is null
+                                </if>
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereNotCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` != #{tbBasicConfigGroupPo.whereNotCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereNotInCreatedUserIds != null and tbBasicConfigGroupPo.whereNotInCreatedUserIds.size() > 0">
+                            AND `tbcg`.`createdUserId` NOT IN
+                            <foreach item="item" index="index" collection="tbBasicConfigGroupPo.whereNotInCreatedUserIds"
+                                     open="(" separator="," close=")">
+                                #{item}
+                            </foreach>
+                        </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                        <if test="tbBasicConfigGroupPo.whereIsNullCreatedUserId != null and tbBasicConfigGroupPo.whereIsNullCreatedUserId == true">
+                            AND `tbcg`.`createdUserId` IS NULL
+                        </if>
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotNullCreatedUserId != null and tbBasicConfigGroupPo.whereIsNotNullCreatedUserId == true">
+                            AND `tbcg`.`createdUserId` IS NOT NULL
+                        </if>
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsEmptyCreatedUserId != null and tbBasicConfigGroupPo.whereIsEmptyCreatedUserId == true">
+                            AND (`tbcg`.`createdUserId` IS NULL OR `tbcg`.`createdUserId` = '')
+                        </if>
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                        <if test="tbBasicConfigGroupPo.whereIsNotEmptyCreatedUserId != null and tbBasicConfigGroupPo.whereIsNotEmptyCreatedUserId == true">
+                            AND `tbcg`.`createdUserId` IS NOT NULL AND `tbcg`.`createdUserId` != ''
+                        </if>
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                            <if test="tbBasicConfigGroupPo.whereGtCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &gt; #{tbBasicConfigGroupPo.whereGtCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                            <if test="tbBasicConfigGroupPo.whereGteCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &gt;= #{tbBasicConfigGroupPo.whereGteCreatedUserId}
+                            </if>
+                    
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLtCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &lt; #{tbBasicConfigGroupPo.whereLtCreatedUserId}
+                            </if>
+                    
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereLteCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &lt;= #{tbBasicConfigGroupPo.whereLteCreatedUserId}
+                            </if>
+                            <if test="tbBasicConfigGroupPo.whereStartCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &gt;= #{tbBasicConfigGroupPo.whereStartCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+                            <if test="tbBasicConfigGroupPo.whereEndCreatedUserId != null">
+                                AND `tbcg`.`createdUserId` &lt;= #{tbBasicConfigGroupPo.whereEndCreatedUserId}
+                            </if>
+                    
+                    <!-- 添加空值查询支持 -->
+                    
+                    
+                    
+                    
+                    <!-- 增加比较运算符条件 -->
+                    
+                    
+                    
+        </if>
+    </sql>
+
+    <select id="query"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="com.api.basic.data.entity.TbBasicConfigGroup">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT 
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.*
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+        <include refid="com.api.mapper.CommonSqlFragments.orderByAndLimit"/>
+    </select>
+
+    <select id="cnt"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="int">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT COUNT(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT `tbcg`.`id` </when>
+            <otherwise> `tbcg`.`id` </otherwise>
+        </choose>
+        ) as cnt
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="field" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{field}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- sum查询 -->
+    <select id="sumId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`id`), 0) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`id`) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`id`) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`id`), 0) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+    <!-- sum查询 -->
+    <select id="sumCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT COALESCE(SUM(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`createdUserId`), 0) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- max查询 -->
+    <select id="maxCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT MAX(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`createdUserId`) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- min查询 -->
+    <select id="minCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT MIN(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`createdUserId`) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+
+    <!-- avg查询 -->
+    <select id="avgCreatedUserId"
+            parameterType="com.api.basic.data.po.TbBasicConfigGroupPo"
+            resultType="java.math.BigDecimal">
+        <bind name="tbBasicConfigGroupPo" value="_parameter"/>
+        SELECT COALESCE(AVG(
+        <choose>
+            <when test="tbBasicConfigGroupPo.useDistinct != null and tbBasicConfigGroupPo.useDistinct == true"> DISTINCT </when>
+        </choose>
+        `tbcg`.`createdUserId`), 0) as result
+        FROM tb_basic_config_group as `tbcg`
+        <where>
+            <include refid="whereClause"/>
+        </where>
+        <if test="tbBasicConfigGroupPo.groupByFields != null and tbBasicConfigGroupPo.groupByFields.size() > 0">
+        GROUP BY
+        <foreach item="groupField" index="index" collection="tbBasicConfigGroupPo.groupByFields" separator=",">
+            `tbcg`.`#{groupField}`
+        </foreach>
+        </if>
+        <if test="tbBasicConfigGroupPo.havingClause != null and tbBasicConfigGroupPo.havingClause != ''">
+        HAVING #{tbBasicConfigGroupPo.havingClause}
+        </if>
+    </select>
+</mapper>

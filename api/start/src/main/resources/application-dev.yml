@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: wujie_api
+  datasource:
+    url: jdbc:mysql://47.120.8.108:23306/wujie_platform?useSSL=false&removeAbandoned=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: root
+    password: root
+
+config:
+  upload:
+    storage_type: selfOSS
+
+selfS3:
+  bucket: wujie
