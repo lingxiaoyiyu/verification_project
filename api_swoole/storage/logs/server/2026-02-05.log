@@ -1,0 +1,1611 @@
+2026-02-05 11:30:33 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:30:33 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:30:33 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:30:33 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:30:34 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:30:34 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:30:34 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:30:34 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:30:34 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:30:34 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:30:34 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:30:34 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:51 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:49:51 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:49:51 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:49:51 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:49:52 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:52 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:52 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:49:52 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:49:52 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:49:52 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:52 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:52 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:53 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:49:53 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:49:53 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:49:53 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:49:54 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:54 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:54 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:49:54 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:49:54 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:49:54 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:54 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:54 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:55 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:49:55 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:49:55 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:49:55 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:49:56 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:56 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:56 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:49:56 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:49:56 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:49:56 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:56 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:56 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:57 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:49:57 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:49:57 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:49:57 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:49:58 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:58 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:58 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:49:58 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:49:58 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:49:58 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:49:58 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:58 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:49:59 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:49:59 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:49:59 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:49:59 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:00 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:00 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:00 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:00 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:00 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:00 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:00 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:00 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:01 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:01 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:01 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:01 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:02 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:02 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:02 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:02 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:02 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:02 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:02 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:02 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:03 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:03 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:03 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:03 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:04 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:04 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:04 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:04 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:04 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:04 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:04 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:04 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:06 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:06 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:06 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:06 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:06 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:06 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:06 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:06 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:06 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:06 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:06 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:06 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:08 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:08 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:08 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:08 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:08 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:08 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:08 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:08 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:08 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:08 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:08 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:08 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:10 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:10 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:10 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:10 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:10 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:10 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:10 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:10 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:10 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:10 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:10 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:10 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:12 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:12 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:12 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:12 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:13 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:13 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:13 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:13 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:13 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:13 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:13 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:13 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:16 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:16 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:16 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:16 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:17 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:17 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:17 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:17 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:17 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:17 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:17 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:17 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:18 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:18 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:18 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:18 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:19 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:19 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:19 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:19 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:19 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:19 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:19 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:19 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:20 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:20 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:20 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:20 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:21 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:21 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:21 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:21 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:21 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:21 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:21 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:21 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:22 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:22 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:22 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:22 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:23 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:23 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:23 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:23 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:23 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:23 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:23 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:23 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:24 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:24 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:24 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:24 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:25 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:25 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:25 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:25 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:25 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:25 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:25 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:25 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:26 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:26 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:26 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:26 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:27 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:27 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:27 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:27 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:27 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:27 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:27 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:27 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:28 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:50:28 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:50:28 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:50:28 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:50:29 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:29 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:29 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:50:29 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:50:29 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:50:29 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:50:29 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:50:29 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:55:50 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:55:50 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:55:50 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:55:50 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:55:51 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:55:51 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:55:51 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:55:51 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:55:51 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:55:51 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:55:51 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:55:51 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:30 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:58:30 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:58:30 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:58:30 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:58:30 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:58:30 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:30 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:58:30 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:58:30 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:58:31 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:58:31 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:31 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:40 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 11:58:40 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 11:58:40 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 11:58:40 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 11:58:41 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:58:41 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:41 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 11:58:41 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 11:58:41 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 11:58:41 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 11:58:41 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 11:58:41 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:01:29 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:01:29 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:01:29 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:01:29 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:01:30 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:01:30 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:01:30 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:01:30 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:01:30 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:01:30 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:01:30 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:01:30 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:08:37 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:08:37 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:08:37 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:08:37 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:08:37 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:08:37 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:08:37 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:08:37 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:08:37 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:08:37 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:08:37 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:08:37 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:37 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:37 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:37 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:37 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:38 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:38 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:38 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:38 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:38 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:38 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:38 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:38 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:39 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:39 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:39 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:39 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:40 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:40 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:40 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:40 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:40 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:40 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:40 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:40 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:41 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:41 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:41 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:41 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:42 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:42 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:42 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:42 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:42 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:42 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:42 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:42 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:43 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:43 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:43 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:43 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:44 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:44 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:44 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:44 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:44 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:44 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:44 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:44 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:45 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:45 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:45 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:45 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:46 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:46 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:46 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:46 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:46 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:46 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:46 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:46 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:47 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:47 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:47 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:47 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:48 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:48 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:48 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:48 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:48 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:48 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:48 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:48 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:49 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:49 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:49 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:49 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:50 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:50 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:50 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:50 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:50 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:50 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:50 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:50 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:51 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:51 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:51 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:51 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:52 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:52 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:52 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:52 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:52 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:52 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:52 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:52 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:54 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:54 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:54 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:54 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:54 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:54 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:54 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:54 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:54 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:54 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:54 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:54 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:56 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:56 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:56 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:56 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:56 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:56 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:56 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:56 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:56 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:57 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:57 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:57 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:58 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:10:58 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:10:58 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:10:58 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:10:59 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:59 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:59 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:10:59 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:10:59 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:10:59 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:10:59 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:10:59 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:00 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:00 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:00 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:00 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:01 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:01 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:01 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:01 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:01 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:01 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:01 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:01 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:02 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:02 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:02 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:02 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:03 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:03 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:03 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:03 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:03 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:03 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:03 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:03 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:04 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:04 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:04 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:04 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:05 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:05 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:05 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:05 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:05 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:05 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:05 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:05 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:06 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:06 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:06 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:06 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:07 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:07 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:07 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:07 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:07 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:07 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:07 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:07 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:08 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:08 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:08 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:08 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:09 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:09 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:09 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:09 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:09 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:09 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:09 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:09 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:10 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:10 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:10 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:10 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:11 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:11 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:11 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:11 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:11 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:11 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:11 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:11 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:13 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:13 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:13 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:13 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:13 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:13 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:13 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:13 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:13 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:13 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:13 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:13 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:19 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:19 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:19 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:19 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:20 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:20 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:20 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:20 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:20 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:20 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:20 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:20 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:21 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:21 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:21 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:21 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:22 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:22 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:22 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:22 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:22 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:22 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:22 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:22 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:23 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:23 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:23 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:23 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:24 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:24 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:24 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:24 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:24 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:24 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:24 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:24 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:25 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:25 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:25 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:25 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:26 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:26 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:26 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:26 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:26 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:26 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:26 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:26 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:27 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:27 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:27 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:27 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:28 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:28 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:28 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:28 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:28 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:28 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:28 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:28 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:29 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:29 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:29 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:29 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:30 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:30 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:30 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:30 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:30 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:30 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:30 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:30 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:31 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:31 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:31 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:31 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:32 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:32 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:32 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:32 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:32 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:32 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:32 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:32 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:33 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:33 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:33 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:33 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:34 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:34 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:34 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:34 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:34 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:34 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:34 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:34 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:35 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:35 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:35 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:35 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:36 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:36 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:36 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:36 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:36 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:36 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:36 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:36 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:38 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:38 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:38 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:38 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:38 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:38 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:38 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:38 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:38 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:38 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:38 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:38 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:40 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:40 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:40 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:40 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:40 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:40 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:40 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:40 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:40 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:40 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:40 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:40 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:42 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:42 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:42 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:42 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:42 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:42 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:42 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:42 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:42 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:42 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:42 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:42 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:44 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:44 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:44 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:44 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:45 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:45 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:45 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:45 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:45 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:45 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:45 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:45 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:46 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:46 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:46 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:46 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:47 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:47 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:47 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:47 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:47 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:47 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:47 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:47 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:48 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:48 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:48 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:48 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:49 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:49 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:49 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:49 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:49 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:49 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:49 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:49 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:50 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:50 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:50 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:50 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:51 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:51 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:51 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:51 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:51 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:51 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:51 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:51 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:52 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:52 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:52 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:52 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:53 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:53 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:53 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:53 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:53 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:53 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:53 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:53 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:54 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:54 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:54 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:54 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:55 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:55 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:55 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:55 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:55 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:55 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:55 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:55 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:56 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:56 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:56 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:56 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:57 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:57 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:57 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:57 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:57 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:57 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:57 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:57 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:58 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:11:58 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:11:58 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:11:58 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:11:59 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:59 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:59 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:11:59 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:11:59 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:11:59 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:11:59 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:11:59 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:34:54 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:34:54 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:34:54 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:34:54 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:34:55 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:34:55 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:34:55 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:34:55 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:34:55 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:34:55 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:34:55 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:34:55 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:35:14 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:35:14 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:35:14 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:35:14 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:35:15 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:35:15 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:35:15 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:35:15 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:35:15 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:35:15 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:35:15 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:35:15 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:42 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:42 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:42 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:42 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:43 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:43 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:43 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:43 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:43 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:43 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:43 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:43 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:44 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:44 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:44 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:44 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:45 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:45 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:45 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:45 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:45 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:45 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:45 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:45 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:46 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:46 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:46 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:46 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:47 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:47 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:47 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:47 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:47 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:47 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:47 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:47 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:48 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:48 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:48 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:48 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:49 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:49 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:49 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:49 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:49 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:49 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:49 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:49 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:50 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:50 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:50 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:50 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:51 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:51 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:51 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:51 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:51 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:51 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:51 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:51 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:52 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 12:42:52 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 12:42:52 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 12:42:52 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 12:42:53 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:53 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:53 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 12:42:53 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 12:42:53 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 12:42:53 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 12:42:53 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 12:42:53 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 13:20:14 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 13:20:14 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 13:20:14 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 13:20:14 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 13:20:15 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 13:20:15 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 13:20:15 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 13:20:15 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 13:20:15 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 13:20:15 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 13:20:15 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 13:20:15 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 13:22:06 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 13:22:06 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 13:22:06 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 13:22:06 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 13:22:06 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 13:22:06 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 13:22:06 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 13:22:06 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 13:22:06 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 13:22:06 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 13:22:06 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 13:22:06 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:31 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 14:50:31 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 14:50:31 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 14:50:31 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 14:50:32 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:50:32 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:32 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 14:50:32 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 14:50:32 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 14:50:32 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:50:32 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:32 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:56 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 14:50:56 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 14:50:56 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 14:50:56 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 14:50:57 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:50:57 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:57 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 14:50:57 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 14:50:57 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 14:50:57 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:50:57 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:50:57 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 14:51:30 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 14:51:30 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 14:51:30 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 14:51:30 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 14:51:30 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:51:30 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:51:30 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 14:51:30 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 14:51:30 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 14:51:30 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 14:51:30 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 14:51:30 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 15:48:27 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 15:48:27 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 15:48:27 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 15:48:27 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 15:48:28 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 15:48:28 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 15:48:28 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 15:48:28 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 15:48:28 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 15:48:28 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 15:48:28 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 15:48:28 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 15:48:39 INFO ==> LOG: [START] GET /test from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 15:48:39 ERROR ==> LOG: 404 NOT FOUND_404
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(138): Library\Route\Builder->dispatch('/test', 'GET', 'http')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/test', 'GET', 'http')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#3 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#4 {main} -- Log.php:523##error 
+2026-02-05 15:48:39 INFO ==> LOG: [END] GET /test from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 | Response: {"code":404,"message":"404 NOT FOUND","request_id":"20260205154839-70550e05-1265"} -- Log.php:556##info 
+2026-02-05 20:22:56 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:22:56 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:22:56 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:22:56 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:22:57 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:22:57 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:22:57 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:22:57 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:22:57 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:22:57 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:22:57 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:22:57 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:23:08 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:23:08 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:23:08 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:23:08 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:23:08 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:23:08 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:23:08 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:23:08 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:23:08 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:23:08 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:23:08 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:23:08 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:39:16 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:39:16 ERROR ==> LOG: Call to undefined method Library\Facades\Validate::make()
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Index\Controller\Http\Ip2Region->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/ip2regio...', 'GET', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/ip2regio...', 'GET', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:39:16 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.008s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":500,"message":"Call to undefined method Library\\Facades\\Validate::make()","data":null} -- Log.php:556##info 
+2026-02-05 20:40:21 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:40:21 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:40:21 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:40:21 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:40:22 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:22 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:22 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:40:22 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:40:22 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:40:22 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:22 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:22 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:34 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:40:34 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:40:34 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:40:34 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:40:34 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:34 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:34 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:40:34 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:40:34 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:40:34 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:34 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:34 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:42 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:40:42 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:40:42 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:40:42 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:40:43 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:43 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:43 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:40:43 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:40:43 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:40:43 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:43 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:43 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:52 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:40:52 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:40:52 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:40:52 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:40:53 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:53 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:53 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:40:53 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:40:53 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:40:53 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:40:53 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:40:53 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:00 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:41:00 ERROR ==> LOG: Call to undefined method Library\Facades\Request::input()
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Index\Controller\Http\Ip2Region->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/ip2regio...', 'GET', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/ip2regio...', 'GET', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:41:00 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.005s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":500,"message":"Call to undefined method Library\\Facades\\Request::input()","data":null} -- Log.php:556##info 
+2026-02-05 20:41:09 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:41:09 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:41:09 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:41:09 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:41:10 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:41:10 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:10 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:41:10 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:41:10 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:41:10 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:41:10 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:10 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:15 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:41:15 ERROR ==> LOG: Call to undefined method Library\Facades\Request::input()
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Index\Controller\Http\Ip2Region->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/ip2regio...', 'GET', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/ip2regio...', 'GET', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:41:15 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.005s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":500,"message":"Call to undefined method Library\\Facades\\Request::input()","data":null} -- Log.php:556##info 
+2026-02-05 20:41:38 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:41:38 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:41:38 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:41:38 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:41:39 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:41:39 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:39 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:41:39 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:41:39 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:41:39 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:41:39 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:39 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:41:47 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:41:47 ERROR ==> LOG: The method `send` is undefined on string
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php(45): swoole_call_string_method()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Index\Controller\Http\Ip2Region->service()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/ip2regio...', 'GET', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/ip2regio...', 'GET', 'http')
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#6 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#7 {main} -- Log.php:523##error 
+2026-02-05 20:41:47 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.009s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":500,"message":"The method `send` is undefined on string","data":null} -- Log.php:556##info 
+2026-02-05 20:42:17 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:42:17 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:42:17 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:42:17 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:42:18 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:42:18 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:42:18 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:42:18 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:42:18 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:42:18 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:42:18 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:42:18 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:42:24 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:42:24 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:42:24 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:42:24 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:42:24 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:42:24 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:42:24 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:42:24 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:42:24 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:42:25 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:42:25 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:42:25 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:03 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:43:03 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:43:03 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:43:03 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:43:04 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:43:04 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:04 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:43:04 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:43:04 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:43:04 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:43:04 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:04 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:04 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:43:04 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:43:04 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:43:04 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:43:05 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:43:05 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:05 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:43:05 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:43:05 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:43:05 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:43:05 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:05 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:43:11 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:43:11 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.006s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:43:42 INFO ==> LOG: [END] GET / from 127.0.0.1 | Duration: 0.000s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: no response data -- Log.php:556##info 
+2026-02-05 20:43:58 INFO ==> LOG: [START] GET /index/init from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:43:58 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= 'admin' -- Log.php:567##debug 
+2026-02-05 20:43:58 ERROR ==> LOG: The method `send` is undefined on string
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Init.php(32): swoole_call_string_method()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Index\Controller\Http\Init->service()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/index/init', 'GET', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/index/init', 'GET', 'http')
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#6 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#7 {main} -- Log.php:523##error 
+2026-02-05 20:43:58 INFO ==> LOG: [END] GET /index/init from 127.0.0.1 | Duration: 0.226s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":500,"message":"The method `send` is undefined on string","data":null} -- Log.php:556##info 
+2026-02-05 20:44:13 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:44:13 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:44:13 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:44:13 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:44:13 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:44:13 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:44:13 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:44:13 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:44:13 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:44:13 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:44:13 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:44:13 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:44:20 INFO ==> LOG: [START] GET /index/init from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:44:20 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= 'admin' -- Log.php:567##debug 
+2026-02-05 20:44:20 INFO ==> LOG: [END] GET /index/init from 127.0.0.1 | Duration: 0.215s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: {"code":0,"message":"success","data":{"message":"系统已初始化"}} -- Log.php:556##info 
+2026-02-05 20:50:08 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:08 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:50:08 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:08 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.002s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:50:08 INFO ==> LOG: [END] GET / from 127.0.0.1 | Duration: 0.000s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: no response data -- Log.php:556##info 
+2026-02-05 20:50:18 INFO ==> LOG: [START] GET /index/init from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:18 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= 'admin' -- Log.php:567##debug 
+2026-02-05 20:50:18 INFO ==> LOG: [END] GET /index/init from 127.0.0.1 | Duration: 0.197s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"message":"系统已初始化"}} -- Log.php:556##info 
+2026-02-05 20:50:21 INFO ==> LOG: [START] POST /basic/auth/login/username from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:21 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"username":{"text":"用户名","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:50:21 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= '' -- Log.php:567##debug 
+2026-02-05 20:50:22 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Username->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:50:22 INFO ==> LOG: [END] POST /basic/auth/login/username from 127.0.0.1 | Duration: 0.114s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:50:22 INFO ==> LOG: [START] POST /basic/auth/login/email from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:22 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"email":{"text":"邮箱","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:50:22 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `email`= '' -- Log.php:567##debug 
+2026-02-05 20:50:22 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Email->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:50:22 INFO ==> LOG: [END] POST /basic/auth/login/email from 127.0.0.1 | Duration: 0.209s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:50:24 INFO ==> LOG: [START] POST /basic/auth/menus from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:24 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Menus->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/men...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/men...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:50:24 INFO ==> LOG: [END] POST /basic/auth/menus from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:50:24 INFO ==> LOG: [START] POST /basic/auth/codes from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:24 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Codes->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/cod...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/cod...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:50:24 INFO ==> LOG: [END] POST /basic/auth/codes from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:50:24 INFO ==> LOG: [START] POST /basic/sys/user/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:24 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_user as u` -- Log.php:567##debug 
+2026-02-05 20:50:25 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_user as u' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select count(*)...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(377): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/User/Controller/Http/Page.php(92): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\User\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:50:25 INFO ==> LOG: [END] POST /basic/sys/user/page from 127.0.0.1 | Duration: 0.103s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:50:25 INFO ==> LOG: [START] POST /basic/sys/user/get/current from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:25 ERROR ==> LOG: 未登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\User\Controller\Http\Get\Current->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:50:25 INFO ==> LOG: [END] POST /basic/sys/user/get/current from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"未登录","data":null} -- Log.php:556##info 
+2026-02-05 20:50:25 INFO ==> LOG: [START] POST /basic/sys/role/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:25 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_role` where `is_delete`= 0 -- Log.php:567##debug 
+2026-02-05 20:50:26 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOStatementProxy.php(49): PDOStatement->execute()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(388): Swoole\Database\PDOStatementProxy->__call('execute', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Role/Controller/Http/Page.php(58): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Role\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/role...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/role...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:50:26 INFO ==> LOG: [END] POST /basic/sys/role/page from 127.0.0.1 | Duration: 0.120s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:50:26 INFO ==> LOG: [START] POST /basic/sys/menu/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:26 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_menu` where `is_delete`= 0 order by `order` asc -- Log.php:567##debug 
+2026-02-05 20:50:26 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Menu/Controller/Http/Query.php(77): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Menu\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/menu...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/menu...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:50:26 INFO ==> LOG: [END] POST /basic/sys/menu/query from 127.0.0.1 | Duration: 0.118s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:50:26 INFO ==> LOG: [START] POST /basic/sys/dic/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:26 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_dic` where `is_delete`= 0 order by `id` asc -- Log.php:567##debug 
+2026-02-05 20:50:26 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_dic' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Dic/Controller/Http/Query.php(48): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Dic\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/dic/...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/dic/...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:50:26 INFO ==> LOG: [END] POST /basic/sys/dic/query from 127.0.0.1 | Duration: 0.105s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:50:27 INFO ==> LOG: [START] POST /basic/config/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:27 ERROR ==> LOG: The method `send` is undefined on string
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Config/Controller/Http/Query.php(26): swoole_call_string_method()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Config\Controller\Http\Query->check()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/config/q...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/config/q...', 'POST', 'http')
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#6 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#7 {main} -- Log.php:523##error 
+2026-02-05 20:50:27 INFO ==> LOG: [END] POST /basic/config/query from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"The method `send` is undefined on string","data":null} -- Log.php:556##info 
+2026-02-05 20:50:27 INFO ==> LOG: [START] POST /apps/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:50:27 ERROR ==> LOG: 404 NOT FOUND_404
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/apps/page', 'POST', 'http')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/apps/page', 'POST', 'http')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#3 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#4 {main} -- Log.php:523##error 
+2026-02-05 20:50:27 INFO ==> LOG: [END] POST /apps/page from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":404,"message":"404 NOT FOUND","request_id":"20260205205027-3a07e9a5-1528"} -- Log.php:556##info 
+2026-02-05 20:50:48 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:50:48 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:50:48 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:50:48 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:50:49 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:50:49 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:50:49 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:50:49 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:50:49 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:50:49 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:50:49 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:50:49 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:05 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:51:05 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:51:05 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:51:05 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:51:06 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:51:06 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:06 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:51:06 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:51:06 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:51:06 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:51:06 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:06 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:20 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:51:20 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:51:20 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:51:20 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:51:20 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:51:20 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:20 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:51:20 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:51:20 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:51:20 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:51:20 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:20 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:51:33 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:33 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.007s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:51:33 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:33 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.002s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:51:33 INFO ==> LOG: [END] GET / from 127.0.0.1 | Duration: 0.000s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: no response data -- Log.php:556##info 
+2026-02-05 20:51:43 INFO ==> LOG: [START] GET /index/init from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:43 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= 'admin' -- Log.php:567##debug 
+2026-02-05 20:51:43 INFO ==> LOG: [END] GET /index/init from 127.0.0.1 | Duration: 0.228s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"message":"系统已初始化"}} -- Log.php:556##info 
+2026-02-05 20:51:44 INFO ==> LOG: [START] POST /basic/auth/login/username from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:44 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"username":{"text":"用户名","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:51:44 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= '' -- Log.php:567##debug 
+2026-02-05 20:51:44 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Username->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:44 INFO ==> LOG: [END] POST /basic/auth/login/username from 127.0.0.1 | Duration: 0.115s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:51:44 INFO ==> LOG: [START] POST /basic/auth/login/email from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:44 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"email":{"text":"邮箱","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:51:44 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `email`= '' -- Log.php:567##debug 
+2026-02-05 20:51:44 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Email->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:44 INFO ==> LOG: [END] POST /basic/auth/login/email from 127.0.0.1 | Duration: 0.099s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:51:45 INFO ==> LOG: [START] POST /basic/auth/menus from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:45 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Menus->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/men...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/men...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:45 INFO ==> LOG: [END] POST /basic/auth/menus from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:51:46 INFO ==> LOG: [START] POST /basic/auth/codes from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:46 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Codes->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/cod...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/cod...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:46 INFO ==> LOG: [END] POST /basic/auth/codes from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:51:46 INFO ==> LOG: [START] POST /basic/sys/user/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:46 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_user as u` -- Log.php:567##debug 
+2026-02-05 20:51:46 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_user as u' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select count(*)...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(377): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/User/Controller/Http/Page.php(92): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\User\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:51:46 INFO ==> LOG: [END] POST /basic/sys/user/page from 127.0.0.1 | Duration: 0.116s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:51:46 INFO ==> LOG: [START] POST /basic/sys/user/get/current from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:46 ERROR ==> LOG: 未登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\User\Controller\Http\Get\Current->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:46 INFO ==> LOG: [END] POST /basic/sys/user/get/current from 127.0.0.1 | Duration: 0.002s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"未登录","data":null} -- Log.php:556##info 
+2026-02-05 20:51:46 INFO ==> LOG: [START] POST /basic/sys/role/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:46 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_role` where `is_delete`= 0 -- Log.php:567##debug 
+2026-02-05 20:51:47 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOStatementProxy.php(49): PDOStatement->execute()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(388): Swoole\Database\PDOStatementProxy->__call('execute', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Role/Controller/Http/Page.php(58): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Role\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/role...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/role...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:51:47 INFO ==> LOG: [END] POST /basic/sys/role/page from 127.0.0.1 | Duration: 0.106s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:51:47 INFO ==> LOG: [START] POST /basic/sys/menu/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:47 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_menu` where `is_delete`= 0 order by `order` asc -- Log.php:567##debug 
+2026-02-05 20:51:47 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Menu/Controller/Http/Query.php(77): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Menu\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/menu...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/menu...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:51:47 INFO ==> LOG: [END] POST /basic/sys/menu/query from 127.0.0.1 | Duration: 0.111s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:51:47 INFO ==> LOG: [START] POST /basic/sys/dic/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:47 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_dic` where `is_delete`= 0 order by `id` asc -- Log.php:567##debug 
+2026-02-05 20:51:47 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_dic' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Dic/Controller/Http/Query.php(48): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Dic\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/dic/...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/dic/...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:51:47 INFO ==> LOG: [END] POST /basic/sys/dic/query from 127.0.0.1 | Duration: 0.115s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:51:47 INFO ==> LOG: [START] POST /basic/config/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:47 ERROR ==> LOG: configKey必须是字符串
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Config\Controller\Http\Query->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/config/q...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/config/q...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:51:47 INFO ==> LOG: [END] POST /basic/config/query from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"configKey必须是字符串","data":null} -- Log.php:556##info 
+2026-02-05 20:51:47 INFO ==> LOG: [START] POST /apps/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:51:47 ERROR ==> LOG: 404 NOT FOUND_404
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/apps/page', 'POST', 'http')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/apps/page', 'POST', 'http')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#3 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#4 {main} -- Log.php:523##error 
+2026-02-05 20:51:47 INFO ==> LOG: [END] POST /apps/page from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":404,"message":"404 NOT FOUND","request_id":"20260205205147-0297d341-1531"} -- Log.php:556##info 
+2026-02-05 20:51:54 INFO ==> LOG: [END] GET / from 127.0.0.1 | Duration: 0.000s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7705 | Response: no response data -- Log.php:556##info 
+2026-02-05 20:55:13 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug 
+2026-02-05 20:55:13 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug 
+2026-02-05 20:55:13 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: wujie_platform, 用户: root, 连接数: 3 -- Log.php:556##info 
+2026-02-05 20:55:13 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info 
+2026-02-05 20:55:14 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:55:14 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:55:14 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug 
+2026-02-05 20:55:14 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info 
+2026-02-05 20:55:14 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info 
+2026-02-05 20:55:14 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info 
+2026-02-05 20:55:14 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug 
+2026-02-05 20:55:14 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug 
+2026-02-05 20:55:36 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:36 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.006s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:55:36 INFO ==> LOG: [START] GET /basic/ip2region from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:36 INFO ==> LOG: [END] GET /basic/ip2region from 127.0.0.1 | Duration: 0.002s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"ip":"127.0.0.1","region":{"country":"内网","province":"","c -- Log.php:556##info 
+2026-02-05 20:55:36 INFO ==> LOG: [END] GET / from 127.0.0.1 | Duration: 0.000s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: no response data -- Log.php:556##info 
+2026-02-05 20:55:47 INFO ==> LOG: [START] GET /index/init from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:47 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= 'admin' -- Log.php:567##debug 
+2026-02-05 20:55:47 INFO ==> LOG: [END] GET /index/init from 127.0.0.1 | Duration: 0.194s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":0,"message":"success","data":{"message":"系统已初始化"}} -- Log.php:556##info 
+2026-02-05 20:55:48 INFO ==> LOG: [START] POST /basic/auth/login/username from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:48 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"username":{"text":"用户名","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:55:48 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `username`= '' -- Log.php:567##debug 
+2026-02-05 20:55:48 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Username->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:48 INFO ==> LOG: [END] POST /basic/auth/login/username from 127.0.0.1 | Duration: 0.126s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:55:48 INFO ==> LOG: [START] POST /basic/auth/login/email from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:48 DEBUG ==> LOG: Validate::validate -- Log.php:567##debug {"email":{"text":"邮箱","rules":["required"]},"password":{"text":"密码","rules":["required"]}}
+2026-02-05 20:55:48 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_user` where `email`= '' -- Log.php:567##debug 
+2026-02-05 20:55:48 ERROR ==> LOG: 账号不存在
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Auth\Controller\Http\Login\Email->service()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/log...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/log...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:48 INFO ==> LOG: [END] POST /basic/auth/login/email from 127.0.0.1 | Duration: 0.145s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: 
+Deprecated: trim(): Passing null to parameter #1 ($string) of type string is deprecated in /cygdriv -- Log.php:556##info 
+2026-02-05 20:55:49 INFO ==> LOG: [START] POST /basic/auth/menus from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:49 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Menus->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/men...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/men...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:49 INFO ==> LOG: [END] POST /basic/auth/menus from 127.0.0.1 | Duration: 0.005s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:55:50 INFO ==> LOG: [START] POST /basic/auth/codes from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:50 ERROR ==> LOG: 请先登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Auth\Controller\Http\Codes->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/auth/cod...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/auth/cod...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:50 INFO ==> LOG: [END] POST /basic/auth/codes from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"请先登录","data":null} -- Log.php:556##info 
+2026-02-05 20:55:50 INFO ==> LOG: [START] POST /basic/sys/user/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:50 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_user as u` -- Log.php:567##debug 
+2026-02-05 20:55:50 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_user as u' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select count(*)...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(377): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/User/Controller/Http/Page.php(92): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\User\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:55:50 INFO ==> LOG: [END] POST /basic/sys/user/page from 127.0.0.1 | Duration: 0.098s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:55:51 INFO ==> LOG: [START] POST /basic/sys/user/get/current from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:51 ERROR ==> LOG: 未登录
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\User\Controller\Http\Get\Current->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/user...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/user...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:51 INFO ==> LOG: [END] POST /basic/sys/user/get/current from 127.0.0.1 | Duration: 0.002s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"未登录","data":null} -- Log.php:556##info 
+2026-02-05 20:55:51 INFO ==> LOG: [START] POST /basic/sys/role/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:51 DEBUG ==> LOG: SQL执行: select count(*) as cnt from `tb_basic_sys_role` where `is_delete`= 0 -- Log.php:567##debug 
+2026-02-05 20:55:51 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOStatementProxy.php(49): PDOStatement->execute()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(388): Swoole\Database\PDOStatementProxy->__call('execute', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(1084): Library\Database\MysqlBuilder->getOne('count(*) as cnt')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Role/Controller/Http/Page.php(58): Library\Database\MysqlBuilder->count()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Role\Controller\Http\Page->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/role...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/role...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:55:51 INFO ==> LOG: [END] POST /basic/sys/role/page from 127.0.0.1 | Duration: 0.114s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:55:51 INFO ==> LOG: [START] POST /basic/sys/menu/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:51 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_menu` where `is_delete`= 0 order by `order` asc -- Log.php:567##debug 
+2026-02-05 20:55:51 ERROR ==> LOG: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where clause'_42S22
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Menu/Controller/Http/Query.php(77): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Menu\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/menu...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/menu...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:55:51 INFO ==> LOG: [END] POST /basic/sys/menu/query from 127.0.0.1 | Duration: 0.106s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_delete' in 'where  -- Log.php:556##info 
+2026-02-05 20:55:51 INFO ==> LOG: [START] POST /basic/sys/dic/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:51 DEBUG ==> LOG: SQL执行: select * from `tb_basic_sys_dic` where `is_delete`= 0 order by `id` asc -- Log.php:567##debug 
+2026-02-05 20:55:51 ERROR ==> LOG: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_basic_sys_dic' doesn't exist_42S02
+#0 @swoole/library/core/Database/PDOProxy.php(41): PDO->prepare('select * from `...')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(315): Swoole\Database\PDOProxy->__call('prepare', Array)
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Database/MysqlBuilder.php(419): Library\Database\MysqlBuilder->getMultiple(NULL)
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Dic/Controller/Http/Query.php(48): Library\Database\MysqlBuilder->get()
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(20): App\Modules\Dic\Controller\Http\Query->service()
+#5 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#6 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/sys/dic/...', 'POST', 'http')
+#7 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/sys/dic/...', 'POST', 'http')
+#8 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#9 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#10 {main} -- Log.php:523##error 
+2026-02-05 20:55:51 INFO ==> LOG: [END] POST /basic/sys/dic/query from 127.0.0.1 | Duration: 0.097s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wujie_platform.tb_ -- Log.php:556##info 
+2026-02-05 20:55:52 INFO ==> LOG: [START] POST /basic/config/query from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:52 ERROR ==> LOG: configKey必须是字符串
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Base/BaseController.php(19): App\Modules\Config\Controller\Http\Query->check()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php(187): App\Base\BaseController->__invoke()
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/basic/config/q...', 'POST', 'http')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/basic/config/q...', 'POST', 'http')
+#4 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#5 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#6 {main} -- Log.php:523##error 
+2026-02-05 20:55:52 INFO ==> LOG: [END] POST /basic/config/query from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":500,"message":"configKey必须是字符串","data":null} -- Log.php:556##info 
+2026-02-05 20:55:52 INFO ==> LOG: [START] POST /apps/page from 127.0.0.1 -- Log.php:556##info 
+2026-02-05 20:55:52 ERROR ==> LOG: 404 NOT FOUND_404
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(143): Library\Route\Builder->dispatch('/apps/page', 'POST', 'http')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/apps/page', 'POST', 'http')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#3 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#4 {main} -- Log.php:523##error 
+2026-02-05 20:55:52 INFO ==> LOG: [END] POST /apps/page from 127.0.0.1 | Duration: 0.004s | Protocol: HTTP/1.1 | User-Agent: python-requests/2.32.3 | Response: {"code":404,"message":"404 NOT FOUND","request_id":"20260205205552-94ccec22-1535"} -- Log.php:556##info 

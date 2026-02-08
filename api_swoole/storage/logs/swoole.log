@@ -1,0 +1,707 @@
+      0 [main] swoole-cli 1238 child_info_fork::abort: \??\D:\cygwin64\bin\cygHalf-2_5-25.dll: Loaded to different address: parent(0x600000) != child(0x770000)
+
+5 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:49:57 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:49:59 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:01 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:03 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:05 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:08 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:10 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:12 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:16 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:18 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:20 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:22 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:24 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:26 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:28 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:50:35 $1781.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:58:30 $1805.0]	INFO	Server is reloading all workers now
+[2026-02-05 11:58:40 $1805.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:02:35 $1811.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:37 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:39 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:41 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:43 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:45 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:47 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:49 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:51 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:53 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:56 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:10:58 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:00 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:02 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:04 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:06 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:08 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:10 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:12 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:19 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:21 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:23 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:25 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:27 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:29 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:31 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:33 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:35 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:37 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:40 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:42 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:44 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:46 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:48 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:50 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:52 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:54 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:56 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:11:58 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:12:03 $1817.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:42 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:44 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:46 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:48 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:50 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:52 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 12:42:58 $1864.0]	INFO	Server is reloading all workers now
+[2026-02-05 13:22:05 $1875.0]	INFO	Server is reloading all workers now
+
+Fatal error: Swoole\Server::start(): failed to start server. Error: 503 in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php on line 271
+
+Fatal error: Swoole\Server::start(): failed to start server. Error: 503 in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php on line 271
+
+Fatal error: Swoole\Server::start(): failed to start server. Error: 503 in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php on line 271
+
+Fatal error: Swoole\Server::start(): failed to start server. Error: 503 in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php on line 271
+
+╔════════════════════════════════════════════════════════════╗
+║                   Swoole Server Started                    ║
+╠════════════════════════════════════════════════════════════╣
+║  Time:     2026-02-05 14:51:30                           ║
+║  Server:   http://0.0.0.0:9501                           ║
+║  Master:   PID: 1219                                     ║
+║  Manager:  PID: 1220                                     ║
+║  Worker:   Count: 1                                      ║
+║  Mode:     SWOOLE_BASE                                   ║
+╚════════════════════════════════════════════════════════════╝
+
+workerStart触发: workerID=0, PID=1221
+
+[DEBUG] 已加载的路由路径：
+=======================================
+请求类型: http
+  /test/test [get, post] -> App\Modules\Test\Controller\Http\Test [OK]
+  /wechat/accessToken [get, post] -> App\Modules\Wechat\Controller\Http\AccessToken [OK]
+  /wechat/officialAccount/ticket [get, post] -> App\Modules\Wechat\Controller\Http\OfficialAccount\Ticket [OK]
+=======================================
+
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug [0m
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info [0m
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug [0m
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info [0m
+[32m2026-02-05 14:51:30 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info [0m
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug [0m
+[36m2026-02-05 14:51:30 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug [0m
+
+ =================================================================
+  [FATAL ERROR]: all coroutines (count: 2) are asleep - deadlock!
+ =================================================================
+
+  [Coroutine-3]
+ -----------------------------------------------------------------
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Log/Log.php(235): Swoole\Coroutine\Channel->pop()
+#1 [internal function]: Library\Log\Log->{closure:Library\Log\Log::startLogProcessor():232}()
+
+  [Coroutine-2]
+ -----------------------------------------------------------------
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Log/Log.php(235): Swoole\Coroutine\Channel->pop()
+#1 [internal function]: Library\Log\Log->{closure:Library\Log\Log::startLogProcessor():232}()
+
+ =================================================================
+[2026-02-05 14:51:37 #1219.0]	WARNING	Server::signal_handler_child_exit(): Fatal Error: manager process exit. status=0, signal=[Unknown signal 0: 0]
+
+╔════════════════════════════════════════════════════════════╗
+║                   Swoole Server Started                    ║
+╠════════════════════════════════════════════════════════════╣
+║  Time:     2026-02-05 15:48:27                           ║
+║  Server:   http://0.0.0.0:9501                           ║
+║  Master:   PID: 1263                                     ║
+║  Manager:  PID: 1264                                     ║
+║  Worker:   Count: 1                                      ║
+║  Mode:     SWOOLE_BASE                                   ║
+╚════════════════════════════════════════════════════════════╝
+
+workerStart触发: workerID=0, PID=1265
+
+[DEBUG] 已加载的路由路径：
+=======================================
+请求类型: http
+  /test/test [get, post] -> App\Modules\Test\Controller\Http\Test [OK]
+  /wechat/accessToken [get, post] -> App\Modules\Wechat\Controller\Http\AccessToken [OK]
+  /wechat/officialAccount/ticket [get, post] -> App\Modules\Wechat\Controller\Http\OfficialAccount\Ticket [OK]
+=======================================
+
+[36m2026-02-05 15:48:27 DEBUG ==> LOG: 日志系统已重置 -- Log.php:567##debug [0m
+[36m2026-02-05 15:48:27 DEBUG ==> LOG: 开始初始化数据库连接池... -- Log.php:567##debug [0m
+[32m2026-02-05 15:48:27 INFO ==> LOG: 正在初始化MySQL数据库连接池... 主机: 47.120.8.108, 端口: 23306, 数据库: basic, 用户: root, 连接数: 3 -- Log.php:556##info [0m
+[32m2026-02-05 15:48:27 INFO ==> LOG: 正在填充数据库连接池... -- Log.php:556##info [0m
+[32m2026-02-05 15:48:28 INFO ==> LOG: 数据库连接池初始化成功！ -- Log.php:556##info [0m
+[36m2026-02-05 15:48:28 DEBUG ==> LOG: 数据库连接池初始化完成 -- Log.php:567##debug [0m
+[36m2026-02-05 15:48:28 DEBUG ==> LOG: 开始初始化Redis连接池... -- Log.php:567##debug [0m
+[32m2026-02-05 15:48:28 INFO ==> LOG: 正在初始化Redis连接池... 主机: 127.0.0.1, 端口: 6379, 数据库索引: 0, 连接数: 30 -- Log.php:556##info [0m
+[32m2026-02-05 15:48:28 INFO ==> LOG: 正在填充Redis连接池... -- Log.php:556##info [0m
+[32m2026-02-05 15:48:28 INFO ==> LOG: Redis连接池初始化成功！ -- Log.php:556##info [0m
+[36m2026-02-05 15:48:28 DEBUG ==> LOG: Redis连接池初始化完成 -- Log.php:567##debug [0m
+[36m2026-02-05 15:48:28 DEBUG ==> LOG: workerStart初始化完成 -- Log.php:567##debug [0m
+[32m2026-02-05 15:48:39 INFO ==> LOG: [START] GET /test from 127.0.0.1 -- Log.php:556##info [0m
+[31m2026-02-05 15:48:39 ERROR ==> LOG: 404 NOT FOUND_404
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(138): Library\Route\Builder->dispatch('/test', 'GET', 'http')
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Core/Server/ServerHttp.php(50): Library\Facades\Route::dispatch('/test', 'GET', 'http')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(151): Library\Core\Server\ServerHttp->run(Object(Swoole\WebSocket\Server), Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#3 [internal function]: Library\Cups::{closure:{closure:Library\Cups::run():149}:150}()
+#4 {main} -- Log.php:523##error [0m
+[32m2026-02-05 15:48:39 INFO ==> LOG: [END] GET /test from 127.0.0.1 | Duration: 0.003s | Protocol: HTTP/1.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 | Response: {"code":404,"message":"404 NOT FOUND","request_id":"20260205154839-70550e05-1265"} -- Log.php:556##info [0m
+
+ =================================================================
+  [FATAL ERROR]: all coroutines (count: 2) are asleep - deadlock!
+ =================================================================
+
+  [Coroutine-3]
+ -----------------------------------------------------------------
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Log/Log.php(235): Swoole\Coroutine\Channel->pop()
+#1 [internal function]: Library\Log\Log->{closure:Library\Log\Log::startLogProcessor():232}()
+
+  [Coroutine-2]
+ -----------------------------------------------------------------
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Log/Log.php(235): Swoole\Coroutine\Channel->pop()
+#1 [internal function]: Library\Log\Log->{closure:Library\Log\Log::startLogProcessor():232}()
+
+ =================================================================
+[2026-02-05 15:49:00 #1263.0]	WARNING	Server::signal_handler_child_exit(): Fatal Error: manager process exit. status=0, signal=[Unknown signal 0: 0]
+
+╔════════════════════════════════════════════════════════════╗
+║                   Swoole Server Started                    ║
+╠════════════════════════════════════════════════════════════╣
+║  Time:     2026-02-05 19:52:54                           ║
+║  Server:   http://0.0.0.0:9501                           ║
+║  Master:   PID: 1304                                     ║
+║  Manager:  PID: 1305                                     ║
+║  Worker:   Count: 1                                      ║
+║  Mode:     SWOOLE_BASE                                   ║
+╚════════════════════════════════════════════════════════════╝
+
+workerStart触发: workerID=0, PID=1306
+[31m2026-02-05 19:52:54 ERROR ==> LOG: workerStart初始化失败: Class "Cups\Facades\Route" not found
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Config/Routes/HTTP.php 行号: 8
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(70): require()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#2 [internal function]: Library\Cups::{closure:Library\Cups::run():78}(Object(Swoole\WebSocket\Server), 0)
+#3 {main}
+ -- Log.php:523##error [0m
+
+ =================================================================
+  [FATAL ERROR]: all coroutines (count: 1) are asleep - deadlock!
+ =================================================================
+
+  [Coroutine-2]
+ -----------------------------------------------------------------
+#0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Log/Log.php(235): Swoole\Coroutine\Channel->pop()
+#1 [internal function]: Library\Log\Log->{closure:Library\Log\Log::startLogProcessor():232}()
+
+ =================================================================
+[2026-02-05 20:40:21 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:40:33 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:40:42 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:40:52 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:41:09 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:41:38 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:42:17 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:42:24 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:42:36 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:42:36 *1368.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:36 *1368.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:36 $1356.0]	WARNING	Worker::report_error(): worker(pid=1368, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:36 *1369.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:36 *1369.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:36 $1356.0]	WARNING	Worker::report_error(): worker(pid=1369, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1370.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1370.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1370, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1371.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1371.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1371, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1372.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1372.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1372, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1373.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1373.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1373, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1374.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1374.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1374, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:37 *1375.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:37 *1375.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:37 $1356.0]	WARNING	Worker::report_error(): worker(pid=1375, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1376.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1376.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1376, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1377.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1377.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1377, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1378.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1378.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1378, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1379.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1379.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1379, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1380.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1380.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1380, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1381.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1381.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:38 $1356.0]	WARNING	Worker::report_error(): worker(pid=1381, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:38 *1382.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:38 *1382.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1382, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:39 *1383.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:39 *1383.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1383, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:39 *1384.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:39 *1384.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1384, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:39 *1385.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:39 *1385.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1385, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:39 *1386.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:39 *1386.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1386, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:39 *1387.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:39 *1387.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:39 $1356.0]	WARNING	Worker::report_error(): worker(pid=1387, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1388.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1388.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1388, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1389.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1389.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1389, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1390.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1390.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1390, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1391.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1391.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1391, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1392.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1392.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1392, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:40 *1393.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:40 *1393.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:40 $1356.0]	WARNING	Worker::report_error(): worker(pid=1393, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1394.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1394.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1394, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1395.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1395.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1395, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1396.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1396.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1396, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1397.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1397.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1397, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1398.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1398.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1398, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:41 *1399.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:41 *1399.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:41 $1356.0]	WARNING	Worker::report_error(): worker(pid=1399, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1400.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1400.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1400, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1401.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1401.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1401, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1402.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1402.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1402, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1403.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1403.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1403, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1404.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1404.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1404, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:42 *1405.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:42 *1405.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:42 $1356.0]	WARNING	Worker::report_error(): worker(pid=1405, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1406.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1406.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1406, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1407.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1407.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1407, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1408.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1408.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1408, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1409.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1409.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1409, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1410.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1410.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1410, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:43 *1411.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:43 *1411.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:43 $1356.0]	WARNING	Worker::report_error(): worker(pid=1411, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1412.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1412.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1412, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1413.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1413.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1413, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1414.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1414.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1414, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1415.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1415.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1415, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1416.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1416.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1416, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:44 *1417.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:44 *1417.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:44 $1356.0]	WARNING	Worker::report_error(): worker(pid=1417, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1418.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:45 *1418.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1418, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1419.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:45 *1419.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1419, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1420.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:45 *1420.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1420, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1421.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 44
+[2026-02-05 20:42:45 *1421.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1421, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1422.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:45 *1422.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1422, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:45 *1423.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:45 *1423.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:45 $1356.0]	WARNING	Worker::report_error(): worker(pid=1423, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1424.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1424.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1424, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1425.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1425.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1425, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1426.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1426.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1426, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1427.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1427.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1427, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1428.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1428.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1428, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:46 *1429.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:46 *1429.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:46 $1356.0]	WARNING	Worker::report_error(): worker(pid=1429, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:47 *1430.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1430.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1430, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:47 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:42:47 *1431.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1431.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1431, id=0) abnormal exit, status=0, signal=15
+[2026-02-05 20:42:47 *1432.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1432.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1432, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:47 *1433.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1433.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1433, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:47 *1434.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1434.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1434, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:47 *1435.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:47 *1435.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:47 $1356.0]	WARNING	Worker::report_error(): worker(pid=1435, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1436.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1436.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:48 $1356.0]	WARNING	Worker::report_error(): worker(pid=1436, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1437.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1437.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:48 $1356.0]	WARNING	Worker::report_error(): worker(pid=1437, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1438.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1438.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:48 $1356.0]	WARNING	Worker::report_error(): worker(pid=1438, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1439.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1439.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:48 $1356.0]	WARNING	Worker::report_error(): worker(pid=1439, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1440.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1440.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:48 $1356.0]	WARNING	Worker::report_error(): worker(pid=1440, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:48 *1441.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:48 *1441.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1441, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1442.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1442.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1442, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1443.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1443.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1443, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1444.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1444.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1444, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1445.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1445.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1445, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1446.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1446.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:49 $1356.0]	WARNING	Worker::report_error(): worker(pid=1446, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:49 *1447.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:49 *1447.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1447, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:50 *1448.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:50 *1448.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1448, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:50 *1449.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:50 *1449.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1449, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:50 *1450.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:50 *1450.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1450, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:50 *1451.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:50 *1451.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1451, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:50 *1452.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:50 *1452.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:50 $1356.0]	WARNING	Worker::report_error(): worker(pid=1452, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:51 *1453.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:51 *1453.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:51 $1356.0]	WARNING	Worker::report_error(): worker(pid=1453, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:51 *1454.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:51 *1454.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:51 $1356.0]	WARNING	Worker::report_error(): worker(pid=1454, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:51 *1455.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:51 *1455.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:51 $1356.0]	WARNING	Worker::report_error(): worker(pid=1455, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:51 *1456.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:51 *1456.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:51 $1356.0]	WARNING	Worker::report_error(): worker(pid=1456, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:51 *1457.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:51 *1457.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:51 $1356.0]	WARNING	Worker::report_error(): worker(pid=1457, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1458.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1458.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1458, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1459.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1459.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1459, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1460.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1460.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1460, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1461.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1461.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1461, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1462.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1462.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1462, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:52 *1463.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:52 *1463.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:52 $1356.0]	WARNING	Worker::report_error(): worker(pid=1463, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1464.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1464.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:53 $1356.0]	WARNING	Worker::report_error(): worker(pid=1464, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1465.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1465.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:53 $1356.0]	WARNING	Worker::report_error(): worker(pid=1465, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1466.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1466.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:53 $1356.0]	WARNING	Worker::report_error(): worker(pid=1466, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1467.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1467.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:53 $1356.0]	WARNING	Worker::report_error(): worker(pid=1467, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1468.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1468.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:53 $1356.0]	WARNING	Worker::report_error(): worker(pid=1468, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:53 *1469.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:53 *1469.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1469, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:54 *1470.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:54 *1470.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1470, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:54 *1471.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:54 *1471.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1471, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:54 *1472.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:54 *1472.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1472, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:54 *1473.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:54 *1473.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1473, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:54 *1474.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:54 *1474.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:54 $1356.0]	WARNING	Worker::report_error(): worker(pid=1474, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1475.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1475.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1475, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1476.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1476.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1476, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1477.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1477.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1477, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1478.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1478.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1478, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1479.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1479.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1479, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:55 *1480.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:55 *1480.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:55 $1356.0]	WARNING	Worker::report_error(): worker(pid=1480, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1481.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1481.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:56 $1356.0]	WARNING	Worker::report_error(): worker(pid=1481, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1482.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1482.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:56 $1356.0]	WARNING	Worker::report_error(): worker(pid=1482, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1483.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1483.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:56 $1356.0]	WARNING	Worker::report_error(): worker(pid=1483, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1484.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1484.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:56 $1356.0]	WARNING	Worker::report_error(): worker(pid=1484, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1485.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1485.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:56 $1356.0]	WARNING	Worker::report_error(): worker(pid=1485, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:56 *1486.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:56 *1486.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1486, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1487.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1487.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1487, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1488.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1488.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1488, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1489.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1489.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1489, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1490.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1490.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1490, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1491.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1491.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:57 $1356.0]	WARNING	Worker::report_error(): worker(pid=1491, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:57 *1492.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:57 *1492.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1492, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1493.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1493.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1493, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1494.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1494.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1494, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1495.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1495.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1495, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1496.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1496.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1496, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1497.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1497.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:58 $1356.0]	WARNING	Worker::report_error(): worker(pid=1497, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:58 *1498.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:58 *1498.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1498, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1499.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1499.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1499, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1500.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1500.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1500, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1501.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1501.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1501, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1502.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1502.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1502, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1503.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1503.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1503, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:42:59 *1504.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:42:59 *1504.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:42:59 $1356.0]	WARNING	Worker::report_error(): worker(pid=1504, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:00 *1505.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:00 *1505.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:00 $1356.0]	WARNING	Worker::report_error(): worker(pid=1505, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:00 *1506.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:00 *1506.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:00 $1356.0]	WARNING	Worker::report_error(): worker(pid=1506, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:00 *1507.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:00 *1507.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:00 $1356.0]	WARNING	Worker::report_error(): worker(pid=1507, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:00 *1508.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:00 *1508.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:00 $1356.0]	WARNING	Worker::report_error(): worker(pid=1508, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:00 *1509.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:00 *1509.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:00 $1356.0]	WARNING	Worker::report_error(): worker(pid=1509, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1510.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1510.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1510, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1511.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1511.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1511, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1512.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1512.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1512, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1513.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1513.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1513, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1514.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1514.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1514, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:01 *1515.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:01 *1515.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:01 $1356.0]	WARNING	Worker::report_error(): worker(pid=1515, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1516.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1516.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1516, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1517.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1517.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1517, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1518.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1518.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1518, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1519.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1519.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1519, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1520.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1520.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1520, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:02 *1521.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:02 *1521.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:02 $1356.0]	WARNING	Worker::report_error(): worker(pid=1521, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:03 *1522.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:03 *1522.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:03 $1356.0]	WARNING	Worker::report_error(): worker(pid=1522, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:03 *1523.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:03 *1523.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:03 $1356.0]	WARNING	Worker::report_error(): worker(pid=1523, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:03 *1524.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:03 *1524.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:03 $1356.0]	WARNING	Worker::report_error(): worker(pid=1524, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:03 *1525.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: A void method must not return a value in /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Controller/Http/Ip2Region.php on line 45
+[2026-02-05 20:43:03 *1525.0]	WARNING	Channel::~Channel() (ERRNO 10003): channel is destroyed, 1 consumers will be discarded
+[2026-02-05 20:43:03 $1356.0]	WARNING	Worker::report_error(): worker(pid=1525, id=0) abnormal exit, status=255, signal=0
+[2026-02-05 20:43:04 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:44:12 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:50:48 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:51:05 $1356.0]	INFO	Server is reloading all workers now
+[2026-02-05 20:51:19 $1356.0]	INFO	Server is reloading all workers now

@@ -1,0 +1,48 @@
+2026-02-05 11:50:35 ERROR ==> LOG: workerStart初始化失败: Unclosed '{' on line 17
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Basic/Auth/Routes/HTTP.php 行号: 20
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#1 [internal function]: Library\Cups::Library\{closure}(Object(Swoole\WebSocket\Server), 0)
+#2 {main}
+ -- Log.php:523##error 
+2026-02-05 12:02:35 ERROR ==> LOG: workerStart初始化失败: Unclosed '{' on line 8
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Route/Builder.php 行号: 10
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/cygdrive/d/SVN...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('Library\\Route\\B...')
+#2 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(19): ReflectionClass->__construct('Library\\Route\\B...')
+#3 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(110): Library\Facades\Route::reset()
+#4 [internal function]: Library\Cups::Library\{closure}(Object(Swoole\WebSocket\Server), 0)
+#5 {main}
+ -- Log.php:523##error 
+2026-02-05 12:12:03 ERROR ==> LOG: workerStart初始化失败: Unclosed '('
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Basic/Sys/Routes/HTTP.php 行号: 17
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#1 [internal function]: Library\Cups::Library\{closure}(Object(Swoole\WebSocket\Server), 0)
+#2 {main}
+ -- Log.php:523##error 
+2026-02-05 12:42:58 ERROR ==> LOG: workerStart初始化失败: Unclosed '{' on line 17
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Basic/Routes/HTTP.php 行号: 19
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#1 [internal function]: Library\Cups::Library\{closure}(Object(Swoole\WebSocket\Server), 0)
+#2 {main}
+ -- Log.php:523##error 
+2026-02-05 19:52:54 ERROR ==> LOG: workerStart初始化失败: Class "Cups\Facades\Route" not found
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Config/Routes/HTTP.php 行号: 8
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(70): require()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#2 [internal function]: Library\Cups::{closure:Library\Cups::run():78}(Object(Swoole\WebSocket\Server), 0)
+#3 {main}
+ -- Log.php:523##error 
+2026-02-05 19:53:51 ERROR ==> LOG: workerStart初始化失败: Class "Cups\Facades\Route" not found
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Config/Routes/HTTP.php 行号: 8
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(70): require()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#2 [internal function]: Library\Cups::{closure:Library\Cups::run():78}(Object(Swoole\WebSocket\Server), 0)
+#3 {main}
+ -- Log.php:523##error 
+2026-02-05 20:19:23 ERROR ==> LOG: workerStart初始化失败: Call to undefined method Library\Facades\Route::any()
+错误文件: /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/app/Modules/Index/Routes/HTTP.php 行号: 10
+堆栈跟踪: #0 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Facades/Route.php(70): require()
+#1 /cygdrive/d/SVN/WUJIE/01_platform/api_swoole/library/Cups.php(111): Library\Facades\Route::initialize()
+#2 [internal function]: Library\Cups::{closure:Library\Cups::run():78}(Object(Swoole\WebSocket\Server), 0)
+#3 {main}
+ -- Log.php:523##error 
